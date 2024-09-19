@@ -12,7 +12,7 @@ export const SalesComponent = () => {
     const dispatch = useDispatch();
     const {products, status, error} = useSelector(state => state.productsReducer);
     // const firstProducts = products.slice().filter(product => product.discont_price).slice(0, 4);
-    const randomProducts = products.slice().filter(product => product.discont_price).sort(() => Math.random() - 0.5).slice(0, 4);
+    const randomProducts = products ? products.slice().filter(product => product.discont_price).sort(() => Math.random() - 0.5).slice(0, 4) : [];
 
 
     useEffect(() => {
@@ -25,7 +25,7 @@ export const SalesComponent = () => {
             <SectionSeparator sectionName="Sale" path="/sales/all" fullSectionName="All sales"/>
             <div className={styles.SaleProductsContainer}>
                 {status === "LOADING" ? <Loader/> : (
-                    randomProducts.map((product) => (
+                    randomProducts.length ? randomProducts.map((product) => (
                         <Link key={product.id} to={`/categories/${product.id}`} className={styles.SaleProduct}>
                             <img
                                 className={styles.CategoryImage}
@@ -45,7 +45,7 @@ export const SalesComponent = () => {
                                 </div>
                             </div>
                         </Link>
-                    ))
+                    )) : <h2 className={styles.NoProducts}>No products</h2>
                 )}
             </div>
         </section>

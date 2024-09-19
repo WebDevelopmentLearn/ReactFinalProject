@@ -6,61 +6,55 @@
   color: #282828;
   font-size: 6.4rem;
   font-weight: 700;
+  margin-bottom: 40px;
 }
 
 .ContactInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  gap: 32px;
+  margin-bottom: 32px;
 }
 
-.ContactInfoDiv {
+.PhoneNumber {
+  background-color: red;
+  grid-column: 1/2;
+}
+
+.ContactCard {
   background-color: #F1F3F4;
   border-radius: 12px;
   padding: 32px;
-  width: 100%;
-  height: 100%;
 }
-
-.PhoneAndSocialsContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 32px;
-}
-.PhoneAndSocialsContainer .PhoneNumber h4, .PhoneAndSocialsContainer .Socials h4 {
+.ContactCard h4 {
   font-size: 2rem;
   font-weight: 500;
   color: #8B8B8B;
 }
-.PhoneAndSocialsContainer .PhoneNumber p, .PhoneAndSocialsContainer .Socials p {
+.ContactCard p {
   font-size: 4rem;
   font-weight: 600;
   color: #282828;
 }
 
-.AddressAndWorkingHoursContainer {
+.Socials {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 16px;
+}
+.Socials .SocialsLinks {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  gap: 32px;
-  flex-wrap: wrap;
+  gap: 16px;
 }
-.AddressAndWorkingHoursContainer .Address h4, .AddressAndWorkingHoursContainer .WorkingHours h4 {
-  font-size: 2rem;
-  font-weight: 500;
-  color: #8B8B8B;
-}
-.AddressAndWorkingHoursContainer .Address p, .AddressAndWorkingHoursContainer .WorkingHours p {
-  font-size: 4rem;
-  font-weight: 600;
+.Socials .SocialsLinks a {
   color: #282828;
+  font-size: 2rem;
 }
 
 .FooterMap {
@@ -69,6 +63,52 @@
 }
 .FooterMap iframe {
   border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .Footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ContactInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .ContactCard {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .ContactCard h4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #8B8B8B;
+  }
+  .ContactCard p {
+    font-size: 3.6rem;
+    font-weight: 600;
+    color: #282828;
+  }
+}
+@media screen and (max-width: 375px) {
+  .Footer {
+    padding: 0 16px 0 16px;
+  }
+  .ContactCard h4 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #8B8B8B;
+  }
+  .ContactCard p {
+    font-size: 3.2rem;
+    font-weight: 600;
+    color: #282828;
+  }
 }
 
 /*# sourceMappingURL=Footer.module.css.map */

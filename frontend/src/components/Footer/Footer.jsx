@@ -8,14 +8,15 @@ export const Footer = () => {
     return (
         <footer className={styles.Footer}>
             <h2 className={styles.FooterHeader}>Contact</h2>
+
             <div className={styles.ContactInfo}>
-                <div className={styles.PhoneAndSocialsContainer}>
-                    <div className={`${styles.PhoneNumber} ${styles.ContactInfoDiv}`}>
-                        <h4>Phone</h4>
-                        <p>+49 30 915-88492</p>
-                    </div>
-                    <div className={`${styles.Socials} ${styles.ContactInfoDiv}`}>
-                        <h4>Socials</h4>
+                <div className={`${styles.PhoneNumber} ${styles.ContactCard}`}>
+                    <h4>Phone</h4>
+                    <p>+49 30 915-88492</p>
+                </div>
+                <div className={`${styles.Socials} ${styles.ContactCard}`}>
+                    <h4>Socials</h4>
+                    <div className={styles.SocialsLinks}>
                         <a href="https://instagram.com">
                             <img src={instagramIcon} alt="instagram_icon"/>
                         </a>
@@ -25,17 +26,14 @@ export const Footer = () => {
                         </a>
                     </div>
                 </div>
-
-                <div className={styles.AddressAndWorkingHoursContainer}>
-                    <div className={`${styles.Address} ${styles.ContactInfoDiv}`}>
-                        <h4>Address</h4>
-                        <p>Wallstraẞe 9-13, 10179 Berlin,</p>
-                        <p>Deutschland</p>
-                    </div>
-                    <div className={`${styles.WorkingHours} ${styles.ContactInfoDiv}`}>
-                        <h4>Working hours</h4>
-                        <p>24 hours a day</p>
-                    </div>
+                <div className={`${styles.Address} ${styles.ContactCard}`}>
+                    <h4>Address</h4>
+                    <p>Wallstraẞe 9-13, 10179 Berlin,</p>
+                    <p>Deutschland</p>
+                </div>
+                <div className={`${styles.WorkingHours} ${styles.ContactCard}`}>
+                    <h4>Working hours</h4>
+                    <p>24 hours a day</p>
                 </div>
             </div>
 

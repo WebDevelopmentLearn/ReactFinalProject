@@ -6,10 +6,9 @@
 }
 
 .SaleProductsContainer {
-  display: flex;
-  justify-content: space-between;
+  @include flex(row, center, center);
   flex-wrap: wrap;
-  align-items: center;
+  gap: 32px;
 
   .SaleProduct {
     width: 316px;
@@ -26,6 +25,12 @@
 
   }
 }
+
+.NoProducts {
+  @include fontSizeAndWeight(4.0rem, 600);
+  text-align: center;
+}
+
 
 .ProductsInfo {
   padding: 0 32px;
@@ -89,11 +94,12 @@
 
     .SaleProduct {
       width: 100%;
-      max-height: 100%;
+
+      img {
+        max-height: initial;
+      }
 
     }
   }
-
-
 
 }

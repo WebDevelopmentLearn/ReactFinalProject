@@ -4,15 +4,23 @@
 
 .CategoriesContainer {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
 }
 .CategoriesContainer .Category {
   width: 316px;
 }
 .CategoriesContainer .Category img {
   width: 100%;
+}
+
+.NoCategories {
+  font-size: 4rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 a {

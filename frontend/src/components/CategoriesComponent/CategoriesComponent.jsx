@@ -10,7 +10,7 @@ import {SectionSeparator} from "../SectionSeparator/SectionSeparator";
 
 export const CategoriesComponent = () => {
     const { categories, status, error } = useSelector(state => state.categoriesReducer);
-    const firstCategories = categories.slice(0, 4);
+    const firstCategories = categories ? categories.slice(0, 4) : [];
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getAllCategories());
@@ -22,7 +22,7 @@ export const CategoriesComponent = () => {
 
             <div className={styles.CategoriesContainer}>
                 {status === "LOADING" ? <Loader /> : (
-                    firstCategories.map((category) => (
+                    firstCategories.length ? firstCategories.map((category) => (
                         <Link key={category.id} to={`/categories/${category.id}`} className={styles.Category}>
                             <img
                                 className={styles.CategoryImage}
@@ -32,7 +32,7 @@ export const CategoriesComponent = () => {
                             />
                             <h3 className={styles.CategoryName}>{category.title}</h3>
                         </Link>
-                    ))
+                    )) : <h2 className={styles.NoCategories}>No categories</h2>
                 )}
             </div>
         </section>

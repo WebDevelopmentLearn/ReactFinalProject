@@ -6,10 +6,10 @@
 }
 
 .CategoriesContainer {
-  display: flex;
-  justify-content: space-between;
+  @include flex(row, center, center);
+
   flex-wrap: wrap;
-  align-items: center;
+  gap: 32px;
 
   .Category {
     width: 316px;
@@ -17,9 +17,14 @@
     img {
       width: 100%;
     }
-
   }
 }
+
+.NoCategories {
+  @include fontSizeAndWeight(4.0rem, 600);
+  text-align: center;
+}
+
 
 a {
   text-decoration: none;
