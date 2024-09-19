@@ -1,0 +1,6 @@
+@import "../../styles/mixins";
+
+.Home {
+  @include flex(column, center, space-around);
+  gap: 80px;
+}

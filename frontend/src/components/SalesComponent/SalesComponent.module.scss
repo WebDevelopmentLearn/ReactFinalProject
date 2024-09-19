@@ -1,0 +1,99 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.SalesComponent {
+  padding: 0 40px;
+}
+
+.SaleProductsContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .SaleProduct {
+    width: 316px;
+    min-height: 422px;
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid #DDDDDD;
+
+    img {
+      width: calc(100% - 8px);
+      max-height: 284px;
+      margin: 4px;
+    }
+
+  }
+}
+
+.ProductsInfo {
+  padding: 0 32px;
+
+  .ProductTitleHeader {
+    white-space: nowrap; /* Предотвращает перенос текста */
+    overflow: hidden; /* Прячет текст, который не помещается */
+    text-overflow: ellipsis; /* Добавляет многоточие */
+  }
+
+
+}
+
+.ProductPriceInfo {
+
+  @include flex(row, start, end);
+  gap: 16px;
+
+  .ProductPrice {
+    color: #282828;
+    @include fontSizeAndWeight(4.0rem, 600);
+  }
+
+  .ProductDiscountPrice {
+    color: #8B8B8B;
+    text-decoration: line-through;
+    @include fontSizeAndWeight(2.0rem, 500);
+    margin-bottom: 2px;
+
+  }
+
+  .ProductDiscount {
+    background-color: #0D50FF;
+    color: $whiteF;
+    @include fontSizeAndWeight(2.0rem, 600);
+    width: max-content;
+    padding: 4px 8px;
+    border-radius: 6px;
+
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+}
+
+
+@media screen and (max-width: 768px){
+
+  .SalesComponent {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .SaleProductsContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+
+    .SaleProduct {
+      width: 100%;
+      max-height: 100%;
+
+    }
+  }
+
+
+
+}

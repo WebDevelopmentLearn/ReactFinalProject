@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.CategoriesComponent {
+  padding: 0 40px 0 40px;
+}
+
+.CategoriesContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .Category {
+    width: 316px;
+
+    img {
+      width: 100%;
+    }
+
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #282828;
+  //font-size: 2rem;
+  //font-weight: 500;
+  @include fontSizeAndWeight(2rem, 500);
+  text-align: center;
+}
+
+
+@media screen and (max-width: 768px){
+
+  .CategoriesComponent {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .CategoriesContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    .Category {
+        width: 100%;
+    }
+  }
+  
+}

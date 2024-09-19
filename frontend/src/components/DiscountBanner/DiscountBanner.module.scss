@@ -1,0 +1,122 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.DiscountBanner {
+  padding: 0 40px;
+}
+
+.DiscountBannerContainer {
+  background-image: linear-gradient(#2451C6, #0D50FF);
+  border-radius: 12px;
+  padding: 32px 0 0 0;
+  //@include flex(column, center, center);
+  text-align: center;
+}
+
+.DiscountHeader {
+  color: $whiteF;
+  @include fontSizeAndWeight(6.4rem, 700);
+}
+
+.DiscountContent {
+  //display: flex;
+  @include flex(row, space-around, center);
+
+  //display: flex;
+  //flex-direction: row;
+  //  justify-content: space-evenly;
+
+  flex-wrap: wrap;
+}
+
+.DiscountForm {
+  width: 516px;
+  @include flex(column, center, center);
+  gap: 16px;
+  margin-bottom: 16px;
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    outline: 1px solid $whiteO;
+    border: none;
+    border-radius: 6px;
+    padding: 16px 32px;
+
+    color: $whiteF;
+    //font-size: 2rem;
+    //font-weight: 500;
+    @include fontSizeAndWeight(2rem, 500);
+
+    transition: outline 0.3s;
+
+    &::placeholder {
+      color: $whiteF;
+      //font-size: 2rem;
+      //font-weight: 500;
+      @include fontSizeAndWeight(2rem, 500);
+    }
+
+    &:focus {
+      outline: 1px solid #9c60e7;
+
+    }
+  }
+
+
+}
+
+.GetDiscountBtn {
+  background-color: $whiteBG;
+  color: #282828;
+  //font-size: 2rem;
+  //font-weight: 600;
+  @include fontSizeAndWeight(2rem, 600);
+  width: 100%;
+  padding: 16px 32px;
+  margin-top: 16px;
+  border: none;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #282828;
+    color: $whiteF;
+  }
+
+  &:active {
+    background-color: #F1F3F4;
+    color: #0D50FF;
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .DiscountContent {
+    justify-content: center;
+
+    img {
+      order: 2;
+    }
+  }
+
+  .DiscountForm {
+    margin-top: 16px;
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+  .DiscountContent {
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .DiscountForm {
+    width: 100%;
+    margin: 0 16px 0 16px;
+  }
+}

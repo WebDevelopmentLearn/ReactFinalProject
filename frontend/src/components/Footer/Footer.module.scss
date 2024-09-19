@@ -1,0 +1,95 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.Footer {
+  padding: 0 40px 80px 40px;
+}
+
+.FooterHeader {
+    color: #282828;
+    @include fontSizeAndWeight(6.4rem, 700);
+}
+
+
+.ContactInfo {
+  @include flex(column, center, space-between);
+  flex-wrap: wrap;
+  gap: 16px;
+
+  //div {
+  //  background-color: #F1F3F4;
+  //  border-radius: 12px;
+  //  padding: 32px;
+  //
+  //  h4 {
+  //    @include fontSizeAndWeight(2.0rem, 500);
+  //    color: #8B8B8B;
+  //  }
+  //
+  //  p {
+  //    @include fontSizeAndWeight(4.0rem, 600);
+  //    color: #282828;
+  //  }
+  //}
+}
+
+
+.ContactInfoDiv {
+  background-color: #F1F3F4;
+  border-radius: 12px;
+  padding: 32px;
+  width: 100%;
+  height: 100%;
+}
+
+.PhoneAndSocialsContainer {
+  @include flex(row, space-between, center);
+  flex-wrap: wrap;
+  //height: 150px;
+  gap: 32px;
+
+
+  .PhoneNumber, .Socials {
+    h4 {
+      @include fontSizeAndWeight(2.0rem, 500);
+      color: #8B8B8B;
+    }
+
+    p {
+      @include fontSizeAndWeight(4.0rem, 600);
+      color: #282828;
+    }
+  }
+
+
+}
+
+.AddressAndWorkingHoursContainer {
+  @include flex(row, center, center);
+  //height: 195px;
+  gap: 32px;
+  flex-wrap: wrap;
+
+
+  .Address, .WorkingHours {
+    h4 {
+      @include fontSizeAndWeight(2.0rem, 500);
+      color: #8B8B8B;
+    }
+
+    p {
+      @include fontSizeAndWeight(4.0rem, 600);
+      color: #282828;
+    }
+  }
+
+}
+
+.FooterMap {
+  width: 100%;
+  height: 350px;
+
+    iframe {
+      border-radius: 12px;
+    }
+}

@@ -1,0 +1,60 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+.AboutBanner {
+  display: flex;
+  flex-direction: column;
+  //align-items: center;
+  justify-content: start;
+  //width: 100%;
+
+  height: 600px;
+  padding: 0 40px;
+  //gap: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+
+.AboutHeader {
+  //font-size: 9.6rem;
+  //font-weight: 700;
+  @include fontSizeAndWeight(9.6rem, 700);
+  color: $whiteF;
+  //width: 75%;
+  align-self: start;
+  margin: 80px 0 40px 0;
+
+  line-height: 105px;
+}
+
+.CheckoutBtn {
+  background-color: #0D50FFFF;
+  color: $whiteF;
+  width: 218px;
+  height: 56px;
+  border: none;
+  border-radius: 6px;
+  padding: 16px 56px;
+  align-self: start;
+  //font-size: 2.0rem;
+  //font-weight: 600;
+  @include fontSizeAndWeight(2.0rem, 600);
+}
+
+@media screen and (max-width: 768px) {
+  .AboutHeader {
+    @include fontSizeAndWeight(6.4rem, 700);
+    width: 100%;
+    line-height: normal;
+    //padding: 0 16px 0 16px;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  .AboutHeader {
+    @include fontSizeAndWeight(4.8rem, 700);
+  }
+
+}

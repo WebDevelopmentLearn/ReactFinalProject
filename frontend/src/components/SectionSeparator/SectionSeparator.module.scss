@@ -1,0 +1,71 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.CategoriesPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  hr {
+    border: 1px solid #DDDDDDFF;
+    width: 100%;
+    //padding-left: 32px;
+  }
+}
+
+.CategoriesHeader {
+  //font-size: 6.4rem;
+  //font-weight: 700;
+  @include fontSizeAndWeight(6.4rem, 700);
+  color: #282828FF;
+  padding-right: 32px;
+}
+
+.AllCategoriesLink {
+  border: 1px solid #DDDDDDFF;
+  border-radius: 6px;
+  //font-size: 1.5rem;
+  //font-weight: 500;
+  @include fontSizeAndWeight(1.5rem, 500);
+  color: #8B8B8BFF;
+  padding: 8px 16px;
+  text-align: center;
+
+  text-decoration: none;
+  //width: 142px;
+  height: fit-content;
+
+}
+
+.AllCategoriesLinkSpan {
+  display: block;
+  width: 110px;
+  height: 20px;
+}
+
+
+
+@media screen and (max-width: 768px){
+
+  .CategoriesPanel {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+    //gap: 6px;
+
+    .CategoriesHeader {
+      padding-right: 0;
+      margin: 0;
+      //font-size: 5.8rem;
+      @include fontSizeAndWeight(5.8rem, 700);
+    }
+
+    //text-align: center;
+    hr {
+      display: none;
+    }
+  }
+
+
+}

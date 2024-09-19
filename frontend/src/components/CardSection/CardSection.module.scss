@@ -1,0 +1,16 @@
+
+.CategoriesContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .Category {
+    width: 316px;
+
+    img {
+      width: 100%;
+    }
+
+  }
+}
