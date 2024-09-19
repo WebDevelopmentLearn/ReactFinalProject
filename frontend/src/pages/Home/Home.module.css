@@ -1,0 +1,9 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  gap: 80px;
+}
+
+/*# sourceMappingURL=Home.module.css.map */

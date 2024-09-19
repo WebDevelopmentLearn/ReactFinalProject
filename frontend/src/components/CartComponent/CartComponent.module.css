@@ -1,0 +1,26 @@
+.iconWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.badge {
+  position: absolute;
+  top: 7px;
+  left: 0;
+  background-color: #007bff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeText {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/*# sourceMappingURL=CartComponent.module.css.map */

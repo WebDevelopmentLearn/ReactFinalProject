@@ -1,0 +1,53 @@
+.CategoriesPanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.CategoriesPanel hr {
+  border: 1px solid #dddddd;
+  width: 100%;
+}
+
+.CategoriesHeader {
+  font-size: 6.4rem;
+  font-weight: 700;
+  color: #282828;
+  padding-right: 32px;
+}
+
+.AllCategoriesLink {
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #8b8b8b;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  height: fit-content;
+}
+
+.AllCategoriesLinkSpan {
+  display: block;
+  width: 110px;
+  height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .CategoriesPanel {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .CategoriesPanel .CategoriesHeader {
+    padding-right: 0;
+    margin: 0;
+    font-size: 5.8rem;
+    font-weight: 700;
+  }
+  .CategoriesPanel hr {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=SectionSeparator.module.css.map */

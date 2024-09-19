@@ -1,0 +1,14 @@
+.CategoriesContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.CategoriesContainer .Category {
+  width: 316px;
+}
+.CategoriesContainer .Category img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=CardSection.module.css.map */

@@ -1,0 +1,48 @@
+.AboutBanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  height: 600px;
+  padding: 0 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.AboutHeader {
+  font-size: 9.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  align-self: start;
+  margin: 80px 0 40px 0;
+  line-height: 105px;
+}
+
+.CheckoutBtn {
+  background-color: #0d50ff;
+  color: #ffffff;
+  width: 218px;
+  height: 56px;
+  border: none;
+  border-radius: 6px;
+  padding: 16px 56px;
+  align-self: start;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .AboutHeader {
+    font-size: 6.4rem;
+    font-weight: 700;
+    width: 100%;
+    line-height: normal;
+  }
+}
+@media screen and (max-width: 375px) {
+  .AboutHeader {
+    font-size: 4.8rem;
+    font-weight: 700;
+  }
+}
+
+/*# sourceMappingURL=AboutBanner.module.css.map */

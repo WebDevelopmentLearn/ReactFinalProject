@@ -1,0 +1,37 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 40px;
+  background-color: #f8f9fa;
+}
+.Navbar a {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #282828;
+}
+.Navbar .active {
+  color: #0d50ff;
+}
+
+.navbarCenterLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .Navbar, .navbarCenterLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+}
+
+/*# sourceMappingURL=Navbar.module.css.map */
