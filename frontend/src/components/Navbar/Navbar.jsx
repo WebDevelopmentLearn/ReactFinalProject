@@ -6,16 +6,11 @@ import {useEffect, useState} from "react";
 
 export const Navbar = () => {
 
-    // const [isMobile, setIsMobile] = useState(false);
-    //
-    // useEffect(() => {
-    //     const mediaQuery = window.matchMedia('(max-width: 768px)');
-    //     setIsMobile(mediaQuery.matches);
-    //     mediaQuery.addEventListener('change', () => {
-    //         setIsMobile(mediaQuery.matches);
-    //     });
-    //
-    // }, [isMobile]);
+    const [isOpened, setIsOpened] = useState(false);
+
+    const handleOpen = () => {
+        setIsOpened(!isOpened);
+    }
 
     return (
         <div className={styles.Navbar}>
@@ -24,7 +19,14 @@ export const Navbar = () => {
             </NavLink>
 
 
-            <div className={styles.navbarCenterLinks}>
+            <div onClick={handleOpen} className={`${styles.burgerBtn}`}>
+                <div className={`${styles.bar} ${isOpened ? styles.change : ''}`}></div>
+                <div className={`${styles.bar} ${isOpened ? styles.change : ''}`}></div>
+                <div className={`${styles.bar} ${isOpened ? styles.change : ''}`}></div>
+            </div>
+
+            <div
+                className={`${styles.navbarCenterLinks} ${isOpened ? styles.navbarCenterLinksOpen : styles.navbarCenterLinksClose}`}>
                 <NavLink
                     to={"/"}
                     className={({isActive}) =>
@@ -52,9 +54,11 @@ export const Navbar = () => {
                         isActive ? styles.active : null
                     }>All sales
                 </NavLink>
+
+                <CartComponent className={`${styles.cartBtn} ${isOpened ? styles.cartBtnOpen : styles.cartBtnClose}`}/>
             </div>
 
-            <CartComponent/>
+            <CartComponent className={`${styles.cartBtn} ${isOpened ? styles.cartBtnClose : ""}`}/>
 
 
         </div>

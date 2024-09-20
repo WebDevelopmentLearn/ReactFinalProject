@@ -1,10 +1,10 @@
 import styles from './CartComponent.module.scss';
 import icon from '../../assets/cart_icon.svg';
 import {Link, NavLink} from "react-router-dom";
-export const CartComponent = () => {
+export const CartComponent = ({className, ...props}) => {
     const count = 5;
     return (
-        <NavLink to="">
+        <NavLink className={className} to="">
             <div className={styles.iconWrapper}>
                 <img src={icon} alt="cart_icon"/>
                 {count > 0 && (
