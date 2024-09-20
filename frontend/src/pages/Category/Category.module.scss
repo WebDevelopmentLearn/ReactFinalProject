@@ -1,0 +1,51 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.Category {
+  padding: 0 40px;
+}
+
+.CategoryHeader {
+  @include fontSizeAndWeight(6.4rem, 700);
+}
+
+
+.CategorySortPanel {
+
+  @include flex(row, start, center);
+  flex-wrap: wrap;
+  gap: 16px;
+
+  span {
+    @include fontSizeAndWeight(2rem, 500);
+    color: #282828;
+  }
+
+
+
+  input[type="text"] {
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 112px;
+
+    &::placeholder {
+      @include fontSizeAndWeight(1.6rem, 500);
+        color: #8B8B8B;
+    }
+
+    &:focus {
+      outline: 1px solid #0D50FF;
+    }
+  }
+
+}
+
+.CategorySortSelectLabel {
+  @include flex(row, start, center);
+  gap: 16px;
+}
+
+.CategorySortSelect {
+  height: 36px;
+}

@@ -1,7 +1,11 @@
+import {Layout} from "../../layouts/Layout/Layout";
+
 export const Product = () => {
     return (
-        <div>
-            <h1>Product</h1>
-        </div>
+        <Layout>
+            <div>
+                <h1>Product</h1>
+            </div>
+        </Layout>
     )
 }

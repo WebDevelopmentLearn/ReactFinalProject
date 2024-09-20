@@ -17,6 +17,10 @@
     img {
       width: 100%;
     }
+
+    .CategoryName {
+      @include fontSizeAndWeight(2.0rem, 500);
+    }
   }
 }
 

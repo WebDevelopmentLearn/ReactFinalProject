@@ -18,7 +18,7 @@ export const CategoriesComponent = () => {
 
     return (
         <section className={styles.CategoriesComponent}>
-            <SectionSeparator sectionName="Categories" path="/categories/all" fullSectionName="All categories" />
+            <SectionSeparator sectionName="Categories" path="/categories" fullSectionName="All categories" />
 
             <div className={styles.CategoriesContainer}>
                 {status === "LOADING" ? <Loader /> : (
@@ -30,7 +30,7 @@ export const CategoriesComponent = () => {
                                 alt={category.title}
                                 loading="lazy"
                             />
-                            <h3 className={styles.CategoryName}>{category.title}</h3>
+                            <h4 className={styles.CategoryName}>{category.title}</h4>
                         </Link>
                     )) : <h2 className={styles.NoCategories}>No categories</h2>
                 )}

@@ -1,3 +1,42 @@
+.Categories {
+  padding: 0 40px;
+}
 
+.CategoriesHeader {
+  font-size: 6.4rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.CategoriesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.CategoriesContainer .Category {
+  width: 316px;
+}
+.CategoriesContainer .Category img {
+  width: 100%;
+}
+.CategoriesContainer .Category .CategoryName {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 425px) {
+  .Categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .CategoriesHeader {
+    font-size: 4.8rem;
+  }
+}
 
 /*# sourceMappingURL=Categories.module.css.map */

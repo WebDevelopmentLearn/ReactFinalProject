@@ -13,6 +13,16 @@ export const getAllCategories = createAsyncThunk("categoriesReducer/getAllCatego
     }
 });
 
+export const getCategoryById = createAsyncThunk("categoriesReducer/getCategoryById", async (categoryId) => {
+    try {
+        const response = await axios.get(`${BACKEND_URL}/categories/${categoryId}`);
+        // console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    }
+})
+
 
 export const getAllProducts = createAsyncThunk("productsReducer/getAllProducts", async () => {
     try {

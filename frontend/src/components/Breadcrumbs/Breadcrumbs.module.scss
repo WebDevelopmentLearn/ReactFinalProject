@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.breadcrumb {
+  @include flex(row, start, center);
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 40px 0 40px 0;
+  height: 36px;
+  //gap: 16px;
+
+  li {
+    @include flex(row, center, center);
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    height: 100%;
+
+    @include fontSizeAndWeight(1.6rem, 500);
+    color: #8B8B8B;
+    padding: 8px 16px;
+  }
+
+  hr {
+    border: 1px solid #DDDDDD;
+    transform: rotate(180deg);
+    width: 16px;
+  }
+
+
+
+
+}
+
+.breadcrumbItem {
+  margin-right: 5px;
+}
+
+.breadcrumbItemActive {
+  font-weight: bold;
+  color: #333;
+}
+
+.breadcrumbItem a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumbItem a:hover {
+  text-decoration: underline;
+}

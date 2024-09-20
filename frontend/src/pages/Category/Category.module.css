@@ -1,3 +1,50 @@
+.Category {
+  padding: 0 40px;
+}
 
+.CategoryHeader {
+  font-size: 6.4rem;
+  font-weight: 700;
+}
+
+.CategorySortPanel {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.CategorySortPanel span {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #282828;
+}
+.CategorySortPanel input[type=text] {
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  padding: 8px 16px;
+  width: 112px;
+}
+.CategorySortPanel input[type=text]::placeholder {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #8B8B8B;
+}
+.CategorySortPanel input[type=text]:focus {
+  outline: 1px solid #0D50FF;
+}
+
+.CategorySortSelectLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+
+.CategorySortSelect {
+  height: 36px;
+}
 
 /*# sourceMappingURL=Category.module.css.map */

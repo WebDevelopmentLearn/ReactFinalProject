@@ -16,6 +16,10 @@
 .CategoriesContainer .Category img {
   width: 100%;
 }
+.CategoriesContainer .Category .CategoryName {
+  font-size: 2rem;
+  font-weight: 500;
+}
 
 .NoCategories {
   font-size: 4rem;
