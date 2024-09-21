@@ -21,7 +21,9 @@ export const getCategoryById = createAsyncThunk("categoriesReducer/getCategoryBy
     } catch (error) {
         console.error(error);
     }
-})
+});
+
+
 
 
 export const getAllProducts = createAsyncThunk("productsReducer/getAllProducts", async () => {

@@ -1,0 +1,167 @@
+
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+
+.ProductCard {
+  width: 316px;
+  //height: 422px;
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid #DDDDDD;
+  transition: background-color 0.5s;
+  img {
+    width: calc(100% - 8px);
+    height: 284px;
+    margin: 4px;
+  }
+
+  &:hover, &:active {
+    background-color: #e3e3e3;
+    //transform: scale(1.02);
+  }
+}
+
+.ProductImage {
+  position: relative;
+}
+
+
+
+
+.ProductInfo {
+  padding: 20px 32px 0 32px;
+  //@include flex(column, start, start);
+    gap: 16px;
+
+  //.ProductTitleHeader {
+  //  white-space: nowrap; /* Предотвращает перенос текста */
+  //  overflow: hidden; /* Прячет текст, который не помещается */
+  //  text-overflow: ellipsis; /* Добавляет многоточие */
+  //}
+
+
+}
+
+.ProductTitle {
+  white-space: nowrap; /* Предотвращает перенос текста */
+  overflow: hidden; /* Прячет текст, который не помещается */
+  text-overflow: ellipsis; /* Добавляет многоточие */
+
+  @include fontSizeAndWeight($fontSize2, 500);
+  color: #282828;
+}
+
+
+.ProductPriceInfo {
+  @include flex(row, start, end);
+  margin-top: 16px;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+
+
+.ProductDPrice {
+    color: #282828;
+    @include fontSizeAndWeight($fontSize6, 600);
+}
+
+.ProductPrice {
+    color: #8B8B8B;
+    text-decoration: line-through;
+    @include fontSizeAndWeight($fontSize2, 500);
+}
+
+
+
+.ProductDiscount {
+  background-color: #0D50FF;
+  color: $whiteF;
+  @include fontSizeAndWeight($fontSize2, 600);
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 6px;
+
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+
+////////////////////
+
+
+.AddToCartBtn {
+  background-color: #0D50FF;
+  color: $whiteF;
+  @include fontSizeAndWeight($fontSize2, 600);
+  width: 284px;
+
+  padding: 16px 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+
+  position: absolute;
+  top: 224px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  opacity: 0; /* Изначально скрыта */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s;
+  &:hover {
+    background-color: #282828;
+  }
+
+  &:active {
+    background-color: $whiteBG;
+    color: #282828;
+  }
+}
+
+.AddToCartBtn {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@media screen and (max-width: 1024px) {
+  //.ProductCard {
+  //  width: 216px;
+  //  min-height: 284px;
+  //}
+
+  .AddToCartBtn {
+    width: 75%;
+    padding: 8px 16px;
+    top: 55%;
+
+  }
+}
+
+
+//@media screen and (max-width: 768px) {
+//  .AddToCartBtn {
+//    width: 75%;
+//    top: 80%;
+//
+//  }
+//}
+
+//@media screen and (max-width: 375px) {
+//  .AddToCartBtn {
+//
+//    top: 70%;
+//
+//  }
+//}
+
+//@media screen and (max-width: 320px) {
+//  .AddToCartBtn {
+//
+//    top: 60%;
+//
+//  }
+//}

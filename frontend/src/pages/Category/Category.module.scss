@@ -6,7 +6,7 @@
 }
 
 .CategoryHeader {
-  @include fontSizeAndWeight(6.4rem, 700);
+  @include fontSizeAndWeight($fontSize8, 700);
 }
 
 
@@ -14,7 +14,7 @@
 
   @include flex(row, start, center);
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 40px;
 
   span {
     @include fontSizeAndWeight(2rem, 500);
@@ -30,7 +30,7 @@
     width: 112px;
 
     &::placeholder {
-      @include fontSizeAndWeight(1.6rem, 500);
+      @include fontSizeAndWeight($fontSize1, 500);
         color: #8B8B8B;
     }
 
@@ -41,6 +41,30 @@
 
 }
 
+
+.priceInputs {
+    @include flex(row, start, center);
+    gap: 16px;
+
+  .priceFromInput {
+    @include flex(row, start, center);
+    gap: 16px;
+  }
+
+}
+
+
+.discountedItemsCheckbox {
+  @include flex(row, start, center);
+  gap: 16px;
+
+  input[type="checkbox"] {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+
 .CategorySortSelectLabel {
   @include flex(row, start, center);
   gap: 16px;
@@ -48,4 +72,29 @@
 
 .CategorySortSelect {
   height: 36px;
+}
+
+
+////////////////////////
+
+
+.CategoryProductsContainer {
+  @include flex(row, center, start);
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .Category {
+    padding: 0 16px;
+  }
+
+  .CategoryProductsContainer{
+
+    gap: 12px;
+  }
+
+  
 }

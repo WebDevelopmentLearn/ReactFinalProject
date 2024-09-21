@@ -45,10 +45,14 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 32px;
   }
   .CategoriesContainer .Category {
     width: 100%;
+  }
+  .CategoriesContainer .Category .CategoryName {
+    font-size: 3rem;
+    font-weight: 500;
   }
 }
 

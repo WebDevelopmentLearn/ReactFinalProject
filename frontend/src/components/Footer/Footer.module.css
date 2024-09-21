@@ -1,4 +1,5 @@
 .Footer {
+  margin-top: 80px;
   padding: 0 40px 80px 40px;
 }
 
@@ -12,14 +13,9 @@
 .ContactInfo {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1.5fr;
   gap: 32px;
   margin-bottom: 32px;
-}
-
-.PhoneNumber {
-  background-color: red;
-  grid-column: 1/2;
 }
 
 .ContactCard {
@@ -55,6 +51,20 @@
 .Socials .SocialsLinks a {
   color: #282828;
   font-size: 2rem;
+}
+.Socials .SocialsLinks .InstagramIcon {
+  color: #282828;
+  transition: color 0.5s;
+}
+.Socials .SocialsLinks .InstagramIcon:hover {
+  color: #E1306C;
+}
+.Socials .SocialsLinks .WhatsAppIcon {
+  color: #282828;
+  transition: color 0.5s;
+}
+.Socials .SocialsLinks .WhatsAppIcon:hover {
+  color: #25D366;
 }
 
 .FooterMap {

@@ -6,7 +6,7 @@
 }
 
 .CategoriesHeader {
-  @include fontSizeAndWeight(6.4rem, 700);
+  @include fontSizeAndWeight($fontSize8, 700);
   margin-bottom: 40px;
 }
 
@@ -24,7 +24,7 @@
     }
 
     .CategoryName {
-      @include fontSizeAndWeight(2.0rem, 500);
+      @include fontSizeAndWeight($fontSize2, 500);
     }
   }
 }

@@ -15,7 +15,7 @@
 
 .DiscountHeader {
   color: $whiteF;
-  @include fontSizeAndWeight(6.4rem, 700);
+  @include fontSizeAndWeight($fontSize8, 700);
 }
 
 .DiscountContent {

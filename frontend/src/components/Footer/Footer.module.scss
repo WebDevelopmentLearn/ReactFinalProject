@@ -2,12 +2,13 @@
 @import "../../styles/mixins";
 
 .Footer {
+  margin-top: 80px;
   padding: 0 40px 80px 40px;
 }
 
 .FooterHeader {
     color: #282828;
-    @include fontSizeAndWeight(6.4rem, 700);
+    @include fontSizeAndWeight($fontSize8, 700);
     margin-bottom: 40px;
 }
 
@@ -15,17 +16,9 @@
 .ContactInfo {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 1.5fr;
   gap: 32px;
   margin-bottom: 32px;
-}
-
-
-.PhoneNumber {
-  background-color: red;
-  //grid-column-start: 1;
-  //grid-column-end: 2;
-  grid-column: 1 / 2;
 }
 
 
@@ -34,12 +27,12 @@
   border-radius: 12px;
   padding: 32px;
   h4 {
-    @include fontSizeAndWeight(2.0rem, 500);
+    @include fontSizeAndWeight($fontSize2, 500);
     color: #8B8B8B;
   }
 
   p {
-    @include fontSizeAndWeight(4.0rem, 600);
+    @include fontSizeAndWeight($fontSize6, 600);
     color: #282828;
   }
 }
@@ -55,6 +48,24 @@
     a {
       color: #282828;
       font-size: 2.0rem;
+    }
+
+    .InstagramIcon {
+      color: #282828;
+      transition: color 0.5s;
+      &:hover {
+        color: #E1306C;
+      }
+    }
+
+
+    .WhatsAppIcon {
+      color: #282828;
+      transition: color 0.5s;
+
+      &:hover {
+        color: #25D366;
+      }
     }
   }
 }
@@ -96,7 +107,7 @@
     }
 
     p {
-      @include fontSizeAndWeight(3.6rem, 600);
+      @include fontSizeAndWeight($fontSize5, 600);
       color: #282828;
     }
   }

@@ -6,6 +6,7 @@ import {useEffect} from "react";
 import {BACKEND_URL, getAllProducts} from "../../store/reducers/actionCreators";
 import {Loader} from "../Loader/Loader";
 import {Link} from "react-router-dom";
+import {ProductCard} from "../ProductCard/ProductCard";
 
 export const SalesComponent = () => {
 
@@ -26,26 +27,28 @@ export const SalesComponent = () => {
             <div className={styles.SaleProductsContainer}>
                 {status === "LOADING" ? <Loader/> : (
                     randomProducts.length ? randomProducts.map((product) => (
-                        <Link key={product.id} to={`/categories/${product.id}`} className={styles.SaleProduct}>
-                            <img
-                                className={styles.CategoryImage}
-                                src={`${BACKEND_URL}/${product.image}`}
-                                alt={product.title}
-                                loading="lazy"
-                            />
-                            <div className={styles.ProductsInfo}>
-                                <h3 className={styles.ProductTitleHeader}>{product.title}</h3>
-                                <div className={styles.ProductPriceInfo}>
-                                    <p className={styles.ProductPrice}>${product.discont_price}</p>
-                                    <p className={styles.ProductDiscountPrice}>${product.price}</p>
-                                    {/*Получить скидку в %*/}
-                                    <p className={styles.ProductDiscount}>
-                                        -{Math.round(((product.price - product.discont_price) * 100) / product.price)}%
-                                    </p>
-                                </div>
-                            </div>
-                        </Link>
-                    )) : <h2 className={styles.NoProducts}>No products</h2>
+                        // <Link key={product.id} to={`/categories/${product.id}`} className={styles.SaleProduct}>
+                        //     <img
+                        //         className={styles.CategoryImage}
+                        //         src={`${BACKEND_URL}/${product.image}`}
+                        //         alt={product.title}
+                        //         loading="lazy"
+                        //     />
+                        //     <div className={styles.ProductsInfo}>
+                        //         <h3 className={styles.ProductTitleHeader}>{product.title}</h3>
+                        //         <div className={styles.ProductPriceInfo}>
+                        //             <p className={styles.ProductPrice}>${product.discont_price}</p>
+                        //             <p className={styles.ProductDiscountPrice}>${product.price}</p>
+                        //             {/*Получить скидку в %*/}
+                        //             <p className={styles.ProductDiscount}>
+                        //                 -{Math.round(((product.price - product.discont_price) * 100) / product.price)}%
+                        //             </p>
+                        //         </div>
+                        //     </div>
+                        // </Link>
+                            <ProductCard key={product.id} data={product} addCartBtn={false}/>
+                        )
+                    ) : <h2 className={styles.NoProducts}>No products</h2>
                 )}
             </div>
         </section>

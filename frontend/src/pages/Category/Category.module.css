@@ -13,7 +13,7 @@
   justify-content: start;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 40px;
 }
 .CategorySortPanel span {
   font-size: 2rem;
@@ -35,6 +35,33 @@
   outline: 1px solid #0D50FF;
 }
 
+.priceInputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+.priceInputs .priceFromInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+
+.discountedItemsCheckbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+.discountedItemsCheckbox input[type=checkbox] {
+  width: 34px;
+  height: 34px;
+}
+
 .CategorySortSelectLabel {
   display: flex;
   flex-direction: row;
@@ -45,6 +72,25 @@
 
 .CategorySortSelect {
   height: 36px;
+}
+
+.CategoryProductsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  .Category {
+    padding: 0 16px;
+  }
+  .CategoryProductsContainer {
+    gap: 12px;
+  }
 }
 
 /*# sourceMappingURL=Category.module.css.map */

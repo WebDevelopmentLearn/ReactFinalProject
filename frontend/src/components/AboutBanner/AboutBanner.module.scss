@@ -19,7 +19,7 @@
 .AboutHeader {
   //font-size: 9.6rem;
   //font-weight: 700;
-  @include fontSizeAndWeight(9.6rem, 700);
+  @include fontSizeAndWeight($fontSize9, 700);
   color: $whiteF;
   //width: 75%;
   align-self: start;
@@ -39,12 +39,12 @@
   align-self: start;
   //font-size: 2.0rem;
   //font-weight: 600;
-  @include fontSizeAndWeight(2.0rem, 600);
+  @include fontSizeAndWeight($fontSize2, 600);
 }
 
 @media screen and (max-width: 768px) {
   .AboutHeader {
-    @include fontSizeAndWeight(6.4rem, 700);
+    @include fontSizeAndWeight($fontSize8, 700);
     width: 100%;
     line-height: normal;
     //padding: 0 16px 0 16px;
@@ -52,9 +52,16 @@
 
 }
 
+@media screen and (max-width: 425px) {
+  .AboutHeader {
+    @include fontSizeAndWeight($fontSize7, 700);
+  }
+
+}
+
 @media screen and (max-width: 375px) {
   .AboutHeader {
-    @include fontSizeAndWeight(4.8rem, 700);
+    @include fontSizeAndWeight($fontSize6, 700);
   }
 
 }

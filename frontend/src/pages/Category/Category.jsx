@@ -1,9 +1,9 @@
 import {Layout} from "../../layouts/Layout/Layout";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {getCategoryById} from "../../store/reducers/actionCreators";
-import {Breadcrumbs, CustomSelect, Loader} from "../../components";
+import {Breadcrumbs, CustomSelect, Loader, ProductCard} from "../../components";
 import styles from './Category.module.scss';
 
 const options = [
@@ -19,16 +19,32 @@ export const Category = () => {
     console.log(categoryId);
 
     const {currentCategory, status, error} = useSelector(state => state.categoriesReducer);
+
+    const [sortedBy, setSortedBy] = useState('default');
+    const [products, setProducts] = useState([]);
+
     // const {category} = categories.slice().filter(category => category.id === Number(categoryId));
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getCategoryById(Number(categoryId)));
-        console.log(currentCategory);
-    }, []);
+        //setProducts
+        // setProducts(currentCategory?.data);
+        //
+        console.log(currentCategory?.data);
+
+    }, [sortedBy]);
 
     const handleSelectChange = (value) => {
         console.log('Selected:', value);
+        setSortedBy(value);
     };
+
+    const onChangePrice = (e) => {
+        const value = e.target.value;
+        if (value.match(/[a-zA-Z]/)) {
+            e.target.value = value.replace(/[a-zA-Z]/, '');
+        }
+    }
 
 
     return (
@@ -40,28 +56,25 @@ export const Category = () => {
                         <h1 className={styles.CategoryHeader}>{currentCategory?.category?.title}</h1>
 
                         <div className={styles.CategorySortPanel}>
-                            <span>Price</span>
-                            <label htmlFor="priceFromInput">
-                                <input id="priceFromInput" type="text" placeholder="from"/>
-                            </label>
 
-                            <label htmlFor="priceToInput">
-                                <input id="priceToInput" type="text" placeholder="to"/>
-                            </label>
+                            <div className={styles.priceInputs}>
+                                <label className={styles.priceFromInput} htmlFor="priceFromInput">
+                                    <span>Price</span>
+                                    <input onChange={onChangePrice} id="priceFromInput" type="text" placeholder="from"/>
+                                </label>
 
-                            <label htmlFor="discountedItemsCheckbox">
+                                <label className={styles.priceToInput} htmlFor="priceToInput">
+                                    <input onChange={onChangePrice} id="priceToInput" type="text" placeholder="to"/>
+                                </label>
+                            </div>
+
+                            <label className={styles.discountedItemsCheckbox} htmlFor="discountedItemsCheckbox">
                                 <span>Discounted items</span>
                                 <input id="discountedItemsCheckbox" type="checkbox"/>
                             </label>
 
                             <label className={styles.CategorySortSelectLabel} htmlFor="sortedBy">
                                 <span>Sorted</span>
-                                {/*<select name="sortedBy" id="sortedBy">*/}
-                                {/*    <option value="default">by default</option>*/}
-                                {/*    <option value="newest">newest</option>*/}
-                                {/*    <option value="price-high-low">price: high-low</option>*/}
-                                {/*    <option value="price-low-high">price: low-high</option>*/}
-                                {/*</select>*/}
                                 <CustomSelect
                                     className={styles.CategorySortSelect}
                                     options={options}
@@ -69,6 +82,12 @@ export const Category = () => {
                                     onChange={handleSelectChange}
                                 />
                             </label>
+                        </div>
+
+                        <div className={styles.CategoryProductsContainer}>
+                            {currentCategory?.data?.length ? currentCategory?.data?.map((product) => (
+                                <ProductCard key={product.id} data={product} addCartBtn={true} />
+                            )) : <h2 className={styles.NoProducts}>No products</h2>}
                         </div>
                     </div>
 

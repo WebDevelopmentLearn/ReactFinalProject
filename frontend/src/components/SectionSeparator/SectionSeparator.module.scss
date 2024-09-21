@@ -6,6 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
 
   hr {
     border: 1px solid #DDDDDDFF;
@@ -17,7 +18,7 @@
 .CategoriesHeader {
   //font-size: 6.4rem;
   //font-weight: 700;
-  @include fontSizeAndWeight(6.4rem, 700);
+  @include fontSizeAndWeight($fontSize8, 700);
   color: #282828FF;
   padding-right: 32px;
 }

@@ -19,13 +19,13 @@
     }
 
     .CategoryName {
-      @include fontSizeAndWeight(2.0rem, 500);
+      @include fontSizeAndWeight($fontSize2, 500);
     }
   }
 }
 
 .NoCategories {
-  @include fontSizeAndWeight(4.0rem, 600);
+  @include fontSizeAndWeight($fontSize6, 600);
   text-align: center;
 }
 
@@ -52,11 +52,17 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 32px;
 
     .Category {
         width: 100%;
+
+      .CategoryName {
+        @include fontSizeAndWeight($fontSize4, 500);
+      }
     }
+
+
   }
   
 }

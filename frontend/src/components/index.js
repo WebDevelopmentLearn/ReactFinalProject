@@ -11,3 +11,4 @@ export {CardSection} from './CardSection/CardSection';
 export {Footer} from './Footer/Footer';
 export {Breadcrumbs} from './Breadcrumbs/Breadcrumbs';
 export {CustomSelect} from './CustomSelect/CustomSelect';
+export {ProductCard} from './ProductCard/ProductCard';
