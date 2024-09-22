@@ -17,34 +17,34 @@
 
 
   .NotFoundTitle {
-    @include fontSizeAndWeight($fontSize8, 700);
-    color: #282828;
+    @include fontSizeAndWeight($fontSize64, 700);
+    color: $darkGrayF;//#282828;
   }
 
   .NotFoundDescription {
-    @include fontSizeAndWeight($fontSize2, 500);
-    color: #8B8B8B;
+    @include fontSizeAndWeight($fontSize20, 500);
+    color: $grayF;
 
   }
 
   .NotFoundBtn {
-    @include fontSizeAndWeight($fontSize2, 600);
+    @include fontSizeAndWeight($fontSize20, 600);
     margin-top: 16px;
     padding: 16px 56px;
     border-radius: 6px;
-    background-color: #0D50FF;
+    background-color: $lightBlueBG;
     border: none;
     color: $whiteF;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 
     &:hover {
-      background-color: #282828;
+      background-color: $darkGrayBG;
     }
 
     &:active {
-      background-color: #ffffff;
-      color: #282828;
+      background-color: $lightCloudBG;
+      color: $darkGrayF;
     }
   }
 }
@@ -60,7 +60,7 @@
 
   .NotFoundInfo {
     .NotFoundTitle {
-      @include fontSizeAndWeight($fontSize6, 700);
+      @include fontSizeAndWeight($fontSize40, 700);
     }
   }
 }
@@ -74,15 +74,15 @@
 
   .NotFoundInfo {
     .NotFoundTitle {
-      @include fontSizeAndWeight($fontSize4, 700);
+      @include fontSizeAndWeight($fontSize30, 700);
     }
 
     .NotFoundDescription {
-      @include fontSizeAndWeight($fontSize1, 500);
+      @include fontSizeAndWeight($fontSize16, 500);
     }
 
     .NotFoundBtn {
-      @include fontSizeAndWeight($fontSize1, 600);
+      @include fontSizeAndWeight($fontSize16, 600);
       padding: 12px 40px;
     }
   }

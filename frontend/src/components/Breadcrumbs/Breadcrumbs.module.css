@@ -1,3 +1,18 @@
+/**
+    * Font
+ */
+/**
+    * Outline
+ */
+/**
+    * Border
+ */
+/**
+    * Background
+ */
+/**
+    * FontSize
+ */
 .breadcrumb {
   display: flex;
   flex-direction: row;
@@ -13,7 +28,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   border-radius: 6px;
   height: 100%;
   font-size: 1.6rem;
@@ -22,7 +37,7 @@
   padding: 8px 16px;
 }
 .breadcrumb hr {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   transform: rotate(180deg);
   width: 16px;
 }

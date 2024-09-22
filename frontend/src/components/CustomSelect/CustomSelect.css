@@ -1,3 +1,18 @@
+/**
+    * Font
+ */
+/**
+    * Outline
+ */
+/**
+    * Border
+ */
+/**
+    * Background
+ */
+/**
+    * FontSize
+ */
 .custom-select-container {
   position: relative;
   width: 200px;
@@ -9,9 +24,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #dddddd;
   border-radius: 6px;
-  background-color: white;
+  background-color: #ffffff;
   cursor: pointer;
   position: relative;
 }
@@ -29,11 +44,11 @@
 }
 
 .custom-select .arrow.down {
-  border-top: 6px solid #333;
+  border-top: 6px solid #282828;
 }
 
 .custom-select .arrow.up {
-  border-bottom: 6px solid #333;
+  border-bottom: 6px solid #282828;
 }
 
 .custom-options {
@@ -41,8 +56,8 @@
   top: 100%;
   left: 0;
   right: 0;
-  background-color: white;
-  border: 1px solid #ccc;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
   border-radius: 4px;
   max-height: 150px;
   overflow-y: auto;

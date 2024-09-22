@@ -1,3 +1,18 @@
+/**
+    * Font
+ */
+/**
+    * Outline
+ */
+/**
+    * Border
+ */
+/**
+    * Background
+ */
+/**
+    * FontSize
+ */
 .CategorySortPanel {
   display: flex;
   flex-direction: row;
@@ -12,7 +27,7 @@
   color: #282828;
 }
 .CategorySortPanel input[type=text] {
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
   border-radius: 6px;
   padding: 8px 16px;
   width: 112px;

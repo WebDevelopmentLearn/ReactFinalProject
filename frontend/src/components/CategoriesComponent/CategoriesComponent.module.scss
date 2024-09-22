@@ -19,20 +19,20 @@
     }
 
     .CategoryName {
-      @include fontSizeAndWeight($fontSize2, 500);
+      @include fontSizeAndWeight($fontSize20, 500);
     }
   }
 }
 
 .NoCategories {
-  @include fontSizeAndWeight($fontSize6, 600);
+  @include fontSizeAndWeight($fontSize40, 600);
   text-align: center;
 }
 
 
 a {
   text-decoration: none;
-  color: #282828;
+  color: $darkGrayF;
   //font-size: 2rem;
   //font-weight: 500;
   @include fontSizeAndWeight(2rem, 500);
@@ -43,22 +43,24 @@ a {
 @media screen and (max-width: 768px){
 
   .CategoriesComponent {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    //flex-direction: column;
+    //align-items: center;
+    //justify-content: center;
+    @include flex(column, center, center);
   }
 
   .CategoriesContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    //flex-direction: column;
+    //    //align-items: center;
+    //    //justify-content: center;
+    @include flex(column, center, center);
     gap: 32px;
 
     .Category {
         width: 100%;
 
       .CategoryName {
-        @include fontSizeAndWeight($fontSize4, 500);
+        @include fontSizeAndWeight($fontSize30, 500);
       }
     }
 

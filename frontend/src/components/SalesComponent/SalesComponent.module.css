@@ -1,4 +1,19 @@
 @charset "UTF-8";
+/**
+    * Font
+ */
+/**
+    * Outline
+ */
+/**
+    * Border
+ */
+/**
+    * Background
+ */
+/**
+    * FontSize
+ */
 .SalesComponent {
   padding: 0 40px;
 }
@@ -16,7 +31,7 @@
   min-height: 422px;
   position: relative;
   border-radius: 12px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid #dddddd;
 }
 .SaleProductsContainer .SaleProduct img {
   width: calc(100% - 8px);

@@ -19,7 +19,7 @@
 .AboutHeader {
   //font-size: 9.6rem;
   //font-weight: 700;
-  @include fontSizeAndWeight($fontSize9, 700);
+  @include fontSizeAndWeight($fontSize96, 700);
   color: $whiteF;
   //width: 75%;
   align-self: start;
@@ -29,7 +29,7 @@
 }
 
 .CheckoutBtn {
-  background-color: #0D50FFFF;
+  background-color: $lightBlueBG;
   color: $whiteF;
   width: 218px;
   height: 56px;
@@ -39,12 +39,12 @@
   align-self: start;
   //font-size: 2.0rem;
   //font-weight: 600;
-  @include fontSizeAndWeight($fontSize2, 600);
+  @include fontSizeAndWeight($fontSize20, 600);
 }
 
 @media screen and (max-width: 768px) {
   .AboutHeader {
-    @include fontSizeAndWeight($fontSize8, 700);
+    @include fontSizeAndWeight($fontSize64, 700);
     width: 100%;
     line-height: normal;
     //padding: 0 16px 0 16px;
@@ -54,14 +54,14 @@
 
 @media screen and (max-width: 425px) {
   .AboutHeader {
-    @include fontSizeAndWeight($fontSize7, 700);
+    @include fontSizeAndWeight($fontSize48, 700);
   }
 
 }
 
 @media screen and (max-width: 375px) {
   .AboutHeader {
-    @include fontSizeAndWeight($fontSize6, 700);
+    @include fontSizeAndWeight($fontSize40, 700);
   }
 
 }

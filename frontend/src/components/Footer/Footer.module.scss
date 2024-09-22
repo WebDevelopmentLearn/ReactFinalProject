@@ -7,8 +7,8 @@
 }
 
 .FooterHeader {
-    color: #282828;
-    @include fontSizeAndWeight($fontSize8, 700);
+    color: $darkGrayF;
+    @include fontSizeAndWeight($fontSize64, 700);
     margin-bottom: 40px;
 }
 
@@ -23,17 +23,17 @@
 
 
 .ContactCard {
-  background-color: #F1F3F4;
+  background-color: $lightCloudBG;
   border-radius: 12px;
   padding: 32px;
   h4 {
-    @include fontSizeAndWeight($fontSize2, 500);
-    color: #8B8B8B;
+    @include fontSizeAndWeight($fontSize20, 500);
+    color: $grayF;
   }
 
   p {
-    @include fontSizeAndWeight($fontSize6, 600);
-    color: #282828;
+    @include fontSizeAndWeight($fontSize40, 600);
+    color: $darkGrayF;
   }
 }
 
@@ -46,25 +46,25 @@
     gap: 16px;
 
     a {
-      color: #282828;
+      color: $darkGrayF;
       font-size: 2.0rem;
     }
 
     .InstagramIcon {
-      color: #282828;
+      color: $darkGrayF;
       transition: color 0.5s;
       &:hover {
-        color: #E1306C;
+        color: $lightPinkF;
       }
     }
 
 
     .WhatsAppIcon {
-      color: #282828;
+      color: $darkGrayF;
       transition: color 0.5s;
 
       &:hover {
-        color: #25D366;
+        color: $lightGreenF;
       }
     }
   }
@@ -107,7 +107,7 @@
     }
 
     p {
-      @include fontSizeAndWeight($fontSize5, 600);
+      @include fontSizeAndWeight($fontSize36, 600);
       color: #282828;
     }
   }

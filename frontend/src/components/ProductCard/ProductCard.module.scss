@@ -8,7 +8,7 @@
   //height: 422px;
   position: relative;
   border-radius: 12px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid $lightGrayB;
   transition: background-color 0.5s;
   img {
     width: calc(100% - 8px);
@@ -17,7 +17,7 @@
   }
 
   &:hover, &:active {
-    background-color: #e3e3e3;
+    background-color: $grayO;
     //transform: scale(1.02);
   }
 }
@@ -48,8 +48,8 @@
   overflow: hidden; /* Прячет текст, который не помещается */
   text-overflow: ellipsis; /* Добавляет многоточие */
 
-  @include fontSizeAndWeight($fontSize2, 500);
-  color: #282828;
+  @include fontSizeAndWeight($fontSize20, 500);
+  color: $darkGrayF;
 }
 
 
@@ -62,22 +62,22 @@
 
 
 .ProductDPrice {
-    color: #282828;
-    @include fontSizeAndWeight($fontSize6, 600);
+    color: $darkGrayF;
+    @include fontSizeAndWeight($fontSize40, 600);
 }
 
 .ProductPrice {
-    color: #8B8B8B;
+    color: $grayF;
     text-decoration: line-through;
-    @include fontSizeAndWeight($fontSize2, 500);
+    @include fontSizeAndWeight($fontSize20, 500);
 }
 
 
 
 .ProductDiscount {
-  background-color: #0D50FF;
+  background-color: $lightBlueBG;
   color: $whiteF;
-  @include fontSizeAndWeight($fontSize2, 600);
+  @include fontSizeAndWeight($fontSize20, 600);
   width: max-content;
   padding: 4px 8px;
   border-radius: 6px;
@@ -92,9 +92,9 @@
 
 
 .AddToCartBtn {
-  background-color: #0D50FF;
+  background-color: $lightBlueO;
   color: $whiteF;
-  @include fontSizeAndWeight($fontSize2, 600);
+  @include fontSizeAndWeight($fontSize20, 600);
   width: 284px;
 
   padding: 16px 32px;
@@ -112,12 +112,12 @@
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s;
   &:hover {
-    background-color: #282828;
+    background-color: $darkGrayBG;
   }
 
   &:active {
     background-color: $whiteBG;
-    color: #282828;
+    color: $darkGrayF;
   }
 }
 

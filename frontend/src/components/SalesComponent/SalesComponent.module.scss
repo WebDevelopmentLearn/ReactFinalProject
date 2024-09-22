@@ -15,7 +15,7 @@
     min-height: 422px;
     position: relative;
     border-radius: 12px;
-    border: 1px solid #DDDDDD;
+    border: 1px solid $lightGrayB;
 
     img {
       width: calc(100% - 8px);
@@ -27,7 +27,7 @@
 }
 
 .NoProducts {
-  @include fontSizeAndWeight($fontSize6, 600);
+  @include fontSizeAndWeight($fontSize40, 600);
   text-align: center;
 }
 
@@ -50,22 +50,22 @@
   gap: 16px;
 
   .ProductPrice {
-    color: #282828;
-    @include fontSizeAndWeight($fontSize6, 600);
+    color: $darkGrayF;
+    @include fontSizeAndWeight($fontSize40, 600);
   }
 
   .ProductDiscountPrice {
-    color: #8B8B8B;
+    color: $grayF;
     text-decoration: line-through;
-    @include fontSizeAndWeight($fontSize2, 500);
+    @include fontSizeAndWeight($fontSize20, 500);
     margin-bottom: 2px;
 
   }
 
   .ProductDiscount {
-    background-color: #0D50FF;
+    background-color: $lightBlueBG;
     color: $whiteF;
-    @include fontSizeAndWeight($fontSize2, 600);
+    @include fontSizeAndWeight($fontSize20, 600);
     width: max-content;
     padding: 4px 8px;
     border-radius: 6px;

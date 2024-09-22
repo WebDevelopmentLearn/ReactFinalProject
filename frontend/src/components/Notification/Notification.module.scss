@@ -16,11 +16,11 @@
     padding: 16px 32px;
     border-radius: 5px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: $whiteF;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include fontSizeAndWeight($fontSize2, 500);
+    @include fontSizeAndWeight($fontSize20, 500);
 }
 
 .notification.success {

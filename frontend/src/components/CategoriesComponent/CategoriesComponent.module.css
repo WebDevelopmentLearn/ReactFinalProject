@@ -1,3 +1,18 @@
+/**
+    * Font
+ */
+/**
+    * Outline
+ */
+/**
+    * Border
+ */
+/**
+    * Background
+ */
+/**
+    * FontSize
+ */
 .CategoriesComponent {
   padding: 0 40px 0 40px;
 }
@@ -37,14 +52,16 @@ a {
 
 @media screen and (max-width: 768px) {
   .CategoriesComponent {
+    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
   }
   .CategoriesContainer {
+    display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 32px;
   }
   .CategoriesContainer .Category {

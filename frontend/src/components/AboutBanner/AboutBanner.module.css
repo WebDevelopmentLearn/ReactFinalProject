@@ -1,3 +1,18 @@
+/**
+    * Font
+ */
+/**
+    * Outline
+ */
+/**
+    * Border
+ */
+/**
+    * Background
+ */
+/**
+    * FontSize
+ */
 .AboutBanner {
   display: flex;
   flex-direction: column;
@@ -18,7 +33,7 @@
 }
 
 .CheckoutBtn {
-  background-color: #0d50ff;
+  background-color: #0D50FF;
   color: #ffffff;
   width: 218px;
   height: 56px;

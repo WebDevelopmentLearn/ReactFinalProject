@@ -7,7 +7,7 @@
 }
 
 .CartHeader {
-  @include fontSizeAndWeight($fontSize8, 700)
+  @include fontSizeAndWeight($fontSize64, 700)
 }
 
 .CartContainer {
@@ -23,14 +23,14 @@
   .CartOrderContainer {
     @include flex(column, start, start);
     gap: 15px;
-    background-color: #F1F3F4;
+    background-color: $lightCloudBG;
     padding: 32px;
     border-radius: 12px;
     width: 40%;
     //width: 30vw;
 
     .CartOrderTitle {
-      @include fontSizeAndWeight($fontSize6, 700);
+      @include fontSizeAndWeight($fontSize40, 700);
     }
 
     .CartOrderPriceContainer {
@@ -39,13 +39,13 @@
     }
 
     .CartProductsCountPar, .CartProductsTotalPar {
-      @include fontSizeAndWeight($fontSize6, 500);
-      color: #8B8B8B;
+      @include fontSizeAndWeight($fontSize40, 500);
+      color: $grayF;
     }
 
     .CartProductsPricePar {
-        @include fontSizeAndWeight($fontSize8, 700);
-        color: #282828;
+        @include fontSizeAndWeight($fontSize64, 700);
+        color: $darkGrayF;
     }
 
     .CartOrderForm {
@@ -56,21 +56,21 @@
       input {
         width: 100%;
         padding: 16px 32px;
-        border: 1px solid #DDDDDD;
+        border: 1px solid $lightGrayB;
         border-radius: 6px;
       }
 
       .CartOrderBtn {
-        @include fontSizeAndWeight($fontSize2, 600);
+        @include fontSizeAndWeight($fontSize20, 600);
         width: 100%;
         padding: 16px 32px;
         border: none;
         border-radius: 6px;
         color: $whiteF;
         cursor: pointer;
-        background-color: #0D50FF;
+        background-color: $lightBlueBG;
         &:hover {
-          background-color: #282828;
+          background-color: $darkGrayBG;
         }
       }
     }
@@ -78,23 +78,23 @@
 }
 
 .ContinueShoppingBtn {
-  @include fontSizeAndWeight($fontSize2, 600);
+  @include fontSizeAndWeight($fontSize20, 600);
   margin-top: 16px;
   padding: 16px 56px;
   border-radius: 6px;
-  background-color: #0D50FF;
+  background-color: $lightBlueBG;
   border: none;
   color: $whiteF;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: #282828;
+    background-color: $darkGrayBG;
   }
 
   &:active {
-    background-color: #ffffff;
-    color: #282828;
+    background-color: $whiteBG;
+    color: $darkGrayF;
   }
 
 }

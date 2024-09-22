@@ -1,3 +1,18 @@
+/**
+    * Font
+ */
+/**
+    * Outline
+ */
+/**
+    * Border
+ */
+/**
+    * Background
+ */
+/**
+    * FontSize
+ */
 .Navbar {
   display: flex;
   justify-content: space-between;
@@ -13,7 +28,7 @@
   color: #282828;
 }
 .Navbar .active {
-  color: #0d50ff;
+  color: #0D50FF;
 }
 
 .navbarCenterLinks {

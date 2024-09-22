@@ -12,15 +12,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid $lightGrayB;
     border-radius: 6px;
-    background-color: white;
+    background-color: $whiteBG;
     cursor: pointer;
     position: relative;
 }
 
 .custom-select.open {
-    border-color: #007bff;
+    border-color: $brightBlueB;
     border-radius: 6px 6px 0 0;
 }
 
@@ -32,11 +32,11 @@
 }
 
 .custom-select .arrow.down {
-    border-top: 6px solid #333;
+    border-top: 6px solid $darkGrayB;
 }
 
 .custom-select .arrow.up {
-    border-bottom: 6px solid #333;
+    border-bottom: 6px solid $darkGrayB;
 }
 
 .custom-options {
@@ -44,8 +44,8 @@
     top: 100%;
     left: 0;
     right: 0;
-    background-color: white;
-    border: 1px solid #ccc;
+    background-color: $whiteBG;
+    border: 1px solid $lightGrayB;
     border-radius: 4px;
     max-height: 150px;
     overflow-y: auto;
@@ -56,12 +56,12 @@
     padding: 10px;
     cursor: pointer;
 
-    @include fontSizeAndWeight($fontSize1, 500);
-    color: #8B8B8B;
+    @include fontSizeAndWeight($fontSize16, 500);
+    color: $grayF;
 }
 
 .custom-option:hover,
 .custom-option.selected {
     //background-color: #f0f0f0;
-    color: #282828;
+    color: $darkGrayF;
 }

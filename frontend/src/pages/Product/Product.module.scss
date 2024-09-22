@@ -36,7 +36,7 @@
   max-width: 574px;
 
   h2 {
-    @include fontSizeAndWeight($fontSize6, 700);
+    @include fontSizeAndWeight($fontSize40, 700);
   }
 }
 
@@ -51,23 +51,23 @@
 
 
 .ProductDPrice {
-  color: #282828;
-  @include fontSizeAndWeight($fontSize8, 700);
+  color: $darkGrayF;
+  @include fontSizeAndWeight($fontSize64, 700);
     margin-right: 16px;
 }
 
 .ProductPrice {
-  color: #8B8B8B;
+  color: $grayF;
   text-decoration: line-through;
-  @include fontSizeAndWeight($fontSize6, 500);
+  @include fontSizeAndWeight($fontSize40, 500);
 }
 
 
 
 .ProductDiscount {
-  background-color: #0D50FF;
+  background-color: $lightBlueBG;
   color: $whiteF;
-  @include fontSizeAndWeight($fontSize2, 600);
+  @include fontSizeAndWeight($fontSize20, 600);
   width: max-content;
   padding: 4px 8px;
   border-radius: 6px;
@@ -89,9 +89,9 @@
 }
 
 .AddToCartBtn {
-  background-color: #0D50FF;
+  background-color: $lightBlueBG;
   color: $whiteF;
-  @include fontSizeAndWeight($fontSize2, 600);
+  @include fontSizeAndWeight($fontSize20, 600);
   width: 316px;
   height: 100%;
 
@@ -102,12 +102,12 @@
 
 
   &:hover {
-    background-color: #282828;
+    background-color: $darkGrayBG;
   }
 
   &:active {
     background-color: $whiteBG;
-    color: #282828;
+    color: $darkGrayF;
   }
 }
 
@@ -117,14 +117,14 @@
 
   width: max-content;
   height: 58px;
-  border: 1px solid #dddddd;
+  border: 1px solid $lightGrayB;
 }
 .QuantityBtn {
   width: 58px;
   height: 58px;
-  border: 1px solid #dddddd;
+  border: 1px solid $lightGrayB;
   border-radius: 6px;
-  font-size: $fontSize5;
+  font-size: $fontSize36;
 
   &:first-child {
     margin-right: 8px;
@@ -136,7 +136,7 @@
 }
 
 .Quantity {
-  @include fontSizeAndWeight($fontSize2, 600);
+  @include fontSizeAndWeight($fontSize20, 600);
   @include flex(row, center, center);
   width: 10px;
 }
@@ -145,7 +145,7 @@
 .ProductFullDescContainer {
 
   .ProductFullDescHeader {
-    @include fontSizeAndWeight($fontSize2, 600);
+    @include fontSizeAndWeight($fontSize20, 600);
     margin: 32px 0 16px 0;
   }
 
@@ -154,7 +154,7 @@
     max-width: 548px;
     height: 300px;
     .ProductFullDescPar {
-      @include fontSizeAndWeight($fontSize1, 400);
+      @include fontSizeAndWeight($fontSize16, 400);
       //Скрыть часть текста
 
       //text-overflow: ellipsis;
@@ -178,21 +178,21 @@
 
   .ProductFullInfoContainer {
     h2 {
-        @include fontSizeAndWeight($fontSize3, 700);
+        @include fontSizeAndWeight($fontSize24, 700);
     }
 
     .ProductFullPriceInfo {
       gap: 8px;
       .ProductDPrice {
-        @include fontSizeAndWeight($fontSize5, 700);
+        @include fontSizeAndWeight($fontSize36, 700);
       }
 
       .ProductPrice {
-        @include fontSizeAndWeight($fontSize3, 500);
+        @include fontSizeAndWeight($fontSize24, 500);
       }
 
       .ProductDiscount {
-        @include fontSizeAndWeight($fontSize1, 600);
+        @include fontSizeAndWeight($fontSize16, 600);
       }
     }
   }

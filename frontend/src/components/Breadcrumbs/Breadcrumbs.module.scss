@@ -11,23 +11,20 @@
 
   li {
     @include flex(row, center, center);
-    border: 1px solid #DDDDDD;
+    border: 1px solid $lightGrayB;
     border-radius: 6px;
     height: 100%;
 
-    @include fontSizeAndWeight($fontSize1, 500);
-    color: #8B8B8B;
+    @include fontSizeAndWeight($fontSize16, 500);
+    color: $grayF;
     padding: 8px 16px;
   }
 
   hr {
-    border: 1px solid #DDDDDD;
+    border: 1px solid $lightGrayB;
     transform: rotate(180deg);
     width: 16px;
   }
-
-
-
 
 }
 
@@ -42,7 +39,7 @@
 
 .breadcrumbItem a {
   text-decoration: none;
-  color: #007bff;
+  color: $brightBlueF;
 }
 
 .breadcrumbItem a:hover {

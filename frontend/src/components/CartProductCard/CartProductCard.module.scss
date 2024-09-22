@@ -7,7 +7,7 @@
   width: 100%;
   height: 180px;
   gap: 32px;
-  border: 1px solid #dddddd;
+  border: 1px solid $lightGrayB;
   border-radius: 12px;
   //position: relative;
 }
@@ -30,8 +30,8 @@
     //width: 100%;
 
   .CartProductTitle {
-    @include fontSizeAndWeight($fontSize2, 500);
-    color: #282828;
+    @include fontSizeAndWeight($fontSize20, 500);
+    color: $darkGrayF;
     max-width: 400px;
   }
 
@@ -41,7 +41,7 @@
     //cursor: pointer;
     border: none;
     background-color: transparent;
-    color: #282828;
+    color: $darkGrayF;
     outline: none;
     //position: absolute;
     //top: 32px;
@@ -57,13 +57,13 @@
     gap: 16px;
 
     .CartProductDiscountPrice {
-        @include fontSizeAndWeight($fontSize6, 600);
-        color: #282828;
+        @include fontSizeAndWeight($fontSize40, 600);
+        color: $darkGrayF;
     }
 
     .CartProductPrice {
-      @include fontSizeAndWeight($fontSize2, 500);
-      color: #8B8B8B;
+      @include fontSizeAndWeight($fontSize20, 500);
+      color: $grayF;
       text-decoration: line-through;
       align-self: end;
     }
@@ -76,14 +76,14 @@
 
   width: max-content;
   height: 58px;
-  border: 1px solid #dddddd;
+  border: 1px solid $lightGrayB;
 }
 .QuantityBtn {
   width: 58px;
   height: 58px;
-  border: 1px solid #dddddd;
+  border: 1px solid $lightGrayB;
   border-radius: 6px;
-  font-size: $fontSize5;
+  font-size: $fontSize36;
 
   &:first-child {
     margin-right: 8px;
@@ -95,7 +95,7 @@
 }
 
 .Quantity {
-  @include fontSizeAndWeight($fontSize2, 600);
+  @include fontSizeAndWeight($fontSize20, 600);
   @include flex(row, center, center);
   width: 10px;
 }

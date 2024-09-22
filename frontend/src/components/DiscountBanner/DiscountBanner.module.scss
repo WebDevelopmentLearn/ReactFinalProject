@@ -14,7 +14,7 @@
 
 .DiscountHeader {
   color: $whiteF;
-  @include fontSizeAndWeight($fontSize8, 700);
+  @include fontSizeAndWeight($fontSize64, 700);
 }
 
 .DiscountContent {
@@ -44,7 +44,7 @@
     }
 
     &:focus {
-      outline: 1px solid #9c60e7;
+      outline: 1px solid $electricPurpleO;
 
     }
   }
@@ -52,7 +52,7 @@
 
 .GetDiscountBtn {
   background-color: $whiteBG;
-  color: #282828;
+  color: $darkGrayF;
   //font-size: 2rem;
   //font-weight: 600;
   @include fontSizeAndWeight(2rem, 600);
@@ -64,13 +64,13 @@
   transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: #282828;
+    background-color: $darkGrayBG;
     color: $whiteF;
   }
 
   &:active {
-    background-color: #F1F3F4;
-    color: #0D50FF;
+    background-color: $lightCloudBG;
+    color: $lightBlueF;
     outline: none;
   }
 }

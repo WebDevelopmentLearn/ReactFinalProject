@@ -10,7 +10,7 @@
   white-space: nowrap;
 
   hr {
-    border: 1px solid #DDDDDDFF;
+    border: 1px solid $lightGrayB;
     width: 100%;
     //padding-left: 32px;
   }
@@ -19,18 +19,18 @@
 .CategoriesHeader {
   //font-size: 6.4rem;
   //font-weight: 700;
-  @include fontSizeAndWeight($fontSize8, 700);
-  color: #282828FF;
+  @include fontSizeAndWeight($fontSize64, 700);
+  color: $darkGrayF;
   padding-right: 32px;
 }
 
 .AllCategoriesLink {
-  border: 1px solid #DDDDDDFF;
+  border: 1px solid $lightGrayB;
   border-radius: 6px;
   //font-size: 1.5rem;
   //font-weight: 500;
   @include fontSizeAndWeight(1.5rem, 500);
-  color: #8B8B8BFF;
+  color: $grayF;
   padding: 8px 16px;
   text-align: center;
 
