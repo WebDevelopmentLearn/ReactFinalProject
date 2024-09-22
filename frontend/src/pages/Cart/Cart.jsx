@@ -1,0 +1,53 @@
+
+import styles from "./Cart.module.scss";
+import {Layout} from "../../layouts/Layout/Layout";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {getProductsFromCart, removeProductFromCart} from "../../store/reducers/cartSlice";
+import STATUS from "../../utils/Utils";
+import {CartProductCard, Loader, SectionSeparator} from "../../components";
+
+export const Cart = () => {
+
+    const {cartProducts, error, status} = useSelector(state => state.cartReducer);
+    //const {cartProducts} = localStorage.getItem('cartProducts') ? JSON.parse(localStorage.getItem('cartProducts')) : useSelector(state => state.cartReducer.products);
+    const dispatch = useDispatch();
+    const price = cartProducts.reduce((acc, product) => acc + product.price, 0);
+    // useEffect(() => {
+    //
+    // }, [cartProducts]);
+
+
+
+    return (
+        <Layout>
+            <div className={styles.Cart}>
+                {/*<h1 className={styles.CartHeader}>Shopping cart</h1>*/}
+                <SectionSeparator sectionName="Shopping cart" path="/products" fullSectionName="Back to store" />
+                {status === STATUS.LOADING ? <Loader /> : (
+                    <div className={styles.CartContainer}>
+                        <div className={styles.CartProducts}>
+                            {cartProducts?.length ? cartProducts?.map(product => (
+                                <CartProductCard key={product.id} productInd={product.id} productCard={product}/>
+                            )) : <h2>No products in cart</h2>}
+                        </div>
+                        <div className={styles.CartOrderContainer}>
+                            <h2 className={styles.CartOrderTitle}>Order details</h2>
+                            <p className={styles.CartProductsCountPar}>{cartProducts.length} items</p>
+                            <div className={styles.CartOrderPriceContainer}>
+                                <p className={styles.CartProductsTotalPar}>Total</p>
+                                <p className={styles.CartProductsPricePar}>${price}</p>
+                            </div>
+                            <form className={styles.CartOrderForm} action="">
+                                <input type="text" placeholder="Name"/>
+                                <input type="tel" placeholder="Phone number"/>
+                                <input type="email" placeholder="Email"/>
+                                <button className={styles.CartOrderBtn} type="submit">Order</button>
+                            </form>
+                        </div>
+                    </div>
+                )}
+            </div>
+        </Layout>
+    )
+}

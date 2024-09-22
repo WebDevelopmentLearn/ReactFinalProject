@@ -1,0 +1,68 @@
+.CategorySortPanel {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.CategorySortPanel span {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #282828;
+}
+.CategorySortPanel input[type=text] {
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  padding: 8px 16px;
+  width: 112px;
+}
+.CategorySortPanel input[type=text]::placeholder {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #8B8B8B;
+}
+.CategorySortPanel input[type=text]:focus {
+  outline: 1px solid #0D50FF;
+}
+
+.priceInputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+.priceInputs .priceFromInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+
+.discountedItemsCheckbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+.discountedItemsCheckbox input[type=checkbox] {
+  width: 34px;
+  height: 34px;
+}
+
+.CategorySortSelectLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+}
+
+.CategorySortSelect {
+  height: 36px;
+}
+
+/*# sourceMappingURL=SortControlPanel.module.css.map */

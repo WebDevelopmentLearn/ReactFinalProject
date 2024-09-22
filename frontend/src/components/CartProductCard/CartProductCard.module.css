@@ -1,0 +1,110 @@
+.CartProductCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: initial;
+  max-width: 780px;
+  width: 100%;
+  height: 180px;
+  gap: 32px;
+  border: 1px solid #dddddd;
+  border-radius: 12px;
+}
+
+.CartProductImg {
+  max-height: 180px;
+}
+
+.CartProductCardInfoContainer {
+  padding: 32px 32px 32px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.CartProductTitleAndBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.CartProductTitleAndBtn .CartProductTitle {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #282828;
+  max-width: 400px;
+}
+.CartProductTitleAndBtn .CartProductRemoveBtn {
+  width: 12px;
+  height: 12px;
+  border: none;
+  background-color: transparent;
+  color: #282828;
+  outline: none;
+}
+
+.QuantityAndPrice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+.QuantityAndPrice .CartProductPriceContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.QuantityAndPrice .CartProductPriceContainer .CartProductDiscountPrice {
+  font-size: 4rem;
+  font-weight: 600;
+  color: #282828;
+}
+.QuantityAndPrice .CartProductPriceContainer .CartProductPrice {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #8B8B8B;
+  text-decoration: line-through;
+  align-self: end;
+}
+
+.QuantityContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  height: 58px;
+  border: 1px solid #dddddd;
+}
+
+.QuantityBtn {
+  width: 58px;
+  height: 58px;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+  font-size: 3.6rem;
+}
+.QuantityBtn:first-child {
+  margin-right: 8px;
+}
+.QuantityBtn:last-child {
+  margin-left: 8px;
+}
+
+.Quantity {
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+}
+
+/*# sourceMappingURL=CartProductCard.module.css.map */

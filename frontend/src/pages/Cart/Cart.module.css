@@ -1,0 +1,98 @@
+.Cart {
+  padding: 0 40px;
+}
+
+.CartHeader {
+  font-size: 6.4rem;
+  font-weight: 700;
+}
+
+.CartContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+}
+.CartContainer .CartProducts {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 15px;
+}
+.CartContainer .CartOrderContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 15px;
+  background-color: #F1F3F4;
+  padding: 32px;
+  border-radius: 12px;
+  width: 40%;
+}
+.CartContainer .CartOrderContainer .CartOrderTitle {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.CartContainer .CartOrderContainer .CartOrderPriceContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.CartContainer .CartOrderContainer .CartProductsCountPar, .CartContainer .CartOrderContainer .CartProductsTotalPar {
+  font-size: 4rem;
+  font-weight: 500;
+  color: #8B8B8B;
+}
+.CartContainer .CartOrderContainer .CartProductsPricePar {
+  font-size: 6.4rem;
+  font-weight: 700;
+  color: #282828;
+}
+.CartContainer .CartOrderContainer .CartOrderForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+.CartContainer .CartOrderContainer .CartOrderForm input {
+  width: 100%;
+  padding: 16px 32px;
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+}
+.CartContainer .CartOrderContainer .CartOrderForm .CartOrderBtn {
+  font-size: 2rem;
+  font-weight: 600;
+  width: 100%;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 6px;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #0D50FF;
+}
+.CartContainer .CartOrderContainer .CartOrderForm .CartOrderBtn:hover {
+  background-color: #282828;
+}
+
+@media screen and (max-width: 1024px) {
+  .CartContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .CartContainer .CartOrderContainer {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=Cart.module.css.map */

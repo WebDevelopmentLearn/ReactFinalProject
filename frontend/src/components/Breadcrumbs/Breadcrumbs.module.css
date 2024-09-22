@@ -1,0 +1,48 @@
+.breadcrumb {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 40px 0 40px 0;
+  height: 36px;
+}
+.breadcrumb li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #DDDDDD;
+  border-radius: 6px;
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #8B8B8B;
+  padding: 8px 16px;
+}
+.breadcrumb hr {
+  border: 1px solid #DDDDDD;
+  transform: rotate(180deg);
+  width: 16px;
+}
+
+.breadcrumbItem {
+  margin-right: 5px;
+}
+
+.breadcrumbItemActive {
+  font-weight: bold;
+  color: #333;
+}
+
+.breadcrumbItem a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumbItem a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=Breadcrumbs.module.css.map */

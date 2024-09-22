@@ -1,0 +1,92 @@
+
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.Cart {
+  padding: 0 40px;
+}
+
+.CartHeader {
+  @include fontSizeAndWeight($fontSize8, 700)
+}
+
+.CartContainer {
+  @include flex(row, space-between, start);
+  flex-wrap: wrap;
+
+  .CartProducts {
+    @include flex(column, start, start);
+    gap: 15px;
+    //width: 50vw;
+  }
+
+  .CartOrderContainer {
+    @include flex(column, start, start);
+    gap: 15px;
+    background-color: #F1F3F4;
+    padding: 32px;
+    border-radius: 12px;
+    width: 40%;
+    //width: 30vw;
+
+    .CartOrderTitle {
+      @include fontSizeAndWeight($fontSize6, 700);
+    }
+
+    .CartOrderPriceContainer {
+        @include flex(row, space-between, center);
+        width: 100%;
+    }
+
+    .CartProductsCountPar, .CartProductsTotalPar {
+      @include fontSizeAndWeight($fontSize6, 500);
+      color: #8B8B8B;
+    }
+
+    .CartProductsPricePar {
+        @include fontSizeAndWeight($fontSize8, 700);
+        color: #282828;
+    }
+
+    .CartOrderForm {
+      @include flex(column, center, center);
+      gap: 15px;
+      width: 100%;
+
+      input {
+        width: 100%;
+        padding: 16px 32px;
+        border: 1px solid #DDDDDD;
+        border-radius: 6px;
+      }
+
+      .CartOrderBtn {
+        @include fontSizeAndWeight($fontSize2, 600);
+        width: 100%;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 6px;
+        color: $whiteF;
+        cursor: pointer;
+        background-color: #0D50FF;
+        &:hover {
+          background-color: #282828;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .CartContainer {
+    @include flex(column, center, center);
+    gap: 16px;
+
+    .CartOrderContainer {
+        width: 100%;
+    }
+  }
+
+
+
+}

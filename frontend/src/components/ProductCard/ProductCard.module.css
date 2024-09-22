@@ -1,0 +1,117 @@
+@charset "UTF-8";
+.ProductCard {
+  width: 316px;
+  position: relative;
+  border-radius: 12px;
+  border: 1px solid #DDDDDD;
+  transition: background-color 0.5s;
+}
+.ProductCard img {
+  width: calc(100% - 8px);
+  height: 284px;
+  margin: 4px;
+}
+.ProductCard:hover, .ProductCard:active {
+  background-color: #e3e3e3;
+}
+
+.ProductImage {
+  position: relative;
+}
+
+.ProductInfo {
+  padding: 20px 32px 0 32px;
+  gap: 16px;
+}
+
+.ProductTitle {
+  white-space: nowrap; /* Предотвращает перенос текста */
+  overflow: hidden; /* Прячет текст, который не помещается */
+  text-overflow: ellipsis; /* Добавляет многоточие */
+  font-size: 2rem;
+  font-weight: 500;
+  color: #282828;
+}
+
+.ProductPriceInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: end;
+  margin-top: 16px;
+  margin-bottom: 32px;
+  gap: 16px;
+}
+
+.ProductDPrice {
+  color: #282828;
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.ProductPrice {
+  color: #8B8B8B;
+  text-decoration: line-through;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.ProductDiscount {
+  background-color: #0D50FF;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 6px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.AddToCartBtn {
+  background-color: #0D50FF;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 284px;
+  padding: 16px 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 224px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0; /* Изначально скрыта */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s;
+}
+.AddToCartBtn:hover {
+  background-color: #282828;
+}
+.AddToCartBtn:active {
+  background-color: #ffffff;
+  color: #282828;
+}
+
+.ProductCard:hover .AddToCartBtn {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 1024px) {
+  .AddToCartBtn {
+    width: 75%;
+    padding: 8px 16px;
+    top: 55%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .AddToCartBtn {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/*# sourceMappingURL=ProductCard.module.css.map */

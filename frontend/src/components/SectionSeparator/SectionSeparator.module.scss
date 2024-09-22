@@ -7,6 +7,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 40px;
+  white-space: nowrap;
 
   hr {
     border: 1px solid #DDDDDDFF;
@@ -54,6 +55,8 @@
     align-items: center;
     margin-bottom: 16px;
     //gap: 6px;
+    white-space: initial;
+    text-align: center;
 
     .CategoriesHeader {
       padding-right: 0;
