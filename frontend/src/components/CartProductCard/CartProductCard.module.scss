@@ -36,8 +36,8 @@
   }
 
   .CartProductRemoveBtn {
-    width: 12px;
-    height: 12px;
+    //width: 12px;
+    //height: 12px;
     //cursor: pointer;
     border: none;
     background-color: transparent;
@@ -98,4 +98,54 @@
   @include fontSizeAndWeight($fontSize20, 600);
   @include flex(row, center, center);
   width: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .CartProductCard {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 320px;
+    height: max-content;
+    padding: 0 16px 16px 16px;
+  }
+
+  .CartProductImg {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .CartProductCardInfoContainer {
+    padding: 16px 0 0 0;
+    width: 100%;
+  }
+
+  .CartProductTitleAndBtn {
+
+    align-items: start;
+
+  }
+  .QuantityAndPrice {
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .QuantityContainer {
+    height: max-content;
+  }
+
+  .QuantityBtn {
+    width: 48px;
+    height: 48px;
+    font-size: $fontSize30;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .CartProductCard {
+    width: 100%;
+
+  }
 }

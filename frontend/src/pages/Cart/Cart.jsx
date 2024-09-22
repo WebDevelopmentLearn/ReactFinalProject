@@ -13,7 +13,7 @@ export const Cart = () => {
     const {cartProducts, error, status} = useSelector(state => state.cartReducer);
     //const {cartProducts} = localStorage.getItem('cartProducts') ? JSON.parse(localStorage.getItem('cartProducts')) : useSelector(state => state.cartReducer.products);
     const dispatch = useDispatch();
-    const price = cartProducts.reduce((acc, product) => acc + product.price, 0);
+    const price = cartProducts.reduce((acc, product) => acc + product.discont_price, 0);
     // useEffect(() => {
     //
     // }, [cartProducts]);
