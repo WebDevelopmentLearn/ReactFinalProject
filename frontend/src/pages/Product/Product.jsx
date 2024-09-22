@@ -39,7 +39,8 @@ export const Product = () => {
 
     return (
         <Layout>
-            <Breadcrumbs />
+            <Breadcrumbs breadcrumbs={[{ title: "Main page", url: "/" }, { title: "Categories", url: "/categories" }, { title: product[0]?.title ? product[0]?.title : "Category", url: `/categories/${product?.categoryId}` }]} current={product?.title?.slice(0, 18) + "..."} />
+
             <div className={styles.ProductFullBlock}>
                 {status === STATUS.LOADING ? (
                     <Loader />

@@ -77,6 +77,28 @@
   }
 }
 
+.ContinueShoppingBtn {
+  @include fontSizeAndWeight($fontSize2, 600);
+  margin-top: 16px;
+  padding: 16px 56px;
+  border-radius: 6px;
+  background-color: #0D50FF;
+  border: none;
+  color: $whiteF;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  &:hover {
+    background-color: #282828;
+  }
+
+  &:active {
+    background-color: #ffffff;
+    color: #282828;
+  }
+
+}
+
 @media screen and (max-width: 1024px) {
   .CartContainer {
     @include flex(column, center, center);

@@ -6,9 +6,10 @@ import {useEffect} from "react";
 import {getProductsFromCart, removeProductFromCart} from "../../store/reducers/cartSlice";
 import STATUS from "../../utils/Utils";
 import {CartProductCard, Loader, SectionSeparator} from "../../components";
+import {useNavigate} from "react-router-dom";
 
 export const Cart = () => {
-
+    const navigate = useNavigate();
     const {cartProducts, error, status} = useSelector(state => state.cartReducer);
     //const {cartProducts} = localStorage.getItem('cartProducts') ? JSON.parse(localStorage.getItem('cartProducts')) : useSelector(state => state.cartReducer.products);
     const dispatch = useDispatch();
@@ -17,7 +18,9 @@ export const Cart = () => {
     //
     // }, [cartProducts]);
 
-
+    const handleClick = () => {
+        navigate('/products');
+    }
 
     return (
         <Layout>
@@ -25,26 +28,36 @@ export const Cart = () => {
                 {/*<h1 className={styles.CartHeader}>Shopping cart</h1>*/}
                 <SectionSeparator sectionName="Shopping cart" path="/products" fullSectionName="Back to store" />
                 {status === STATUS.LOADING ? <Loader /> : (
-                    <div className={styles.CartContainer}>
-                        <div className={styles.CartProducts}>
-                            {cartProducts?.length ? cartProducts?.map(product => (
-                                <CartProductCard key={product.id} productInd={product.id} productCard={product}/>
-                            )) : <h2>No products in cart</h2>}
-                        </div>
-                        <div className={styles.CartOrderContainer}>
-                            <h2 className={styles.CartOrderTitle}>Order details</h2>
-                            <p className={styles.CartProductsCountPar}>{cartProducts.length} items</p>
-                            <div className={styles.CartOrderPriceContainer}>
-                                <p className={styles.CartProductsTotalPar}>Total</p>
-                                <p className={styles.CartProductsPricePar}>${price}</p>
+                    <div>
+                        {cartProducts?.length ? (
+                            <div className={styles.CartContainer}>
+                                <div className={styles.CartProducts}>
+                                    {cartProducts?.length ? cartProducts?.map(product => (
+                                        <CartProductCard key={product.id} productInd={product.id}
+                                                         productCard={product}/>
+                                    )) : <h2>No products in cart</h2>}
+                                </div>
+                                <div className={styles.CartOrderContainer}>
+                                    <h2 className={styles.CartOrderTitle}>Order details</h2>
+                                    <p className={styles.CartProductsCountPar}>{cartProducts.length} items</p>
+                                    <div className={styles.CartOrderPriceContainer}>
+                                        <p className={styles.CartProductsTotalPar}>Total</p>
+                                        <p className={styles.CartProductsPricePar}>${price}</p>
+                                    </div>
+                                    <form className={styles.CartOrderForm} action="">
+                                        <input type="text" placeholder="Name"/>
+                                        <input type="tel" placeholder="Phone number"/>
+                                        <input type="email" placeholder="Email"/>
+                                        <button className={styles.CartOrderBtn} type="submit">Order</button>
+                                    </form>
+                                </div>
                             </div>
-                            <form className={styles.CartOrderForm} action="">
-                                <input type="text" placeholder="Name"/>
-                                <input type="tel" placeholder="Phone number"/>
-                                <input type="email" placeholder="Email"/>
-                                <button className={styles.CartOrderBtn} type="submit">Order</button>
-                            </form>
-                        </div>
+                        ) : (
+                                <div>
+                                    <h2 className={styles.NoProducts}>Looks like you have no items in your basket currently.</h2>
+                                    <button className={styles.ContinueShoppingBtn} onClick={handleClick}>Continue Shopping</button>
+                                </div>
+                            )}
                     </div>
                 )}
             </div>

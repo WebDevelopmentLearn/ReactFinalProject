@@ -82,6 +82,26 @@
   background-color: #282828;
 }
 
+.ContinueShoppingBtn {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 16px;
+  padding: 16px 56px;
+  border-radius: 6px;
+  background-color: #0D50FF;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.ContinueShoppingBtn:hover {
+  background-color: #282828;
+}
+.ContinueShoppingBtn:active {
+  background-color: #ffffff;
+  color: #282828;
+}
+
 @media screen and (max-width: 1024px) {
   .CartContainer {
     display: flex;
