@@ -17,6 +17,9 @@
   max-height: 574px;
 }
 
+.ProductFullInfoContainer {
+  max-width: 574px;
+}
 .ProductFullInfoContainer h2 {
   font-size: 4rem;
   font-weight: 700;
@@ -103,6 +106,13 @@
   height: 58px;
   border: 1px solid #dddddd;
   border-radius: 6px;
+  font-size: 3.6rem;
+}
+.QuantityBtn:first-child {
+  margin-right: 8px;
+}
+.QuantityBtn:last-child {
+  margin-left: 8px;
 }
 
 .Quantity {
@@ -112,6 +122,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: 10px;
 }
 
 .ProductFullDescContainer .ProductFullDescHeader {

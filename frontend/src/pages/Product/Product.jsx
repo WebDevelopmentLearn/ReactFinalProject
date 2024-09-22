@@ -46,9 +46,6 @@ export const Product = () => {
                 ) : (
                     product.length && (
                         <div className={styles.ProductFull}>
-                            {/*<div className={styles.ProductImg}>*/}
-                            {/*    <img src={`${BACKEND_URL}/${product[0].image}`} alt={product[0]?.title}/>*/}
-                            {/*</div>*/}
                             <img className={styles.ProductImg} src={`${BACKEND_URL}/${product[0].image}`} alt={product[0]?.title}/>
                             <div className={styles.ProductFullInfoContainer}>
                                 <h2>{product[0]?.title}</h2>

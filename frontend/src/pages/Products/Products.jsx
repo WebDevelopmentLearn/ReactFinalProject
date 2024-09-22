@@ -1,18 +1,13 @@
 import {Layout} from "../../layouts/Layout/Layout";
 import styles from "../Category/Category.module.scss";
-import {Breadcrumbs, CustomSelect, Loader, ProductCard} from "../../components";
+import {Breadcrumbs, Loader, ProductCard, SortControlPanel} from "../../components";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {getAllProducts, getCategoryById} from "../../store/reducers/actionCreators";
-import {status} from "../../utils/Utils";
+import STATUS from "../../utils/Utils";
 
-const options = [
-    { value: 'default', label: 'by default' },
-    { value: 'newest', label: 'newest' },
-    { value: 'price-high-low', label: 'price: high-low' },
-    { value: 'price-low-high', label: 'price: low-high' },
-];
+
 
 export const Products = () => {
     const {categoryId} = useParams();
@@ -30,54 +25,16 @@ export const Products = () => {
 
     }, [sortedBy]);
 
-    const handleSelectChange = (value) => {
-        console.log('Selected:', value);
-        setSortedBy(value);
-    };
 
-    const onChangePrice = (e) => {
-        const value = e.target.value;
-        if (value.match(/[a-zA-Z]/)) {
-            e.target.value = value.replace(/[a-zA-Z]/, '');
-        }
-    }
 
     return (
         <Layout>
             <div className={styles.Category}>
                 <Breadcrumbs />
-                {status === status.LOADING ? <Loader /> : (
+                {status === STATUS.LOADING ? <Loader /> : (
                     <div>
                         <h1 className={styles.CategoryHeader}>All products</h1>
-
-                        <div className={styles.CategorySortPanel}>
-
-                            <div className={styles.priceInputs}>
-                                <label className={styles.priceFromInput} htmlFor="priceFromInput">
-                                    <span>Price</span>
-                                    <input onChange={onChangePrice} id="priceFromInput" type="text" placeholder="from"/>
-                                </label>
-
-                                <label className={styles.priceToInput} htmlFor="priceToInput">
-                                    <input onChange={onChangePrice} id="priceToInput" type="text" placeholder="to"/>
-                                </label>
-                            </div>
-
-                            <label className={styles.discountedItemsCheckbox} htmlFor="discountedItemsCheckbox">
-                                <span>Discounted items</span>
-                                <input id="discountedItemsCheckbox" type="checkbox"/>
-                            </label>
-
-                            <label className={styles.CategorySortSelectLabel} htmlFor="sortedBy">
-                                <span>Sorted</span>
-                                <CustomSelect
-                                    className={styles.CategorySortSelect}
-                                    options={options}
-                                    defaultValue="by default"
-                                    onChange={handleSelectChange}
-                                />
-                            </label>
-                        </div>
+                        <SortControlPanel setSortedBy={setSortedBy} />
 
                         <div className={styles.CategoryProductsContainer}>
                             {products?.length ? products?.map((product) => (

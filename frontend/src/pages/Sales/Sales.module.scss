@@ -1,44 +1,30 @@
 @import "../../styles/variables";
 @import "../../styles/mixins";
 
-.Category {
+.Sales {
   padding: 0 40px;
 }
 
-.CategoryHeader {
+.SalesHeader {
   @include fontSizeAndWeight($fontSize8, 700);
 }
 
 
-
-
-
-
-
-
-
-
-
-////////////////////////
-
-
-.CategoryProductsContainer {
+.SalesProductsContainer {
   @include flex(row, center, start);
   flex-wrap: wrap;
   gap: 32px;
   margin-top: 40px;
 }
 
-
 @media screen and (max-width: 1024px) {
-  .Category {
+  .Sales {
     padding: 0 16px;
   }
 
-  .CategoryProductsContainer{
-
+  .SalesProductsContainer{
     gap: 12px;
   }
 
-  
+
 }

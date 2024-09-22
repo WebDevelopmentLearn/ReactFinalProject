@@ -1,12 +1,11 @@
 import {Layout} from "../../layouts/Layout/Layout";
-import {Breadcrumbs} from "../../components/Breadcrumbs/Breadcrumbs";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {BACKEND_URL, getAllCategories} from "../../store/reducers/actionCreators";
 import styles from './Categories.module.scss';
-import {Loader} from "../../components";
+import {Breadcrumbs, Loader} from "../../components";
 import {Link} from "react-router-dom";
-import {status} from "../../utils/Utils";
+import STATUS from "../../utils/Utils";
 
 export const Categories = () => {
 
@@ -22,7 +21,7 @@ export const Categories = () => {
                 <Breadcrumbs/>
                 <h1 className={styles.CategoriesHeader}>Categories</h1>
                 <div className={styles.CategoriesContainer}>
-                    {status === status.LOADING ? <Loader/> : (
+                    {status === STATUS.LOADING ? <Loader/> : (
                         (categories && categories.length) ? categories.map((category) => (
                             <Link key={category.id} to={`/categories/${category.id}`} className={styles.Category}>
                                 <img

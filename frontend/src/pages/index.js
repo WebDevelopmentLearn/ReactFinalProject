@@ -4,3 +4,4 @@ export {Categories} from "./Categories/Categories";
 export {Category} from "./Category/Category";
 export {Products} from "./Products/Products";
 export {Product} from "./Product/Product";
+export {Sales} from "./Sales/Sales";

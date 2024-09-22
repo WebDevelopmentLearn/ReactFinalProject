@@ -1,5 +1,5 @@
 import {Route, Routes} from "react-router-dom";
-import {Categories, Category, Home, NotFound, Products, Product} from "../pages";
+import {Categories, Category, Home, NotFound, Products, Product, Sales} from "../pages";
 
 export const MainRouter = () => {
     return (
@@ -9,6 +9,7 @@ export const MainRouter = () => {
             <Route path="/categories/:categoryId" element={<Category />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:productId" element={<Product />} />
+            <Route path="/sales" element={<Sales />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     )

@@ -1,0 +1,62 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.CategorySortPanel {
+  @include flex(row, start, center);
+  flex-wrap: wrap;
+  gap: 40px;
+
+  span {
+    @include fontSizeAndWeight(2rem, 500);
+    color: #282828;
+  }
+
+  input[type="text"] {
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 112px;
+
+    &::placeholder {
+      @include fontSizeAndWeight($fontSize1, 500);
+      color: #8B8B8B;
+    }
+
+    &:focus {
+      outline: 1px solid #0D50FF;
+    }
+  }
+
+}
+
+.priceInputs {
+  @include flex(row, start, center);
+  gap: 16px;
+
+  .priceFromInput {
+    @include flex(row, start, center);
+    gap: 16px;
+  }
+
+}
+
+
+.discountedItemsCheckbox {
+  @include flex(row, start, center);
+  gap: 16px;
+
+  input[type="checkbox"] {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+
+.CategorySortSelectLabel {
+  @include flex(row, start, center);
+  gap: 16px;
+}
+
+.CategorySortSelect {
+  height: 36px;
+}

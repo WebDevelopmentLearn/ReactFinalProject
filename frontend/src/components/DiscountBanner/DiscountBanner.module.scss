@@ -9,7 +9,6 @@
   background-image: linear-gradient(#2451C6, #0D50FF);
   border-radius: 12px;
   padding: 32px 0 0 0;
-  //@include flex(column, center, center);
   text-align: center;
 }
 
@@ -19,13 +18,7 @@
 }
 
 .DiscountContent {
-  //display: flex;
   @include flex(row, space-around, center);
-
-  //display: flex;
-  //flex-direction: row;
-  //  justify-content: space-evenly;
-
   flex-wrap: wrap;
 }
 
@@ -42,18 +35,11 @@
     border: none;
     border-radius: 6px;
     padding: 16px 32px;
-
     color: $whiteF;
-    //font-size: 2rem;
-    //font-weight: 500;
     @include fontSizeAndWeight(2rem, 500);
-
     transition: outline 0.3s;
-
     &::placeholder {
       color: $whiteF;
-      //font-size: 2rem;
-      //font-weight: 500;
       @include fontSizeAndWeight(2rem, 500);
     }
 
@@ -62,8 +48,6 @@
 
     }
   }
-
-
 }
 
 .GetDiscountBtn {
