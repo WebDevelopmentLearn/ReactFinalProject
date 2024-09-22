@@ -18,7 +18,6 @@ export const Navbar = () => {
                 <img src={logo} alt="logo"/>
             </NavLink>
 
-
             <div onClick={handleOpen} className={`${styles.burgerBtn}`}>
                 <div className={`${styles.bar} ${isOpened ? styles.change : ''}`}></div>
                 <div className={`${styles.bar} ${isOpened ? styles.change : ''}`}></div>
@@ -59,7 +58,6 @@ export const Navbar = () => {
             </div>
 
             <CartComponent className={`${styles.cartBtn} ${isOpened ? styles.cartBtnClose : ""}`}/>
-
 
         </div>
     )

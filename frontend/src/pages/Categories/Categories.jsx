@@ -6,6 +6,7 @@ import {BACKEND_URL, getAllCategories} from "../../store/reducers/actionCreators
 import styles from './Categories.module.scss';
 import {Loader} from "../../components";
 import {Link} from "react-router-dom";
+import {status} from "../../utils/Utils";
 
 export const Categories = () => {
 
@@ -21,7 +22,7 @@ export const Categories = () => {
                 <Breadcrumbs/>
                 <h1 className={styles.CategoriesHeader}>Categories</h1>
                 <div className={styles.CategoriesContainer}>
-                    {status === "LOADING" ? <Loader/> : (
+                    {status === status.LOADING ? <Loader/> : (
                         (categories && categories.length) ? categories.map((category) => (
                             <Link key={category.id} to={`/categories/${category.id}`} className={styles.Category}>
                                 <img

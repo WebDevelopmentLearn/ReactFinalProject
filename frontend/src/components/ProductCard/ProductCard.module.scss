@@ -121,7 +121,7 @@
   }
 }
 
-.AddToCartBtn {
+.ProductCard:hover .AddToCartBtn {
   opacity: 1;
   visibility: visible;
 }
@@ -142,13 +142,12 @@
 }
 
 
-//@media screen and (max-width: 768px) {
-//  .AddToCartBtn {
-//    width: 75%;
-//    top: 80%;
-//
-//  }
-//}
+@media screen and (max-width: 768px) {
+  .AddToCartBtn {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 
 //@media screen and (max-width: 375px) {
 //  .AddToCartBtn {

@@ -7,6 +7,7 @@ import {BACKEND_URL, getAllProducts} from "../../store/reducers/actionCreators";
 import {Loader} from "../Loader/Loader";
 import {Link} from "react-router-dom";
 import {ProductCard} from "../ProductCard/ProductCard";
+import {status} from "../../utils/Utils";
 
 export const SalesComponent = () => {
 
@@ -25,7 +26,7 @@ export const SalesComponent = () => {
         <section className={styles.SalesComponent}>
             <SectionSeparator sectionName="Sale" path="/sales/all" fullSectionName="All sales"/>
             <div className={styles.SaleProductsContainer}>
-                {status === "LOADING" ? <Loader/> : (
+                {status === status.LOADING ? <Loader/> : (
                     randomProducts.length ? randomProducts.map((product) => (
                         // <Link key={product.id} to={`/categories/${product.id}`} className={styles.SaleProduct}>
                         //     <img

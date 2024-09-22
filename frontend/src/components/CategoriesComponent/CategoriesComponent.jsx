@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {BACKEND_URL, getAllCategories} from "../../store/reducers/actionCreators";
 import {Loader} from "../Loader/Loader";
 import {SectionSeparator} from "../SectionSeparator/SectionSeparator";
+import {status} from "../../utils/Utils";
 
 
 export const CategoriesComponent = () => {
@@ -21,7 +22,7 @@ export const CategoriesComponent = () => {
             <SectionSeparator sectionName="Categories" path="/categories" fullSectionName="All categories" />
 
             <div className={styles.CategoriesContainer}>
-                {status === "LOADING" ? <Loader /> : (
+                {status === status.LOADING ? <Loader /> : (
                     firstCategories.length ? firstCategories.map((category) => (
                         <Link key={category.id} to={`/categories/${category.id}`} className={styles.Category}>
                             <img

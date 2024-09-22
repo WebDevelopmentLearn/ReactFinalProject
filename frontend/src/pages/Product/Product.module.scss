@@ -1,0 +1,192 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.ProductFullBlock {
+  margin: 0 40px;
+}
+
+.ProductFull {
+    @include flex(row, space-around, start);
+  flex-wrap: wrap;
+  //max-height: 574px;
+}
+
+//.ProductImg {
+//    //width: 50%;
+//  height: 100%;
+//    object-fit: cover;
+//  img {
+//    width: 100%;
+//    height: 100%;
+//  }
+//}
+
+
+.ProductImg {
+  max-width: 574px;
+  width: 100%;
+  height: 100%;
+  max-height: 574px;
+  //object-fit: contain; /* Либо 'cover', в зависимости от желаемого эффекта */
+}
+
+
+.ProductFullInfoContainer {
+    //width: 50%;
+
+  h2 {
+    @include fontSizeAndWeight($fontSize6, 700);
+  }
+}
+
+.ProductFullPriceInfo {
+
+  @include flex(row, center, end);
+  gap: 16px;
+  position: relative;
+  width: max-content;
+}
+
+
+
+.ProductDPrice {
+  color: #282828;
+  @include fontSizeAndWeight($fontSize8, 700);
+    margin-right: 16px;
+}
+
+.ProductPrice {
+  color: #8B8B8B;
+  text-decoration: line-through;
+  @include fontSizeAndWeight($fontSize6, 500);
+}
+
+
+
+.ProductDiscount {
+  background-color: #0D50FF;
+  color: $whiteF;
+  @include fontSizeAndWeight($fontSize2, 600);
+  width: max-content;
+  padding: 4px 8px;
+  border-radius: 6px;
+
+  align-self: start;
+  //position: absolute;
+  //top: 0;
+  //right: 0;
+}
+
+
+////////////
+
+.ProductFullControlPanel {
+  @include flex(row, start, center);
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.AddToCartBtn {
+  background-color: #0D50FF;
+  color: $whiteF;
+  @include fontSizeAndWeight($fontSize2, 600);
+  width: 316px;
+  height: 100%;
+
+  padding: 16px 32px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+
+  &:hover {
+    background-color: #282828;
+  }
+
+  &:active {
+    background-color: $whiteBG;
+    color: #282828;
+  }
+}
+
+.QuantityContainer {
+  @include flex(row, center, center);
+  gap: 16px;
+
+  width: max-content;
+  height: 58px;
+  border: 1px solid #dddddd;
+}
+.QuantityBtn {
+  width: 58px;
+  height: 58px;
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+}
+
+.Quantity {
+  @include fontSizeAndWeight($fontSize2, 600);
+  @include flex(row, center, center);
+}
+
+
+.ProductFullDescContainer {
+
+  .ProductFullDescHeader {
+    @include fontSizeAndWeight($fontSize2, 600);
+    margin: 32px 0 16px 0;
+  }
+
+  .ProductFullDescOverflowContainer {
+    overflow: scroll;
+    max-width: 548px;
+    height: 300px;
+    .ProductFullDescPar {
+      @include fontSizeAndWeight($fontSize1, 400);
+      //Скрыть часть текста
+
+      //text-overflow: ellipsis;
+      line-height: 26px;
+
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+  .ProductFull {
+    @include flex(column, center, center);
+
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+
+  .ProductFullInfoContainer {
+    h2 {
+        @include fontSizeAndWeight($fontSize3, 700);
+    }
+
+    .ProductFullPriceInfo {
+      gap: 8px;
+      .ProductDPrice {
+        @include fontSizeAndWeight($fontSize5, 700);
+      }
+
+      .ProductPrice {
+        @include fontSizeAndWeight($fontSize3, 500);
+      }
+
+      .ProductDiscount {
+        @include fontSizeAndWeight($fontSize1, 600);
+      }
+    }
+  }
+
+  .AddToCartBtn {
+    width: 75vw;
+  }
+}

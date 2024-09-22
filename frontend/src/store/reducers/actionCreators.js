@@ -35,3 +35,13 @@ export const getAllProducts = createAsyncThunk("productsReducer/getAllProducts",
         console.error(error);
     }
 });
+
+export const getProductById = createAsyncThunk("productsReducer/getProductById", async (productId) => {
+    try {
+        const response = await axios.get(`${BACKEND_URL}/products/${productId}`);
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        console.error(error);
+    }
+});

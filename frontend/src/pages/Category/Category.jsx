@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {getCategoryById} from "../../store/reducers/actionCreators";
 import {Breadcrumbs, CustomSelect, Loader, ProductCard} from "../../components";
 import styles from './Category.module.scss';
+import {status} from "../../utils/Utils";
 
 const options = [
     { value: 'default', label: 'by default' },
@@ -27,9 +28,6 @@ export const Category = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getCategoryById(Number(categoryId)));
-        //setProducts
-        // setProducts(currentCategory?.data);
-        //
         console.log(currentCategory?.data);
 
     }, [sortedBy]);
@@ -51,7 +49,7 @@ export const Category = () => {
         <Layout>
             <div className={styles.Category}>
                 <Breadcrumbs />
-                {status === "LOADING" ? <Loader /> : (
+                {status === status.LOADING ? <Loader /> : (
                     <div>
                         <h1 className={styles.CategoryHeader}>{currentCategory?.category?.title}</h1>
 

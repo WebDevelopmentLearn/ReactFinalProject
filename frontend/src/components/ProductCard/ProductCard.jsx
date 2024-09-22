@@ -21,7 +21,7 @@ export const ProductCard = ({data, addCartBtn = false}) => {
     }
 
     return (
-        <Link key={data.id} to={`/product/${data.id}`} className={styles.ProductCard}>
+        <Link key={data.id} to={`/products/${data.id}`} className={styles.ProductCard}>
             <img
                 className={styles.ProductImage}
                 src={`${BACKEND_URL}/${data.image}`}

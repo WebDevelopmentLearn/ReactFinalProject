@@ -1,9 +1,11 @@
-import {getAllProducts} from "./actionCreators";
+import {getAllProducts, getProductById} from "./actionCreators";
 import {createSlice} from "@reduxjs/toolkit";
+import STATUS from "../../utils/Utils";
 
 const initialState = {
     products: [],
-    status: "IDLE",
+    product: {},
+    status: STATUS.IDLE,
     error: null,
 }
 
@@ -13,14 +15,27 @@ const productsSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(getAllProducts.pending, (state) => {
-            state.status = "LOADING";
+            state.status = STATUS.LOADING;
         })
         .addCase(getAllProducts.fulfilled, (state, action) => {
-            state.status = "SUCCESS";
+            state.status = STATUS.SUCCESS;
             state.products = action.payload;
         })
         .addCase(getAllProducts.rejected, (state, action) => {
-            state.status = "FAILED";
+            state.status = STATUS.FAILED;
+            state.error = action.payload;
+        });
+
+        builder.addCase(getProductById.pending, (state) => {
+            state.status = STATUS.LOADING;
+            state.error = null;
+        })
+        .addCase(getProductById.fulfilled, (state, action) => {
+            state.status = STATUS.SUCCESS;
+            state.product = action.payload;
+        })
+        .addCase(getProductById.rejected, (state, action) => {
+            state.status = STATUS.FAILED;
             state.error = action.payload;
         });
     }
