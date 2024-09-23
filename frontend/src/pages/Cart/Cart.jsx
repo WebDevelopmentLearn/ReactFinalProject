@@ -60,7 +60,7 @@ export const Cart = () => {
                                                          productCard={product}/>
                                     )) : <h2>No products in cart</h2>}
                                 </div>
-                               <OrderDetails productsLength={cartProducts?.length} price={price} />
+                               <OrderDetails products={cartProducts} productsLength={cartProducts?.length} price={price} />
                             </div>
                         ) : (
                                 <div>

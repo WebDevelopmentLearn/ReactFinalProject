@@ -1,27 +1,36 @@
 import styles from "./OrderDetails.module.scss";
-import {useEffect} from "react";
+import {useContext, useEffect} from "react";
 import {useForm} from "react-hook-form";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {sendOrder} from "../../store/reducers/actionCreators";
 import {DiscountAndOrderForm} from "../DiscountAndOrderForm/DiscountAndOrderForm";
+import {NotificationContext} from "../../context/NotificationContext";
+import STATUS from "../../utils/Utils";
 
 export const OrderDetails = ({products, productsLength, price}) => {
-
- const dispatch = useDispatch();
+    const { addNotification } = useContext(NotificationContext);
+    const {status, error} = useSelector(state => state.orderReducer);
+    const dispatch = useDispatch();
     const submitOrder = (data) => {
         console.log(data);
+        const sentProducts = products.map(product => {
+            return {
+                id: product.id,
+                quantity: product.quantity
+            }
+        });
         const orderData = {
             name: data.name,
             phone: data.phone,
             email: data.email,
-            products: products.map(product => {
-                return {
-                    id: product.id,
-                    quantity: product.quantity
-                }
-            })
+            products: sentProducts
         }
         dispatch(sendOrder(orderData));
+        if (status === STATUS.SUCCESS) {
+            addNotification("Order has been successfully sent", "success");
+        } else if (status === STATUS.FAILED) {
+            addNotification("Failed to send order", "error");
+        }
     }
 
     // const orderData = {
