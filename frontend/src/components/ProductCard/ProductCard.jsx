@@ -6,6 +6,7 @@ import {useEffect, useRef} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {addProductToCart} from "../../store/reducers/cartSlice";
 import STATUS from "../../utils/Utils";
+import {AddToCartBtn} from "../AddToCartBtn/AddToCartBtn";
 
 
 /**
@@ -19,13 +20,7 @@ export const ProductCard = ({data, addCartBtn = false}) => {
 
     const dispatch = useDispatch();
     const {status} = useSelector(state => state.cartReducer);
-    const handleClick = (event) => {
-        event.stopPropagation(); // Останавливаем всплытие события
-        event.preventDefault();  // Останавливаем переход по ссылке
-        console.log("[WIP] Add to cart button clicked", data);
-        dispatch(addProductToCart(data));
 
-    }
 
     return (
         <Link key={data.id} to={`/products/${data.id}`} className={styles.ProductCard}>
@@ -35,7 +30,12 @@ export const ProductCard = ({data, addCartBtn = false}) => {
                 alt={data.title}
                 loading="lazy"
             />
-            {addCartBtn && <button onClick={(event) => handleClick(event)} className={styles.AddToCartBtn}>Add to cart</button>}
+            {addCartBtn &&
+                // <button onClick={(event) => handleClick(event)} className={styles.AddToCartBtn}>
+                //     Add to cart
+                // </button>
+                <AddToCartBtn className={styles.HiddenBtn}  product={data} />
+            }
 
             <div className={styles.ProductInfo}>
                 <h4 className={styles.ProductTitle}>{data.title}</h4>

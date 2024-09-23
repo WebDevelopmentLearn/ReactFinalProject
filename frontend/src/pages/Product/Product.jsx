@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {BACKEND_URL, getProductById} from "../../store/reducers/actionCreators";
 import {useParams} from "react-router-dom";
-import {Breadcrumbs, Loader} from "../../components";
+import {AddToCartBtn, Breadcrumbs, Loader} from "../../components";
 import STATUS from "../../utils/Utils";
 import styles from "./Product.module.scss";
 export const Product = () => {
@@ -69,7 +69,7 @@ export const Product = () => {
                                         <button className={styles.QuantityBtn} onClick={incrementQuantity}>+</button>
 
                                     </div>
-                                    <button className={styles.AddToCartBtn}>Add to cart</button>
+                                    <AddToCartBtn product={product[0]} />
                                 </div>
                                 <div className={styles.ProductFullDescContainer}>
                                     <h4 className={styles.ProductFullDescHeader}>Description</h4>

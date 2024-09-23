@@ -84,33 +84,17 @@
   right: 16px;
 }
 
-.AddToCartBtn {
-  background-color: #0D50FF;
-  color: #ffffff;
-  font-size: 2rem;
-  font-weight: 600;
-  width: 284px;
-  padding: 16px 32px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
+.HiddenBtn {
   position: absolute;
   top: 224px;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0; /* Изначально скрыта */
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s;
-}
-.AddToCartBtn:hover {
-  background-color: #282828;
-}
-.AddToCartBtn:active {
-  background-color: #ffffff;
-  color: #282828;
+  transition: opacity 0.5s, visibility 0.5s;
 }
 
-.ProductCard:hover .AddToCartBtn {
+.ProductCard:hover .HiddenBtn {
   opacity: 1;
   visibility: visible;
 }

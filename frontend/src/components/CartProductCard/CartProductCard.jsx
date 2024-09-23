@@ -9,7 +9,7 @@ export const CartProductCard = ({productInd, productCard}) => {
 
     const [quantity, setQuantity] = useState(1);
     const product = {...productCard};
-    const price = product.discont_price * quantity;
+    const price = product.discont_price ? product.discont_price : product.price * quantity;
     const priceWithoutDiscount = product.price * quantity;
 
     const dispatch = useDispatch();

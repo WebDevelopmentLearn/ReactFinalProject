@@ -90,19 +90,7 @@
 
 ////////////////////
 
-
-.AddToCartBtn {
-  background-color: $lightBlueO;
-  color: $whiteF;
-  @include fontSizeAndWeight($fontSize20, 600);
-  width: 284px;
-
-  padding: 16px 32px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-
-
+.HiddenBtn {
   position: absolute;
   top: 224px;
   left: 50%;
@@ -110,21 +98,15 @@
 
   opacity: 0; /* Изначально скрыта */
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s;
-  &:hover {
-    background-color: $darkGrayBG;
-  }
-
-  &:active {
-    background-color: $whiteBG;
-    color: $darkGrayF;
-  }
+    transition: opacity 0.5s, visibility 0.5s;
 }
 
-.ProductCard:hover .AddToCartBtn {
+.ProductCard:hover .HiddenBtn {
   opacity: 1;
   visibility: visible;
 }
+
+
 
 
 @media screen and (max-width: 1024px) {
