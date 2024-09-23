@@ -26,18 +26,18 @@
   font-weight: 500;
   color: #282828;
 }
-.CategorySortPanel input[type=text] {
+.CategorySortPanel input[type=number] {
   border: 1px solid #dddddd;
   border-radius: 6px;
   padding: 8px 16px;
   width: 112px;
 }
-.CategorySortPanel input[type=text]::placeholder {
+.CategorySortPanel input[type=number]::placeholder {
   font-size: 1.6rem;
   font-weight: 500;
   color: #8B8B8B;
 }
-.CategorySortPanel input[type=text]:focus {
+.CategorySortPanel input[type=number]:focus {
   outline: 1px solid #0D50FF;
 }
 

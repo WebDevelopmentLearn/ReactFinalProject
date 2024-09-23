@@ -7,11 +7,12 @@ import {useEffect, useState} from "react";
 import {getAllProducts} from "../../store/reducers/actionCreators";
 import STATUS from "../../utils/Utils";
 import {useBreadcrumbs} from "../../utils/CustomHooks";
+import {filteredProducts} from "../../store/selectors";
 
 export const Sales = () => {
 
-    const {products, status, error} = useSelector(state => state.productsReducer);
-
+    const {status, error} = useSelector(state => state.productsReducer);
+    const products = useSelector(filteredProducts);
     const discountProducts = products.filter(product => product.discont_price);
 
     const dispatch = useDispatch();

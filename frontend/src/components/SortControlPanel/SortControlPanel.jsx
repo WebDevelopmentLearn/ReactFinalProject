@@ -51,11 +51,11 @@ export const SortControlPanel = ({showDiscountCheckbox = true}) => {
             <div className={styles.priceInputs}>
                 <label className={styles.priceFromInput} htmlFor="priceFromInput">
                     <span>Price</span>
-                    <input value={customFilter.price.from} onChange={onChangePriceFrom} id="priceFromInput" type="number" placeholder="from"/>
+                    <input value={customFilter.price.from} onChange={onChangePriceFrom} id="priceFromInput" type="number" placeholder="from" min={0}/>
                 </label>
 
                 <label className={styles.priceToInput} htmlFor="priceToInput">
-                    <input value={customFilter.price.to} onChange={onChangePriceTo} id="priceToInput" type="number" placeholder="to"/>
+                    <input value={customFilter.price.to} onChange={onChangePriceTo} id="priceToInput" type="number" placeholder="to" min={0}/>
                 </label>
             </div>
 
