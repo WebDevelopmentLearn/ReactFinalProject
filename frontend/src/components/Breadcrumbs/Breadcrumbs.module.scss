@@ -5,11 +5,11 @@
   @include flex(row, start, center);
   flex-wrap: wrap;
   list-style: none;
-  margin: 40px 0 40px 0;
-  height: 36px;
-  //gap: 16px;
+  margin: 40px;
+  //height: 36px;
+  gap: 32px;
 
-  li {
+  .crumbLink {
     @include flex(row, center, center);
     border: 1px solid $lightGrayB;
     border-radius: 6px;
@@ -18,6 +18,20 @@
     @include fontSizeAndWeight($fontSize16, 500);
     color: $grayF;
     padding: 8px 16px;
+
+    //&:after {
+    //  content: "";
+    //  width: 100%;
+    //  height: 2px;
+    //  background-color: red;
+    //}
+  }
+
+  div {
+    @extend .crumbLink;
+    color: $darkGrayF;
+
+
   }
 
   hr {

@@ -50,6 +50,12 @@
 
   @include fontSizeAndWeight($fontSize20, 500);
   color: $darkGrayF;
+
+    //&:hover {
+    //  background-color: #ffffff;
+    //  overflow: visible; /* Прячет текст, который не помещается */
+    //  text-overflow: unset; /* Добавляет многоточие */
+    //}
 }
 
 

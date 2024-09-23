@@ -6,6 +6,7 @@ import styles from './Categories.module.scss';
 import {Breadcrumbs, Loader} from "../../components";
 import {Link} from "react-router-dom";
 import STATUS from "../../utils/Utils";
+import {useBreadcrumbs} from "../../utils/CustomHooks";
 
 export const Categories = () => {
 
@@ -15,10 +16,12 @@ export const Categories = () => {
         dispatch(getAllCategories());
     }, []);
 
+    useBreadcrumbs();
+
     return (
         <Layout>
             <div className={styles.Categories}>
-                <Breadcrumbs/>
+
                 <h1 className={styles.CategoriesHeader}>Categories</h1>
                 <div className={styles.CategoriesContainer}>
                     {status === STATUS.LOADING ? <Loader/> : (

@@ -20,10 +20,10 @@
   align-items: center;
   flex-wrap: wrap;
   list-style: none;
-  margin: 40px 0 40px 0;
-  height: 36px;
+  margin: 40px;
+  gap: 32px;
 }
-.breadcrumb li {
+.breadcrumb .crumbLink, .breadcrumb div {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -35,6 +35,9 @@
   font-weight: 500;
   color: #8B8B8B;
   padding: 8px 16px;
+}
+.breadcrumb div {
+  color: #282828;
 }
 .breadcrumb hr {
   border: 1px solid #dddddd;

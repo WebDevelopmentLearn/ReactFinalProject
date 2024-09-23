@@ -16,14 +16,14 @@ import {AddToCartBtn} from "../AddToCartBtn/AddToCartBtn";
  * @returns {JSX.Element}
  * @constructor
  */
-export const ProductCard = ({data, addCartBtn = false}) => {
+export const ProductCard = ({isDiscountPrice = false, data, addCartBtn = false}) => {
 
     const dispatch = useDispatch();
     const {status} = useSelector(state => state.cartReducer);
 
-
+    // "/categories/"
     return (
-        <Link key={data.id} to={`/products/${data.id}`} className={styles.ProductCard}>
+        <Link key={data.id} to={`${isDiscountPrice ? `/sales/${data.id}` : `/products/${data.id}`}`} className={styles.ProductCard}>
             <img
                 className={styles.ProductImage}
                 src={`${BACKEND_URL}/${data.image}`}

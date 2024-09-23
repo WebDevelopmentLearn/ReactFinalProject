@@ -1,6 +1,10 @@
 
 import styles from './SortControlPanel.module.scss';
 import {CustomSelect} from "../CustomSelect/CustomSelect";
+import {useDispatch, useSelector} from "react-redux";
+import {setFilter, toggleDiscount} from "../../store/reducers/filterSlice";
+import {filter, filteredProducts} from "../../store/selectors";
+import {set} from "react-hook-form";
 
 const options = [
     { value: 'default', label: 'by default' },
@@ -9,41 +13,56 @@ const options = [
     { value: 'price-low-high', label: 'price: low-high' },
 ];
 
-export const SortControlPanel = ({setSortedBy = null, showDiscountCheckbox = true}) => {
-
-
+export const SortControlPanel = ({showDiscountCheckbox = true}) => {
+    const dispatch = useDispatch();
+    const customFilter = useSelector(filter)
     const handleSelectChange = (value) => {
         console.log('Selected:', value);
-        if (setSortedBy) {
-            setSortedBy(value);
-        }
+        dispatch(setFilter({
+            ...customFilter,
+            sort: value
+        }))
     };
 
-    const onChangePrice = (e) => {
-        const value = e.target.value;
-        if (value.match(/[a-zA-Z]/)) {
-            e.target.value = value.replace(/[a-zA-Z]/, '');
-        }
+    const onChangePriceFrom = (e) => {
+        const value = Number(e.target.value);
+        dispatch(setFilter({
+            ...customFilter,
+            price: {...customFilter.price,
+                from: value
+            }
+        }))
     }
 
+    const onChangePriceTo = (e) => {
+        const value = Number(e.target.value);
+        dispatch(setFilter({
+            ...customFilter,
+            price: {...customFilter.price,
+                to: value
+            }
+        }))
+        console.log(value);
+    }
+    console.log(customFilter);
     return (
         <div className={styles.CategorySortPanel}>
 
             <div className={styles.priceInputs}>
                 <label className={styles.priceFromInput} htmlFor="priceFromInput">
                     <span>Price</span>
-                    <input onChange={onChangePrice} id="priceFromInput" type="text" placeholder="from"/>
+                    <input value={customFilter.price.from} onChange={onChangePriceFrom} id="priceFromInput" type="number" placeholder="from"/>
                 </label>
 
                 <label className={styles.priceToInput} htmlFor="priceToInput">
-                    <input onChange={onChangePrice} id="priceToInput" type="text" placeholder="to"/>
+                    <input value={customFilter.price.to} onChange={onChangePriceTo} id="priceToInput" type="number" placeholder="to"/>
                 </label>
             </div>
 
             {showDiscountCheckbox && (
                 <label className={styles.discountedItemsCheckbox} htmlFor="discountedItemsCheckbox">
                     <span>Discounted items</span>
-                    <input id="discountedItemsCheckbox" type="checkbox"/>
+                    <input checked={customFilter.isDiscount}  onChange={() => dispatch(toggleDiscount(!customFilter.isDiscount))}  id="discountedItemsCheckbox" type="checkbox"/>
                 </label>
             )}
 
@@ -52,9 +71,10 @@ export const SortControlPanel = ({setSortedBy = null, showDiscountCheckbox = tru
                 <CustomSelect
                     className={styles.CategorySortSelect}
                     options={options}
-                    defaultValue="by default"
+                    value={customFilter.sort}
                     onChange={handleSelectChange}
                 />
+
             </label>
         </div>
     )

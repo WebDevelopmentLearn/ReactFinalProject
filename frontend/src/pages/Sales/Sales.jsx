@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {getAllProducts} from "../../store/reducers/actionCreators";
 import STATUS from "../../utils/Utils";
+import {useBreadcrumbs} from "../../utils/CustomHooks";
 
 export const Sales = () => {
 
@@ -19,6 +20,8 @@ export const Sales = () => {
 
     }, []);
 
+    useBreadcrumbs();
+
     return (
         <Layout>
             {/*<div className={styles.Sales}>*/}
@@ -27,7 +30,7 @@ export const Sales = () => {
             {/*</div>*/}
 
             <div className={styles.Sales}>
-                <Breadcrumbs/>
+
                 {status === STATUS.LOADING ? <Loader/> : (
                     <div>
                         <h1 className={styles.SalesHeader}>All Sales</h1>
@@ -35,7 +38,7 @@ export const Sales = () => {
 
                         <div className={styles.SalesProductsContainer}>
                             {discountProducts?.length ? discountProducts?.map((product) => (
-                                <ProductCard key={product.id} data={product} addCartBtn={true}/>
+                                <ProductCard isDiscountPrice={true} key={product.id} data={product} addCartBtn={true}/>
                             )) : <h2 className={styles.NoProducts}>No products</h2>}
                         </div>
                     </div>

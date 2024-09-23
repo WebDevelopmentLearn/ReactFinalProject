@@ -6,6 +6,7 @@ import {useParams} from "react-router-dom";
 import {AddToCartBtn, Breadcrumbs, Loader} from "../../components";
 import STATUS from "../../utils/Utils";
 import styles from "./Product.module.scss";
+import {useBreadcrumbs} from "../../utils/CustomHooks";
 export const Product = () => {
     const { productId } = useParams();
     const dispatch = useDispatch();
@@ -38,10 +39,9 @@ export const Product = () => {
             setQuantity(prev => prev - 1);
         }
     }
-
+    useBreadcrumbs();
     return (
         <Layout>
-            <Breadcrumbs breadcrumbs={[{ title: "Main page", url: "/" }, { title: "Categories", url: "/categories" }, { title: product[0]?.title ? product[0]?.title : "Category", url: `/categories/${product?.categoryId}` }]} current={product?.title?.slice(0, 18) + "..."} />
 
             <div className={styles.ProductFullBlock}>
                 {status === STATUS.LOADING ? (

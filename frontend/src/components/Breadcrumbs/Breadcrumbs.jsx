@@ -1,39 +1,23 @@
 import {Link, useLocation} from "react-router-dom";
-import styles from './Breadcrumbs.module.scss'; // Подключаем стили
+import {useContext} from "react";
+import breadcrumbsContext from "../../context/breadcrumbsContext";
+import styles from "./Breadcrumbs.module.scss";
 
-export const Breadcrumbs = () => {
-    const location = useLocation();
-    // Разбиваем путь на сегменты
-    const pathnames = location.pathname.split('/').filter(x => x);
+export const Breadcrumbs = ({crumbs}) => {
 
     return (
-        <nav aria-label="breadcrumb">
-
-            <ul className={styles.breadcrumb}>
-                {/* Ссылка на главную страницу */}
-                <li>
-                    <Link to="/">Главная</Link>
-                </li>
-
-                <hr/>
-                {/* Генерация крошек для каждой части пути */}
-                {pathnames.map((value, index) => {
-                    const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
-                    const isLast = index === pathnames.length - 1;
-
-                    return isLast ? (
-                        <li key={index} className={styles.breadcrumbItemActive}>
-                            {decodeURIComponent(value)} {/* Последняя крошка, не является ссылкой */}
-                        </li>
-                    ) : (
-                        <li key={index} className={styles.breadcrumbItem}>
-                            <Link to={routeTo}>{decodeURIComponent(value)}</Link>
-
-                        </li>
-
-                    );
-                })}
-            </ul>
-        </nav>
+        <div className={styles.breadcrumb}>
+            {crumbs.map((crumb, index, array) => {
+                if (array.length - 1 === index) {
+                    return <div  key={crumb.path}>
+                        {crumb.label}
+                    </div>
+                } else  {
+                    return <Link className={styles.crumbLink} key={crumb.path} to={crumb.path} >
+                        {crumb.label}
+                    </Link>
+                }
+            })}
+        </div>
     );
 }

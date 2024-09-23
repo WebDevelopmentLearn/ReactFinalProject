@@ -6,6 +6,7 @@ import {getCategoryById} from "../../store/reducers/actionCreators";
 import {Breadcrumbs, CustomSelect, Loader, ProductCard, SortControlPanel} from "../../components";
 import styles from './Category.module.scss';
 import {status} from "../../utils/Utils";
+import {useBreadcrumbs} from "../../utils/CustomHooks";
 
 
 
@@ -28,12 +29,12 @@ export const Category = () => {
     }, [sortedBy]);
 
 
-
+    useBreadcrumbs();
 
     return (
         <Layout>
             <div className={styles.Category}>
-                <Breadcrumbs />
+
                 {status === status.LOADING ? <Loader /> : (
                     <div>
                         <h1 className={styles.CategoryHeader}>{currentCategory?.category?.title}</h1>

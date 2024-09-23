@@ -1,11 +1,11 @@
 import {useState} from "react";
 import './CustomSelect.scss';
-export const CustomSelect = ({ options, defaultValue, onChange }) => {
-    const [selectedValue, setSelectedValue] = useState(defaultValue);
+export const CustomSelect = ({ options, value, onChange }) => {
+
     const [isOpen, setIsOpen] = useState(false);
 
     const handleOptionClick = (value) => {
-        setSelectedValue(value);
+
         setIsOpen(false);
         if (onChange) {
             onChange(value);
@@ -18,7 +18,7 @@ export const CustomSelect = ({ options, defaultValue, onChange }) => {
                 className={`custom-select ${isOpen ? 'open' : ''}`}
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <span>{selectedValue || "Select option"}</span>
+                <span>{value || "Select option"}</span>
                 <div className={`arrow ${isOpen ? 'up' : 'down'}`} />
             </div>
             {isOpen && (
@@ -26,7 +26,7 @@ export const CustomSelect = ({ options, defaultValue, onChange }) => {
                     {options.map((option) => (
                         <li
                             key={option.value}
-                            className={`custom-option ${option.value === selectedValue ? 'selected' : ''}`}
+                            className={`custom-option ${option.value === value ? 'selected' : ''}`}
                             onClick={() => handleOptionClick(option.value)}
                         >
                             {option.label}
