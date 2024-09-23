@@ -131,13 +131,26 @@
   }
 }
 
-//@media screen and (max-width: 375px) {
-//  .AddToCartBtn {
-//
-//    top: 70%;
-//
-//  }
-//}
+@media screen and (max-width: 375px) {
+  .ProductCard {
+    width: 100%;
+
+    .ProductInfo {
+      .ProductTitle {
+        @include fontSizeAndWeight($fontSize16, 500);
+      }
+
+      .ProductPriceInfo {
+        .ProductDPrice {
+          @include fontSizeAndWeight($fontSize30, 600);
+        }
+        .ProductPrice {
+          @include fontSizeAndWeight($fontSize16, 500);
+        }
+      }
+    }
+  }
+}
 
 //@media screen and (max-width: 320px) {
 //  .AddToCartBtn {

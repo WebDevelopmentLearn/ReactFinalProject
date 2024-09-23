@@ -71,7 +71,7 @@ export const sendDiscountForm = createAsyncThunk("discountReducer/sendDiscountFo
 // ================ ЗАКАЗ [НАЧАЛО] ====================
 export const sendOrder = createAsyncThunk("cartReducer/getCart", async (orderData) => {
     try {
-        const response = await axios.post(`${BACKEND_URL}/order/send`, orderData);
+        const response = await axios.post(`${BACKEND_URL}/order/send`, {});
         console.log(response.data);
         return response.data;
     } catch (error) {

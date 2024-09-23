@@ -7,7 +7,7 @@ export const Notification = ({message, status}) => {
     const { notifications, removeNotification } = useContext(NotificationContext);
 
     return (
-        <div className={styles.notificationContainer}>
+        <div className={`${styles.notificationContainer} ${notifications.length ? styles.active : ""}`}>
             {notifications.map((notification) => (
                 <div key={notification.id} className={`${styles.notification} ${styles[notification.type]}`}>
                     <p>{notification.message}</p>

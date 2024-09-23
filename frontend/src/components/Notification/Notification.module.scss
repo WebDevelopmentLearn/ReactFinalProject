@@ -10,6 +10,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
 }
 
 .notification {
@@ -22,6 +26,7 @@
     align-items: center;
     @include fontSizeAndWeight($fontSize20, 500);
 }
+
 
 .notification.success {
     background-color: #4caf50;
@@ -37,4 +42,10 @@
 
 .notification.warning {
     background-color: #ff9800;
+}
+
+.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }

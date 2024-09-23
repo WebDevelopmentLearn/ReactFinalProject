@@ -112,5 +112,22 @@
     visibility: visible;
   }
 }
+@media screen and (max-width: 375px) {
+  .ProductCard {
+    width: 100%;
+  }
+  .ProductCard .ProductInfo .ProductTitle {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+  .ProductCard .ProductInfo .ProductPriceInfo .ProductDPrice {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  .ProductCard .ProductInfo .ProductPriceInfo .ProductPrice {
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+}
 
 /*# sourceMappingURL=ProductCard.module.css.map */

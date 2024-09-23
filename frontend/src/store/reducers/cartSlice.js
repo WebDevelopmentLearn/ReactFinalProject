@@ -19,14 +19,16 @@ export const cartSlice = createSlice({
         },
         increaseQuantity(state, action) {
             const product = state.cartProducts.find(item => item.id === action.payload);
-            if (product) {
+            if (product && "quantity" in product) {
                 product.quantity += 1; // Увеличиваем количество напрямую
+            } else {
+                product.quantity = 2; // Если у товара не было свойства quantity, то добавляем его и устанавливаем в 2
             }
 
         },
         decreaseQuantity(state, action) {
             const product = state.cartProducts.find(item => item.id === action.payload);
-            if (product && product.quantity > 1) {
+            if (product && "quantity" in product && product.quantity > 1) {
                 product.quantity -= 1; // Уменьшаем количество напрямую, если оно больше 1
             }
         }

@@ -22,7 +22,11 @@ export const Cart = () => {
 
         //Посчитать общую стоимость товаров в корзине с учетом количества
         const newPrice = cartProducts.reduce((acc, product) => {
-            return acc + (product.discont_price ? product.discont_price : product.price) * (product.quantity ? product.quantity : 1);
+            let quantity = 1;
+            if ("quantity" in product) {
+                quantity = product.quantity;
+            }
+            return acc + (product.discont_price ? product.discont_price : product.price) * quantity;
         }, 0);
 
         setPrice(newPrice);
