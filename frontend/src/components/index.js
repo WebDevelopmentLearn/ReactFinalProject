@@ -15,3 +15,4 @@ export {ProductCard} from './ProductCard/ProductCard';
 export {Notification} from './Notification/Notification';
 export {SortControlPanel} from './SortControlPanel/SortControlPanel';
 export {CartProductCard} from './CartProductCard/CartProductCard';
+export {OrderDetails} from './OrderDetails/OrderDetails';

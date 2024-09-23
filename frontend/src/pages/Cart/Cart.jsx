@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {getProductsFromCart, removeProductFromCart} from "../../store/reducers/cartSlice";
 import STATUS from "../../utils/Utils";
-import {CartProductCard, Loader, SectionSeparator} from "../../components";
+import {CartProductCard, Loader, OrderDetails, SectionSeparator} from "../../components";
 import {useNavigate} from "react-router-dom";
 
 export const Cart = () => {
@@ -37,20 +37,7 @@ export const Cart = () => {
                                                          productCard={product}/>
                                     )) : <h2>No products in cart</h2>}
                                 </div>
-                                <div className={styles.CartOrderContainer}>
-                                    <h2 className={styles.CartOrderTitle}>Order details</h2>
-                                    <p className={styles.CartProductsCountPar}>{cartProducts.length} items</p>
-                                    <div className={styles.CartOrderPriceContainer}>
-                                        <p className={styles.CartProductsTotalPar}>Total</p>
-                                        <p className={styles.CartProductsPricePar}>${price}</p>
-                                    </div>
-                                    <form className={styles.CartOrderForm} action="">
-                                        <input type="text" placeholder="Name"/>
-                                        <input type="tel" placeholder="Phone number"/>
-                                        <input type="email" placeholder="Email"/>
-                                        <button className={styles.CartOrderBtn} type="submit">Order</button>
-                                    </form>
-                                </div>
+                               <OrderDetails productsLength={cartProducts?.length} price={price} />
                             </div>
                         ) : (
                                 <div>

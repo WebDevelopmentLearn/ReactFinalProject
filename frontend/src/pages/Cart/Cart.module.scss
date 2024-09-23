@@ -20,61 +20,6 @@
     //width: 50vw;
   }
 
-  .CartOrderContainer {
-    @include flex(column, start, start);
-    gap: 15px;
-    background-color: $lightCloudBG;
-    padding: 32px;
-    border-radius: 12px;
-    width: 40%;
-    //width: 30vw;
-
-    .CartOrderTitle {
-      @include fontSizeAndWeight($fontSize40, 700);
-    }
-
-    .CartOrderPriceContainer {
-        @include flex(row, space-between, center);
-        width: 100%;
-    }
-
-    .CartProductsCountPar, .CartProductsTotalPar {
-      @include fontSizeAndWeight($fontSize40, 500);
-      color: $grayF;
-    }
-
-    .CartProductsPricePar {
-        @include fontSizeAndWeight($fontSize64, 700);
-        color: $darkGrayF;
-    }
-
-    .CartOrderForm {
-      @include flex(column, center, center);
-      gap: 15px;
-      width: 100%;
-
-      input {
-        width: 100%;
-        padding: 16px 32px;
-        border: 1px solid $lightGrayB;
-        border-radius: 6px;
-      }
-
-      .CartOrderBtn {
-        @include fontSizeAndWeight($fontSize20, 600);
-        width: 100%;
-        padding: 16px 32px;
-        border: none;
-        border-radius: 6px;
-        color: $whiteF;
-        cursor: pointer;
-        background-color: $lightBlueBG;
-        &:hover {
-          background-color: $darkGrayBG;
-        }
-      }
-    }
-  }
 }
 
 .ContinueShoppingBtn {
