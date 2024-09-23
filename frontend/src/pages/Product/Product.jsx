@@ -23,6 +23,8 @@ export const Product = () => {
         }
     }, [product, status]);
 
+    // useEffect(() => {
+
     // if (status === STATUS.SUCCESS && productId) {
     //     console.log(product[0].image);
     // }

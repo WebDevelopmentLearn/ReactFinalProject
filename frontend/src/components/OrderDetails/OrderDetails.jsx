@@ -1,6 +1,10 @@
 import styles from "./OrderDetails.module.scss";
+import {useEffect} from "react";
 
 export const OrderDetails = ({productsLength, price}) => {
+
+
+
     return (
         <div className={styles.CartOrderContainer}>
             <h2 className={styles.CartOrderTitle}>Order details</h2>

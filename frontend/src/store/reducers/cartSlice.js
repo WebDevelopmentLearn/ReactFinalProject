@@ -17,6 +17,19 @@ export const cartSlice = createSlice({
         removeProductFromCart(state, action) {
             state.cartProducts = state.cartProducts.filter(item => item.id !== action.payload);
         },
+        increaseQuantity(state, action) {
+            const product = state.cartProducts.find(item => item.id === action.payload);
+            if (product) {
+                product.quantity += 1; // Увеличиваем количество напрямую
+            }
+
+        },
+        decreaseQuantity(state, action) {
+            const product = state.cartProducts.find(item => item.id === action.payload);
+            if (product && product.quantity > 1) {
+                product.quantity -= 1; // Уменьшаем количество напрямую, если оно больше 1
+            }
+        }
 
         // toggleTodo: (state, action) => {
         //     const currentTodo = state.todos.find(todo => todo.id === action.payload);
@@ -26,4 +39,4 @@ export const cartSlice = createSlice({
 });
 
 export default cartSlice.reducer;
-export const {addProductToCart, removeProductFromCart, getProductsFromCart, clearCart, setStatus, setError} = cartSlice.actions;
+export const {addProductToCart, removeProductFromCart, getProductsFromCart, increaseQuantity, decreaseQuantity} = cartSlice.actions;

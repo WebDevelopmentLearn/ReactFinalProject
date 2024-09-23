@@ -2,7 +2,7 @@
 import styles from "./Cart.module.scss";
 import {Layout} from "../../layouts/Layout/Layout";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {getProductsFromCart, removeProductFromCart} from "../../store/reducers/cartSlice";
 import STATUS from "../../utils/Utils";
 import {CartProductCard, Loader, OrderDetails, SectionSeparator} from "../../components";
@@ -13,12 +13,29 @@ export const Cart = () => {
     const {cartProducts, error, status} = useSelector(state => state.cartReducer);
     //const {cartProducts} = localStorage.getItem('cartProducts') ? JSON.parse(localStorage.getItem('cartProducts')) : useSelector(state => state.cartReducer.products);
     const dispatch = useDispatch();
-    const price = cartProducts.reduce((acc, product) => {
-        return acc + (product.discont_price ? product.discont_price : product.price);
-    }, 0);
+    const [price, setPrice] = useState(0);
+
+    useEffect(() => {
+        // cartProducts.reduce((acc, product) => {
+        //     return acc + (product.discont_price ? product.discont_price : product.price);
+        // }, 0);
+
+        //Посчитать общую стоимость товаров в корзине с учетом количества
+        const newPrice = cartProducts.reduce((acc, product) => {
+            return acc + (product.discont_price ? product.discont_price : product.price) * (product.quantity ? product.quantity : 1);
+        }, 0);
+
+        setPrice(newPrice);
+        console.log("New price", price);
+    }, [cartProducts]);
+
     // useEffect(() => {
     //
     // }, [cartProducts]);
+
+    useEffect(() => {
+
+    }, [price]);
 
     const handleClick = () => {
         navigate('/products');
