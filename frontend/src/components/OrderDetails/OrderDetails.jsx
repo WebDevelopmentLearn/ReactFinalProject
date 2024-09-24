@@ -29,6 +29,7 @@ export const OrderDetails = ({products, productsLength, price}) => {
             products: sentProducts
         }
         dispatch(sendOrder(orderData));
+        console.log(status);
         if (status === STATUS.SUCCESS) {
             //addNotification("Order has been successfully sent", "success");
             addModal(
@@ -44,6 +45,8 @@ export const OrderDetails = ({products, productsLength, price}) => {
         } else if (status === STATUS.FAILED) {
             addNotification("Failed to send order", "error");
         }
+
+
     }
 
     // const orderData = {

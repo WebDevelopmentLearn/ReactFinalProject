@@ -23,8 +23,6 @@ const filterSlice = createSlice({
         toggleDiscount: (state, action) => {
             state.isDiscount = action.payload;
         }
-
-
     }
 })
 

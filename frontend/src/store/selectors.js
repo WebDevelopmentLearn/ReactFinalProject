@@ -27,9 +27,9 @@ export const filteredProducts = createSelector([products, filter], (productsFrom
         return products
             .filter((product) => {
                 console.log("product.price", product);
-                if (product.discont_price) {
-                    return product.discont_price >= filterFromState.price.from && product.discont_price <= filterFromState.price.to;
-                }
+                // if (product.discont_price) {
+                //     return product.discont_price >= filterFromState.price.from && product.discont_price <= filterFromState.price.to;
+                // }
                 return product.price >= filterFromState.price.from && product.price <= filterFromState.price.to;
             })
             .sort((a, b) => {
@@ -37,15 +37,15 @@ export const filteredProducts = createSelector([products, filter], (productsFrom
                     return b.id - a.id;
                 }
                 if (filterFromState.sort === "price-low-high") {
-                    if (a.discont_price && b.discont_price) {
-                        return a.discont_price - b.discont_price;
-                    }
+                    // if (a.discont_price && b.discont_price) {
+                    //     return a.discont_price - b.discont_price;
+                    // }
                     return a.price - b.price;
                 }
                 if (filterFromState.sort === "price-high-low") {
-                    if (b.discont_price && a.discont_price) {
-                        return b.discont_price - a.discont_price;
-                    }
+                    // if (b.discont_price && a.discont_price) {
+                    //     return b.discont_price - a.discont_price;
+                    // }
                     return b.price - a.price;
                 }
                 return a.id - b.id;
