@@ -1,0 +1,132 @@
+//
+
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+// Notification.module.scss
+.modalContainer {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.modal {
+  @include flex(column, center, start);
+  background-color: $lightBlueBG;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-20px);
+  transition: transform 0.5s;
+}
+
+.ModalHeader {
+  @include flex(row, space-between, center);
+  margin-bottom: 32px;
+  width: 100%;
+  h5 {
+    @include fontSizeAndWeight($fontSize40, 600);
+    color: $whiteF;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+}
+
+
+
+.ModalContent {
+    @include flex(column, center, start);
+    gap: 16px;
+}
+
+.ModalContentDesc {
+    @include fontSizeAndWeight($fontSize20, 600);
+    color: $whiteF;
+}
+
+
+.modal.success {
+  background-color: #4caf50;
+}
+
+.modal.error {
+  background-color: #f44336;
+}
+
+.modal.info {
+  background-color: #2196f3;
+}
+
+.modal.warning {
+  background-color: #ff9800;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+
+}
+
+.activeModal {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
+//.modal {
+//  position: fixed;
+//  left: 0;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  background-color: rgba(0, 0, 0, 0.5);
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//}
+//.modal-content {
+//  border: 1px solid #fff;
+//  width: 500px;
+//  background-color: #fff;
+//  border-radius: 15px;
+//}
+//.exit-icon {
+//  cursor: pointer;
+//  font-size: 20px;
+//}
+//.modal-title {
+//  color: #6821c3;
+//  font-weight: 700;
+//  font-size: 30px;
+//  line-height: 28px;
+//}
+//.modal-image img {
+//  width: 8rem;
+//}
+//.modalText {
+//  text-align: justify;
+//}
+//.modal-button button {
+//  border: 1px solid #6821c3;
+//  padding: 6px;
+//  width: 8rem;
+//  background-color: #6821c3;
+//  color: white;
+//  border-radius: 7px;
+//}

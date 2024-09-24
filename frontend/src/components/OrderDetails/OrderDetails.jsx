@@ -6,9 +6,12 @@ import {sendOrder} from "../../store/reducers/actionCreators";
 import {DiscountAndOrderForm} from "../DiscountAndOrderForm/DiscountAndOrderForm";
 import {NotificationContext} from "../../context/NotificationContext";
 import STATUS from "../../utils/Utils";
+import {ModalContext} from "../../context/ModalContext";
+import {clearCart} from "../../store/reducers/cartSlice";
 
 export const OrderDetails = ({products, productsLength, price}) => {
     const { addNotification } = useContext(NotificationContext);
+    const {addModal} = useContext(ModalContext);
     const {status, error} = useSelector(state => state.orderReducer);
     const dispatch = useDispatch();
     const submitOrder = (data) => {
@@ -27,7 +30,17 @@ export const OrderDetails = ({products, productsLength, price}) => {
         }
         dispatch(sendOrder(orderData));
         if (status === STATUS.SUCCESS) {
-            addNotification("Order has been successfully sent", "success");
+            //addNotification("Order has been successfully sent", "success");
+            addModal(
+                {
+                    title: "Congratulations!",
+                    content: {
+                        par1: "Your order has been successfully placed on the website.",
+                        par2: "A manager will contact you shortly to confirm your order."
+                    }
+                });
+            dispatch(clearCart());
+
         } else if (status === STATUS.FAILED) {
             addNotification("Failed to send order", "error");
         }

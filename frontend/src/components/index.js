@@ -18,3 +18,4 @@ export {CartProductCard} from './CartProductCard/CartProductCard';
 export {OrderDetails} from './OrderDetails/OrderDetails';
 export {AddToCartBtn} from './AddToCartBtn/AddToCartBtn';
 export {DiscountAndOrderForm} from './DiscountAndOrderForm/DiscountAndOrderForm';
+export {ModalComponent} from './ModalComponent/ModalComponent';
