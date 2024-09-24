@@ -1,9 +1,11 @@
 import {Breadcrumbs, Footer, Navbar} from "../../components";
 import {useContext} from "react";
-import breadcrumbsContext from "../../context/breadcrumbsContext";
+import {BreadcrumbsContext} from "../../context/BreadcrumbsContext";
+import {useBreadcrumbs} from "../../utils/CustomHooks";
 
 export const Layout = ({children}) => {
-    const {crumbs} = useContext(breadcrumbsContext);
+    const {crumbs} = useContext(BreadcrumbsContext);
+    useBreadcrumbs();
     return (
         <div>
             <Navbar/>

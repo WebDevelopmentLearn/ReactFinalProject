@@ -43,6 +43,15 @@
   align-self: start;
   font-size: 2rem;
   font-weight: 600;
+  transition: background-color 0.5s, color 0.5s;
+}
+.CheckoutBtn:hover {
+  background-color: #282828;
+  color: #ffffff;
+}
+.CheckoutBtn:active {
+  background-color: #ffffff;
+  color: #282828;
 }
 
 @media screen and (max-width: 768px) {

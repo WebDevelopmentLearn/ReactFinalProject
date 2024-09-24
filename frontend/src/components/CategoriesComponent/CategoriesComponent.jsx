@@ -11,10 +11,6 @@ import STATUS from "../../utils/Utils";
 export const CategoriesComponent = () => {
     const { categories, status, error } = useSelector(state => state.categoriesReducer);
     const firstCategories = categories ? categories.slice(0, 4) : [];
-    const dispatch = useDispatch();
-    // useEffect(() => {
-    //     dispatch(getAllCategories());
-    // }, []);
 
     return (
         <section className={styles.CategoriesComponent}>

@@ -1,15 +1,15 @@
 import {Layout} from "../../layouts/Layout/Layout";
 import {useDispatch, useSelector} from "react-redux";
 import {useContext, useEffect, useState} from "react";
-import {BACKEND_URL, getProductById} from "../../store/reducers/actionCreators";
+import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import {useParams} from "react-router-dom";
-import {AddToCartBtn, Breadcrumbs, Loader} from "../../components";
+import {AddToCartBtn, Loader} from "../../components";
 import STATUS from "../../utils/Utils";
 import styles from "./Product.module.scss";
-import {useBreadcrumbs} from "../../utils/CustomHooks";
 import {selectProductById} from "../../store/selectors";
 import {addProductToCart} from "../../store/reducers/cartSlice";
 import {NotificationContext} from "../../context/NotificationContext";
+
 export const Product = () => {
     const { productId } = useParams();
     const dispatch = useDispatch();
@@ -45,7 +45,6 @@ export const Product = () => {
         addNotification("Product has been successfully added to cart", "success");
     }
 
-    useBreadcrumbs();
     return (
         <Layout>
 

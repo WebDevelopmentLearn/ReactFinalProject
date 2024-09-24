@@ -3,7 +3,7 @@ import {getAllCategories, getCategoryById} from "./actionCreators";
 import STATUS from "../../utils/Utils";
 const initialState = {
     categories: [],
-    currentCategory: 0,
+    currentCategory: {},
     status: STATUS.IDLE,
     error: null
 }
@@ -16,28 +16,26 @@ const categoriesSlice = createSlice({
         builder.addCase(getAllCategories.pending, (state, action) => {
             state.status = STATUS.LOADING;
             state.error = null;
-        })
-        .addCase(getAllCategories.fulfilled, (state, action) => {
+        }).addCase(getAllCategories.fulfilled, (state, action) => {
             state.status = STATUS.SUCCESS;
             state.categories = action.payload;
-        })
-        .addCase(getAllCategories.rejected, (state, action) => {
+        }).addCase(getAllCategories.rejected, (state, action) => {
             state.status = STATUS.FAILED;
-            state.error = action.payload;
+            state.error = action.error.message;
+            state.categories = [];
         });
 
         builder.addCase(getCategoryById.pending, (state, action) => {
             state.status = STATUS.LOADING;
             state.error = null;
-        })
-        .addCase(getCategoryById.fulfilled, (state, action) => {
+        }).addCase(getCategoryById.rejected, (state, action) => {
+            state.status = STATUS.FAILED;
+            state.error = action.error.message;
+        }).addCase(getCategoryById.fulfilled, (state, action) => {
             state.status = STATUS.SUCCESS;
             state.currentCategory = action.payload;
-        })
-        .addCase(getCategoryById.rejected, (state, action) => {
-            state.status = STATUS.FAILED;
-            state.error = action.payload;
         });
+
     }
 });
 

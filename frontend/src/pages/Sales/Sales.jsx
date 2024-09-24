@@ -5,7 +5,7 @@ import {Loader, ProductCard, SortControlPanel} from "../../components";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import STATUS from "../../utils/Utils";
-import {useBreadcrumbs} from "../../utils/CustomHooks";
+
 import {filteredProducts} from "../../store/selectors";
 import {toggleDiscount} from "../../store/reducers/filterSlice";
 
@@ -20,7 +20,7 @@ export const Sales = () => {
         dispatch(toggleDiscount(true));
     }, []);
 
-    useBreadcrumbs();
+
 
     return (
         <Layout>

@@ -1,6 +1,5 @@
 import styles from "./OrderDetails.module.scss";
 import {useContext, useEffect} from "react";
-import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 import {sendOrder} from "../../store/reducers/actionCreators";
 import {DiscountAndOrderForm} from "../DiscountAndOrderForm/DiscountAndOrderForm";
@@ -17,6 +16,7 @@ export const OrderDetails = ({products, productsLength, price}) => {
     const {status: orderStatus, orderError} = useSelector(state => state.orderReducer);
     const dispatch = useDispatch();
 
+
     useEffect(() => {
         if (orderStatus === STATUS.SUCCESS) {
             addModal(
@@ -32,9 +32,11 @@ export const OrderDetails = ({products, productsLength, price}) => {
                     }
                 });
 
-        } else if (orderStatus === STATUS.FAILED) {
-            addNotification("Failed to send order", "error");
+        } else if (orderStatus === STATUS.FAILED && orderError) {
+            console.log(orderError);
+            addNotification(orderError, "error");
         }
+
     }, [orderStatus]);
 
     const submitOrder = (data) => {
@@ -52,8 +54,6 @@ export const OrderDetails = ({products, productsLength, price}) => {
             products: sentProducts
         }
         dispatch(sendOrder(orderData));
-
-
 
     }
 

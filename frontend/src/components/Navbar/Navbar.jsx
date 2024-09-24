@@ -2,7 +2,7 @@ import logo from '../../assets/logo.svg';
 import {NavLink} from "react-router-dom";
 import styles from './Navbar.module.scss';
 import {CartComponent} from "../CartComponent/CartComponent";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 export const Navbar = () => {
 

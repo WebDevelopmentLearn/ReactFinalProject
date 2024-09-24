@@ -31,7 +31,7 @@ export const getCategoryById = createAsyncThunk("categoriesReducer/getCategoryBy
 export const getAllProducts = createAsyncThunk("productsReducer/getAllProducts", async () => {
     try {
         const response = await axios.get(`${BACKEND_URL}/products/all`);
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         throw new Error(error);
@@ -41,7 +41,7 @@ export const getAllProducts = createAsyncThunk("productsReducer/getAllProducts",
 export const getProductById = createAsyncThunk("productsReducer/getProductById", async (productId) => {
     try {
         const response = await axios.get(`${BACKEND_URL}/products/${productId}`);
-        console.log(response.data);
+        // console.log(response.data);
         return response.data;
     } catch (error) {
         throw new Error(error);
@@ -75,7 +75,7 @@ export const sendOrder = createAsyncThunk("orderReducer/sendOrder", async (order
         console.log(response.data);
         return response.data;
     } catch (error) {
-        console.error(error);
+        throw new Error(error);
     }
 });
 // ================ ЗАКАЗ [КОНЕЦ] ====================

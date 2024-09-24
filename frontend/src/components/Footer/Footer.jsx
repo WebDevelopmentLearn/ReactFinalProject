@@ -1,7 +1,6 @@
 
 import styles from './Footer.module.scss';
 
-
 export const Footer = () => {
     return (
         <footer className={styles.Footer}>
@@ -16,7 +15,6 @@ export const Footer = () => {
                     <h4>Socials</h4>
                     <div className={styles.SocialsLinks}>
                         <a href="https://instagram.com">
-                            {/*<img src={instagramIcon} alt="instagram_icon"/>*/}
                             <svg className={styles.InstagramIcon} width="38" height="38" viewBox="0 0 38 38"
                                  fill="none"
                                  xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +26,6 @@ export const Footer = () => {
                         </a>
 
                         <a href="https://whatsapp.com">
-                            {/*<img src={whatsappIcon} alt="whatsapp_icon"/>*/}
                             <svg className={styles.WhatsAppIcon} width="39" height="38" viewBox="0 0 39 38"
                                  fill="none"
                                  xmlns="http://www.w3.org/2000/svg">

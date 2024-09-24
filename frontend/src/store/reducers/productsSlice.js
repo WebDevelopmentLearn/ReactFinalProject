@@ -23,7 +23,7 @@ const productsSlice = createSlice({
         })
         .addCase(getAllProducts.rejected, (state, action) => {
             state.status = STATUS.FAILED;
-            state.error = action.payload;
+            state.error = action.error.message;
         });
 
         builder.addCase(getProductById.pending, (state) => {
@@ -36,7 +36,7 @@ const productsSlice = createSlice({
         })
         .addCase(getProductById.rejected, (state, action) => {
             state.status = STATUS.FAILED;
-            state.error = action.payload;
+            state.error = action.error.message;
         });
     }
 });

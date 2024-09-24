@@ -90,7 +90,6 @@ export const filteredProducts = createSelector([products, filter, cart],
 
 export const calculateSum = createSelector([cart], (cart) => {
     return cart?.reduce((acc, item) => {
-        console.log(acc);
         return item.discont_price ?
             item.discont_price * item.quantity + acc :
             item.price * item.quantity + acc;

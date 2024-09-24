@@ -1,6 +1,4 @@
-import {Link, useLocation} from "react-router-dom";
-import {useContext} from "react";
-import breadcrumbsContext from "../../context/breadcrumbsContext";
+import {Link} from "react-router-dom";
 import styles from "./Breadcrumbs.module.scss";
 
 export const Breadcrumbs = ({crumbs}) => {

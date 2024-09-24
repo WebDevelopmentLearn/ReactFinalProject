@@ -30,7 +30,7 @@ const discountSlice = createSlice({
             })
             .addCase(sendDiscountForm.rejected, (state, action) => {
                 state.status = STATUS.FAILED;
-                state.error = action.payload;
+                state.error = action.error.message;
             })
     }
 });

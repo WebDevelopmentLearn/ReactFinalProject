@@ -1,7 +1,7 @@
 import {useLocation, useParams} from "react-router-dom";
 import {useSelector} from "react-redux";
 import {useContext, useEffect} from "react";
-import breadcrumbsContext from "../context/breadcrumbsContext";
+import {BreadcrumbsContext} from "../context/BreadcrumbsContext";
 
 const pageTitle = {
     products: "All Products",
@@ -14,7 +14,7 @@ const pagesBlacklist = ["cart", "404"];
 
 export const useBreadcrumbs = () => {
     const location = useLocation();
-    const {setCrumbs} = useContext(breadcrumbsContext);
+    const {setCrumbs} = useContext(BreadcrumbsContext);
     const {productId, categoryId} = useParams();
     const page = location.pathname.split("/").filter((pathItem) => pathItem !== "")[0];
 

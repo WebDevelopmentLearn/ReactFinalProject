@@ -1,8 +1,5 @@
 
 import styles from './CardSection.module.scss';
-import {Loader} from "../Loader/Loader";
-import {Link} from "react-router-dom";
-import {BACKEND_URL} from "../../store/reducers/actionCreators";
 
 export const CardSection = ({status, cardsArray, }) => {
     return (

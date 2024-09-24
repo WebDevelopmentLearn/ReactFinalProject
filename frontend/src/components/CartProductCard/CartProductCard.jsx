@@ -1,20 +1,10 @@
 
 import styles from './CartProductCard.module.scss';
-import {useState} from "react";
 import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import {decreaseQuantity, increaseQuantity, removeProductFromCart} from "../../store/reducers/cartSlice";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import x_icon from '../../assets/x_icon.svg';
 export const CartProductCard = ({productInd, productCard}) => {
-
-
-
-    // Используем useSelector, чтобы получить доступ к товарам в корзине
-    const cartProducts = useSelector(state => state.cartReducer.cartProducts);
-
-
-
-    // Проверяем, если продукт найден, устанавливаем количество из корзины
     const amount = productCard?.quantity;
 
     const product = {...productCard};
@@ -24,14 +14,13 @@ export const CartProductCard = ({productInd, productCard}) => {
     const dispatch = useDispatch();
 
     const incrementQuantity = () => {
-
-        dispatch(increaseQuantity(productInd));  // Передаем индекс продукта для увеличения количества
-        console.log("Increment Amount", amount); // Выводим количество после увеличения
+        dispatch(increaseQuantity(productInd));
+        console.log("Increment Amount", amount);
     };
 
     const decrementQuantity = () => {
-        dispatch(decreaseQuantity(productInd));  // Передаем индекс продукта для уменьшения количества
-        console.log("Decrement Amount", amount); // Выводим количество после уменьшения
+        dispatch(decreaseQuantity(productInd));
+        console.log("Decrement Amount", amount);
     };
 
     const handleRemove = (id) => {
@@ -64,8 +53,6 @@ export const CartProductCard = ({productInd, productCard}) => {
                     </div>
                 </div>
             </div>
-
-
         </div>
     )
 }

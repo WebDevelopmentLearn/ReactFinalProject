@@ -1,8 +1,7 @@
 import {createContext} from "react";
 
- const breadcrumbsContext = createContext([{
+export const BreadcrumbsContext = createContext([{
     path: "/",
     label: "Main Page"
 }]);
 
- export default breadcrumbsContext;

@@ -40,6 +40,18 @@
   //font-size: 2.0rem;
   //font-weight: 600;
   @include fontSizeAndWeight($fontSize20, 600);
+
+  transition: background-color 0.5s, color 0.5s;
+
+  &:hover {
+    background-color: $darkGrayBG;
+    color: $whiteF;
+  }
+
+  &:active {
+    background-color: $whiteBG;
+    color: $darkGrayF;
+  }
 }
 
 @media screen and (max-width: 768px) {

@@ -1,26 +1,23 @@
 import {SectionSeparator} from "../SectionSeparator/SectionSeparator";
 
 import styles from './SalesComponent.module.scss';
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
-import {BACKEND_URL} from "../../store/reducers/actionCreators";
+import {useSelector} from "react-redux";
 import {Loader} from "../Loader/Loader";
-import {Link} from "react-router-dom";
 import {ProductCard} from "../ProductCard/ProductCard";
 import STATUS from "../../utils/Utils";
+import {useContext, useEffect} from "react";
+import {NotificationContext} from "../../context/NotificationContext";
 
 export const SalesComponent = () => {
-
-    const dispatch = useDispatch();
     const {products, status, error} = useSelector(state => state.productsReducer);
-    // const firstProducts = products.slice().filter(product => product.discont_price).slice(0, 4);
     const randomProducts = products ? products.slice().filter(product => product.discont_price).sort(() => Math.random() - 0.5).slice(0, 4) : [];
 
-
-    // useEffect(() => {
-    //     dispatch(getAllProducts());
-    //     console.log(randomProducts);
-    // }, []);
+    const {addNotification} = useContext(NotificationContext);
+    useEffect(() => {
+        if (error) {
+            addNotification(error, "error");
+        }
+    }, []);
 
     return (
         <section className={styles.SalesComponent}>
@@ -28,25 +25,6 @@ export const SalesComponent = () => {
             <div className={styles.SaleProductsContainer}>
                 {status === STATUS.LOADING ? <Loader/> : (
                     randomProducts.length ? randomProducts.map((product) => (
-                        // <Link key={product.id} to={`/categories/${product.id}`} className={styles.SaleProduct}>
-                        //     <img
-                        //         className={styles.CategoryImage}
-                        //         src={`${BACKEND_URL}/${product.image}`}
-                        //         alt={product.title}
-                        //         loading="lazy"
-                        //     />
-                        //     <div className={styles.ProductsInfo}>
-                        //         <h3 className={styles.ProductTitleHeader}>{product.title}</h3>
-                        //         <div className={styles.ProductPriceInfo}>
-                        //             <p className={styles.ProductPrice}>${product.discont_price}</p>
-                        //             <p className={styles.ProductDiscountPrice}>${product.price}</p>
-                        //             {/*Получить скидку в %*/}
-                        //             <p className={styles.ProductDiscount}>
-                        //                 -{Math.round(((product.price - product.discont_price) * 100) / product.price)}%
-                        //             </p>
-                        //         </div>
-                        //     </div>
-                        // </Link>
                             <ProductCard isDiscountPrice={true} key={product.id} productData={product} addCartBtn={true}/>
                         )
                     ) : <h2 className={styles.NoProducts}>No products</h2>

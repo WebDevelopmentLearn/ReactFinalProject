@@ -2,7 +2,7 @@
 import styles from './ProductCard.module.scss';
 import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import {Link} from "react-router-dom";
-import {useContext, useEffect, useRef} from "react";
+import {useContext} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {addProductToCart} from "../../store/reducers/cartSlice";
 import STATUS from "../../utils/Utils";
@@ -33,7 +33,6 @@ export const ProductCard = ({isDiscountPrice = false, productData, addCartBtn = 
         addNotification("Product has been successfully added to cart", "success");
     }
 
-    // "/categories/"
     return (
         <Link key={productData?.id} to={`${isDiscountPrice ? `/sales/${productData.id}` : `/products/${productData?.id}`}`} className={styles.ProductCard}>
             <img
@@ -43,9 +42,6 @@ export const ProductCard = ({isDiscountPrice = false, productData, addCartBtn = 
                 loading="lazy"
             />
             {addCartBtn &&
-                // <button onClick={(event) => handleClick(event)} className={styles.AddToCartBtn}>
-                //     Add to cart
-                // </button>
                 <AddToCartBtn isDisabled={productData?.isInCart} onClick={handleClick}  title={productData?.isInCart ? "Added to cart" : "Add to cart"} className={styles.HiddenBtn}  product={productData} />
             }
 

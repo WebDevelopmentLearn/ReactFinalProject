@@ -3,8 +3,7 @@ import styles from './SortControlPanel.module.scss';
 import {CustomSelect} from "../CustomSelect/CustomSelect";
 import {useDispatch, useSelector} from "react-redux";
 import {setFilter, toggleDiscount} from "../../store/reducers/filterSlice";
-import {filter, filteredProducts} from "../../store/selectors";
-import {set} from "react-hook-form";
+import {filter} from "../../store/selectors";
 
 const options = [
     { value: 'default', label: 'by default' },
