@@ -15,7 +15,7 @@ export const Products = () => {
     const {categoryId} = useParams();
 
     const {status, error} = useSelector(state => state.productsReducer);
-    const productsS = useSelector(filteredProducts);
+    const products = useSelector(filteredProducts);
     const [sortedBy, setSortedBy] = useState('default');
     // const [products, setProducts] = useState([]);
 
@@ -35,11 +35,11 @@ export const Products = () => {
                 {status === STATUS.LOADING ? <Loader /> : (
                     <div>
                         <h1 className={styles.CategoryHeader}>All products</h1>
-                        <SortControlPanel  />
+                        <SortControlPanel />
 
                         <div className={styles.CategoryProductsContainer}>
-                            {productsS?.length ? productsS?.map((product) => (
-                                <ProductCard key={product.id} data={product} addCartBtn={true} />
+                            {products?.length ? products?.map((product) => (
+                                <ProductCard key={product.id} productData={product} addCartBtn={true} />
                             )) : <h2 className={styles.NoProducts}>No products</h2>}
                         </div>
                     </div>

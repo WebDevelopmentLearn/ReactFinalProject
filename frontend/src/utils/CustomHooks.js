@@ -10,13 +10,15 @@ const pageTitle = {
     cart: "Shopping cart"
 }
 
+const pagesBlacklist = ["cart", "404"];
+
 export const useBreadcrumbs = () => {
     const location = useLocation();
     const {setCrumbs} = useContext(breadcrumbsContext);
     const {productId, categoryId} = useParams();
     const page = location.pathname.split("/").filter((pathItem) => pathItem !== "")[0];
 
-    const crumbsArray = page ? [
+    const crumbsArray = page && !pagesBlacklist.includes(page) ? [
         {
             path: "/",
             label: "Main Page"

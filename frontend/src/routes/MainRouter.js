@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {Categories, Category, Home, NotFound, Products, Product, Sales, Cart} from "../pages";
 
 export const MainRouter = () => {
@@ -13,7 +13,8 @@ export const MainRouter = () => {
             <Route path="/sales" element={<Sales />} />
             <Route path="/sales/:productId" element={<Product />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<Navigate to="/404" />} />
         </Routes>
     )
 }

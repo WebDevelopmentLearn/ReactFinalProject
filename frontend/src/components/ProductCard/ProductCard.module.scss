@@ -104,7 +104,11 @@
 
   opacity: 0; /* Изначально скрыта */
   visibility: hidden;
-    transition: opacity 0.5s, visibility 0.5s;
+  transition: opacity 0.5s, visibility 0.5s;
+
+  //&:hover {
+  //
+  //}
 }
 
 .ProductCard:hover .HiddenBtn {

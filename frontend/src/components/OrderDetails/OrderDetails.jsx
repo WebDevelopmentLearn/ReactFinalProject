@@ -8,12 +8,35 @@ import {NotificationContext} from "../../context/NotificationContext";
 import STATUS from "../../utils/Utils";
 import {ModalContext} from "../../context/ModalContext";
 import {clearCart} from "../../store/reducers/cartSlice";
+import {clearStatus} from "../../store/reducers/orderSlice";
 
 export const OrderDetails = ({products, productsLength, price}) => {
     const { addNotification } = useContext(NotificationContext);
     const {addModal} = useContext(ModalContext);
-    const {status, error} = useSelector(state => state.orderReducer);
+    const {status, error} = useSelector(state => state.cartReducer);
+    const {status: orderStatus, orderError} = useSelector(state => state.orderReducer);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (orderStatus === STATUS.SUCCESS) {
+            addModal(
+                {
+                    title: "Congratulations!",
+                    content: {
+                        par1: "Your order has been successfully placed on the website.",
+                        par2: "A manager will contact you shortly to confirm your order."
+                    },
+                    onClose: () => {
+                        dispatch(clearCart());
+                        dispatch(clearStatus());
+                    }
+                });
+
+        } else if (orderStatus === STATUS.FAILED) {
+            addNotification("Failed to send order", "error");
+        }
+    }, [orderStatus]);
+
     const submitOrder = (data) => {
         console.log(data);
         const sentProducts = products.map(product => {
@@ -29,41 +52,10 @@ export const OrderDetails = ({products, productsLength, price}) => {
             products: sentProducts
         }
         dispatch(sendOrder(orderData));
-        console.log(status);
-        if (status === STATUS.SUCCESS) {
-            //addNotification("Order has been successfully sent", "success");
-            addModal(
-                {
-                    title: "Congratulations!",
-                    content: {
-                        par1: "Your order has been successfully placed on the website.",
-                        par2: "A manager will contact you shortly to confirm your order."
-                    }
-                });
-            dispatch(clearCart());
 
-        } else if (status === STATUS.FAILED) {
-            addNotification("Failed to send order", "error");
-        }
 
 
     }
-
-    // const orderData = {
-    //     name: "John Doe",
-    //     phone: "1234567890",
-    //     email: "johndoe@example.com",
-    //     products: [
-    //         {
-    //             id: 1,
-    //             quantity: 2
-    //         },
-    //         {
-    //             id: 2,
-    //             quantity: 1
-    //         }
-    //     ]
-    // };
 
     return (
         <div className={styles.CartOrderContainer}>

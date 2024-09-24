@@ -11,7 +11,11 @@ const initialState = {
 const orderSlice = createSlice({
     name: "orderReducer",
     initialState,
-    reducers: {},
+    reducers: {
+        clearStatus: (state, action) => {
+            state.status = STATUS.IDLE;
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(sendOrder.pending, (state) => {
             state.status = STATUS.LOADING;
@@ -29,3 +33,4 @@ const orderSlice = createSlice({
 });
 
 export default orderSlice.reducer;
+export const {clearStatus} = orderSlice.actions;

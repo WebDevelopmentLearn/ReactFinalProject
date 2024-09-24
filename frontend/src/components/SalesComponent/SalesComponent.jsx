@@ -47,7 +47,7 @@ export const SalesComponent = () => {
                         //         </div>
                         //     </div>
                         // </Link>
-                            <ProductCard isDiscountPrice={true} key={product.id} data={product} addCartBtn={false}/>
+                            <ProductCard isDiscountPrice={true} key={product.id} productData={product} addCartBtn={false}/>
                         )
                     ) : <h2 className={styles.NoProducts}>No products</h2>
                 )}

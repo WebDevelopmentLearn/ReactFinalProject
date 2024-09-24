@@ -7,25 +7,18 @@ import {getProductsFromCart, removeProductFromCart} from "../../store/reducers/c
 import STATUS from "../../utils/Utils";
 import {CartProductCard, Loader, OrderDetails, SectionSeparator} from "../../components";
 import {useNavigate} from "react-router-dom";
+import {calculateSum} from "../../store/selectors";
 
 export const Cart = () => {
     const navigate = useNavigate();
     const {cartProducts, error, status} = useSelector(state => state.cartReducer);
     const dispatch = useDispatch();
-    const [price, setPrice] = useState(0);
 
-    useEffect(() => {
-        const newPrice = cartProducts.reduce((acc, product) => {
-            let quantity = 1;
-            if ("quantity" in product) {
-                quantity = product.quantity;
-            }
-            return acc + (product.discont_price ? product.discont_price : product.price) * quantity;
-        }, 0);
-
-        setPrice(newPrice);
-        console.log("New price", price);
-    }, [cartProducts]);
+    const price = useSelector(calculateSum);
+    // useEffect(() => {
+    //
+    //     console.log("New price", price);
+    // }, [cartProducts]);
 
 
     const handleClick = () => {

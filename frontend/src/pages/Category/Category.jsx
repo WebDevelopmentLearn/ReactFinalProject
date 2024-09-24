@@ -39,11 +39,11 @@ export const Category = () => {
                     <div>
                         <h1 className={styles.CategoryHeader}>{currentCategory?.category?.title}</h1>
 
-                        <SortControlPanel setSortedBy={setSortedBy} />
+                        <SortControlPanel />
 
                         <div className={styles.CategoryProductsContainer}>
                             {currentCategory?.data?.length ? currentCategory?.data?.map((product) => (
-                                <ProductCard key={product.id} data={product} addCartBtn={true} />
+                                <ProductCard key={product.id} productData={product} addCartBtn={true} />
                             )) : <h2 className={styles.NoProducts}>No products</h2>}
                         </div>
                     </div>

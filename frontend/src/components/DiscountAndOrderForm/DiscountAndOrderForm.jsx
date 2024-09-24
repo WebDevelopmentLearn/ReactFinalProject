@@ -1,18 +1,19 @@
 
 import styles from './DiscountAndOrderForm.module.scss';
 import {useForm} from "react-hook-form";
-export const DiscountAndOrderForm = ({formClass, buttonClass, submitForm, title}) => {
+import STATUS from "../../utils/Utils";
+export const DiscountAndOrderForm = ({status = null, formClass, buttonClass, submitForm, title}) => {
     const {register, handleSubmit, formState: {errors, isValid}} = useForm();
 
     return (
         <form onSubmit={handleSubmit(submitForm)} className={formClass} action="">
-            <input {...register("name", {
+            <input disabled={status === STATUS.SUCCESS} {...register("name", {
                 required: {
                     value: true,
                     message: "Name is required"
                 }
             })} type="text" placeholder="Name"/>
-            <input {...register("phone", {
+            <input disabled={status === STATUS.SUCCESS} {...register("phone", {
                 required: {
                     value: true,
                     message: "phone is required"
@@ -22,7 +23,7 @@ export const DiscountAndOrderForm = ({formClass, buttonClass, submitForm, title}
                     message: "Invalid phone number"
                 }
             })} type="tel" placeholder="Phone number"/>
-            <input {...register("email", {
+            <input disabled={status === STATUS.SUCCESS} {...register("email", {
                 required: {
                     value: true,
                     message: "email is required"
@@ -31,7 +32,7 @@ export const DiscountAndOrderForm = ({formClass, buttonClass, submitForm, title}
             {errors.name && <p className={styles.Error}>{errors.name.message}</p>}
             {errors.phone && <p className={styles.Error}>{errors.phone.message}</p>}
             {errors.email && <p className={styles.Error}>{errors.email.message}</p>}
-            <button className={buttonClass} type="submit">{title}</button>
+            <button disabled={status === STATUS.SUCCESS} className={buttonClass} type="submit">{title}</button>
         </form>
     )
 }

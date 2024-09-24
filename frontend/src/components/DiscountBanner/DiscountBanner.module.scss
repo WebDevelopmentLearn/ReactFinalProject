@@ -47,6 +47,10 @@
       outline: 1px solid $electricPurpleO;
 
     }
+
+    &:disabled {
+      background-color: $grayBG;
+    }
   }
 }
 
@@ -72,6 +76,12 @@
     background-color: $lightCloudBG;
     color: $lightBlueF;
     outline: none;
+  }
+
+  &:disabled {
+    background-color: $grayBG;
+    color: $whiteF;
+    cursor: initial;
   }
 }
 

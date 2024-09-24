@@ -6,8 +6,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {sendDiscountForm} from "../../store/reducers/actionCreators";
 import STATUS from "../../utils/Utils";
 import {NotificationContext} from "../../context/NotificationContext";
-import {useContext} from "react";
+import {useContext, useEffect} from "react";
 import {DiscountAndOrderForm} from "../DiscountAndOrderForm/DiscountAndOrderForm";
+import {clearCart} from "../../store/reducers/cartSlice";
+import {clearStatus} from "../../store/reducers/orderSlice";
 export const DiscountBanner = () => {
     const { addNotification } = useContext(NotificationContext);
     const {register,
@@ -16,6 +18,14 @@ export const DiscountBanner = () => {
 
     const dispatch = useDispatch();
     const {status, error, discount} = useSelector(state => state.discountReducer);
+
+    useEffect(() => {
+        if (status === STATUS.SUCCESS) {
+            addNotification("Discount has been successfully sent", "success");
+        } else if (status === STATUS.FAILED) {
+            addNotification("Failed to send discount", "error");
+        }
+    }, [status]);
 
     const submitForm = (data) => {
         console.log(data);
@@ -26,11 +36,7 @@ export const DiscountBanner = () => {
         }
         dispatch(sendDiscountForm(customerData));
 
-        if (status === STATUS.SUCCESS) {
-            addNotification("Discount has been successfully sent", "success");
-        } else if (status === STATUS.FAILED) {
-            addNotification("Failed to send discount", "error");
-        }
+
     }
 
     if (status === STATUS.SUCCESS) {
@@ -65,7 +71,7 @@ export const DiscountBanner = () => {
                     {/*    })} type="email" placeholder="Email"/>*/}
                     {/*    <button className={styles.GetDiscountBtn} type="submit">Get a discount</button>*/}
                     {/*</form>*/}
-                    <DiscountAndOrderForm submitForm={submitForm} title={"Get a discount"} formClass={`${styles.DiscountForm}`} buttonClass={styles.GetDiscountBtn} />
+                    <DiscountAndOrderForm status={status}  submitForm={submitForm} title={"Get a discount"} formClass={`${styles.DiscountForm}`} buttonClass={styles.GetDiscountBtn} />
                 </div>
             </div>
         </section>

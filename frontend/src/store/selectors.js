@@ -1,9 +1,12 @@
 import {createSelector} from "@reduxjs/toolkit";
 
- const products = (state) => state.productsReducer.products;
+const cart = (state) => state.cartReducer.cartProducts;
+const products = (state) => state.productsReducer.products;
 export const filter = (state) => state.filterReducer;
 
-export const filteredProducts = createSelector([products, filter], (productsFromState, filterFromState) => {
+
+export const filteredProducts = createSelector([products, filter, cart],
+    (productsFromState, filterFromState, cart) => {
     const products = [...productsFromState];
     if (filterFromState.isDiscount) {
         return products
@@ -22,6 +25,12 @@ export const filteredProducts = createSelector([products, filter], (productsFrom
                     return b.discont_price - a.discont_price;
                 }
                 return a.id - b.id;
+            }).map((product) => {
+                if (cart.find((item) => product.id === item.id )) {
+                    return {...product, isInCart: true};
+                } else {
+                    return product;
+                }
             });
     } else {
         return products
@@ -66,6 +75,35 @@ export const filteredProducts = createSelector([products, filter], (productsFrom
                     return b.price - a.price;
                 }
                 return a.id - b.id;
+            }).map((product) => {
+                if (cart.find((item) => product.id === item.id )) {
+                    return {...product, isInCart: true};
+                } else {
+                    return product;
+                }
             });
     }
 });
+
+
+
+export const calculateSum = createSelector([cart], (cart) => {
+    return cart?.reduce((acc, item) => {
+        console.log(acc);
+        return item.discont_price ?
+            item.discont_price * item.quantity + acc :
+            item.price * item.quantity + acc;
+    }, 0);
+})
+
+
+export const selectProductById = createSelector((state) => state?.productsReducer?.products, (state) => state?.cartReducer?.cartProducts,
+    (state, productId) => productId,
+    (products, cartProducts, productId) => {
+
+    const productInCart = cartProducts?.find((item) => item.id === Number(productId));
+    if (productInCart) {
+        return productInCart;
+    } else {
+        return products.find((item) => item.id === Number(productId));
+    }});

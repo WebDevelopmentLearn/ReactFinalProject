@@ -67,6 +67,9 @@
 .DiscountForm input:focus {
   outline: 1px solid #9c60e7;
 }
+.DiscountForm input:disabled {
+  background-color: #8B8B8B;
+}
 
 .GetDiscountBtn {
   background-color: #ffffff;
@@ -88,6 +91,11 @@
   background-color: #F1F3F4;
   color: #0D50FF;
   outline: none;
+}
+.GetDiscountBtn:disabled {
+  background-color: #8B8B8B;
+  color: #ffffff;
+  cursor: initial;
 }
 
 @media screen and (max-width: 1024px) {

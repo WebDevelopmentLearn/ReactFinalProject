@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import styles from './ModalComponent.module.scss';
 import {ModalContext} from "../../context/ModalContext";
-export const ModalComponent = () => {
+export const ModalComponent = ({onClose}) => {
     const { modal, removeModal } = useContext(ModalContext);
 
     return (
@@ -11,7 +11,10 @@ export const ModalComponent = () => {
                     <h5 className="modal-title">
                         {modal?.title || "Заголовок отсутствует"}
                     </h5>
-                    <button onClick={() => removeModal()}>
+                    <button onClick={() => {
+                        modal?.onClose();
+                        removeModal();
+                    }}>
                         <svg width="44" height="44" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
                             <path fill="currentColor" d="M18 6L6 18" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path fill="currentColor" d="M6 6L18 18" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -19,7 +22,6 @@ export const ModalComponent = () => {
                     </button>
                 </div>
                 <div className={styles.ModalContent}>
-                    {/* Если контент существует, отображаем его, иначе скрываем */}
                     {modal?.content ? (
                         Object.keys(modal.content).map((key) => (
                             <p key={key} className={styles.ModalContentDesc}>
@@ -27,7 +29,7 @@ export const ModalComponent = () => {
                             </p>
                         ))
                     ) : (
-                        <div style={{ visibility: 'hidden' }}> {/* Скрываем, но не удаляем контент */}
+                        <div style={{ visibility: 'hidden' }}>
                             <p>Контент отсутствует</p>
                         </div>
                     )}

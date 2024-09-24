@@ -15,18 +15,8 @@
   border: none;
   cursor: pointer;
 
+  transition: background-color 0.5s, color 0.5s;
 
-  //position: absolute;
-  //top: 224px;
-  //left: 50%;
-  //transform: translateX(-50%);
-  //
-  //opacity: 0; /* Изначально скрыта */
-  //visibility: hidden;
-
-
-
-  transition: background-color 0.3s;
   &:hover {
     background-color: $darkGrayBG;
   }
@@ -35,4 +25,11 @@
     background-color: $whiteBG;
     color: $darkGrayF;
   }
+
+  &:disabled {
+    background-color: $whiteBG;
+    color: $darkGrayF;
+    cursor: initial;
+  }
+
 }

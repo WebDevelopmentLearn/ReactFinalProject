@@ -12,13 +12,19 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addProductToCart(state, action) {
-            state.cartProducts = [...state.cartProducts, action.payload];
+            const itemIndex = state.cartProducts.findIndex((item) => item.id === action.payload.id);
+            if (itemIndex >= 0) {
+                state.cartProducts[itemIndex] = action.payload;
+            } else {
+                state.cartProducts.push(action.payload);
+            }
         },
         removeProductFromCart(state, action) {
             state.cartProducts = state.cartProducts.filter(item => item.id !== action.payload);
         },
         clearCart(state) {
             state.cartProducts = [];
+            state.status = STATUS.IDLE;
         },
         increaseQuantity(state, action) {
             const product = state.cartProducts.find(item => item.id === action.payload);
@@ -27,7 +33,6 @@ export const cartSlice = createSlice({
             } else {
                 product.quantity = 2; // Если у товара не было свойства quantity, то добавляем его и устанавливаем в 2
             }
-
         },
         decreaseQuantity(state, action) {
             const product = state.cartProducts.find(item => item.id === action.payload);
@@ -35,11 +40,6 @@ export const cartSlice = createSlice({
                 product.quantity -= 1; // Уменьшаем количество напрямую, если оно больше 1
             }
         }
-
-        // toggleTodo: (state, action) => {
-        //     const currentTodo = state.todos.find(todo => todo.id === action.payload);
-        //     currentTodo.isCompleted = !currentTodo.isCompleted;
-        // }
     }
 });
 

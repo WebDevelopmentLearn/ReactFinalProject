@@ -25,21 +25,7 @@ function App() {
     };
 
     const [modal, setModal] = useState(null);
-//     {title: 'Congratulations!', content: {…}}
-//     content
-//         :
-//         par1
-//             :
-//             "Your order has been successfully placed on the website."
-//     par2
-//         :
-//         "A manager will contact you shortly to confirm your order."
-//             [[Prototype]]
-// :
-//     Object
-//     title
-//         :
-//         "Congratulations!"
+
     const addModal = (contentObj) => {
         const id = Math.random().toString(36).substr(2, 9);
         console.log(contentObj);
@@ -47,7 +33,8 @@ function App() {
             id: id,
             ...contentObj,
             title: contentObj.title,
-            content: contentObj.content
+            content: contentObj.content,
+            onClose: contentObj.onClose
         }
         console.log(objData);
         setModal(objData);
