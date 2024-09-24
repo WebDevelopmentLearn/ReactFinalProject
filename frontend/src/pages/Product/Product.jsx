@@ -18,17 +18,22 @@ export const Product = () => {
     const [product, setProduct] = useState(null);
     const isInCart = Boolean(productFromStore?.quantity);
     const { addNotification } = useContext(NotificationContext);
+
     useEffect(() => {
        if (productFromStore) {
            setProduct(isInCart ? productFromStore : {...productFromStore, quantity: 1})
        }
     }, [productFromStore]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const incrementQuantity = () => {
         setProduct({...product, quantity: product.quantity + 1})
     }
-    //
+
+
     const decrementQuantity = () => {
         if (product?.quantity > 1) {
             setProduct({...product, quantity: product.quantity - 1})

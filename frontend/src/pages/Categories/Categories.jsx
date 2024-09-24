@@ -1,9 +1,9 @@
 import {Layout} from "../../layouts/Layout/Layout";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {BACKEND_URL, getAllCategories} from "../../store/reducers/actionCreators";
+import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import styles from './Categories.module.scss';
-import {Breadcrumbs, Loader} from "../../components";
+import {Loader} from "../../components";
 import {Link} from "react-router-dom";
 import STATUS from "../../utils/Utils";
 import {useBreadcrumbs} from "../../utils/CustomHooks";
@@ -11,10 +11,6 @@ import {useBreadcrumbs} from "../../utils/CustomHooks";
 export const Categories = () => {
 
     const {categories, status, error} = useSelector(state => state.categoriesReducer);
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getAllCategories());
-    }, []);
 
     useBreadcrumbs();
 

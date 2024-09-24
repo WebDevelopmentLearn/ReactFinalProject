@@ -12,7 +12,11 @@ const initialState = {
 const discountSlice = createSlice({
     name: 'discountReducer',
     initialState,
-    reducers: {},
+    reducers: {
+        clearStatus: (state, action) => {
+            state.status = STATUS.IDLE;
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(sendDiscountForm.pending, (state) => {
@@ -32,3 +36,4 @@ const discountSlice = createSlice({
 });
 
 export default discountSlice.reducer;
+export const {clearStatus} = discountSlice.actions;

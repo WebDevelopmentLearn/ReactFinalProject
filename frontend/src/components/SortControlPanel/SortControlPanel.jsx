@@ -44,7 +44,7 @@ export const SortControlPanel = ({showDiscountCheckbox = true}) => {
         }))
         console.log(value);
     }
-    console.log(customFilter);
+
     return (
         <div className={styles.CategorySortPanel}>
 

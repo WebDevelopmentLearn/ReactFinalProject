@@ -2,9 +2,11 @@ import './App.css';
 import {MainRouter} from "../routes/MainRouter";
 import {NotificationContext, NotificationProvider} from "../context/NotificationContext";
 import {ModalComponent, Notification} from "../components/";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import BreadcrumbsContext from "../context/breadcrumbsContext";
 import {ModalContext} from "../context/ModalContext";
+import {useDispatch} from "react-redux";
+import {getAllCategories, getAllProducts} from "../store/reducers/actionCreators";
 
 function App() {
     const [notifications, setNotifications] = useState([]);
@@ -43,6 +45,12 @@ function App() {
     const removeModal = () => {
         setModal(null);
     }
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getAllProducts())
+        dispatch(getAllCategories())
+    }, [dispatch]);
 
     return (
       <NotificationContext.Provider value={{notifications, addNotification, removeNotification}}>

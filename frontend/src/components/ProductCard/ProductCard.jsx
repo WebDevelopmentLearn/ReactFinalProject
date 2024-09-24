@@ -33,6 +33,7 @@ export const ProductCard = ({isDiscountPrice = false, productData, addCartBtn = 
         addNotification("Product has been successfully added to cart", "success");
     }
 
+    // "/categories/"
     return (
         <Link key={productData?.id} to={`${isDiscountPrice ? `/sales/${productData.id}` : `/products/${productData?.id}`}`} className={styles.ProductCard}>
             <img
@@ -42,7 +43,10 @@ export const ProductCard = ({isDiscountPrice = false, productData, addCartBtn = 
                 loading="lazy"
             />
             {addCartBtn &&
-                <AddToCartBtn isDisabled={productData.isInCart} onClick={handleClick}  title={productData.isInCart ? "Added to cart" : "Add to cart"} className={styles.HiddenBtn}  product={productData} />
+                // <button onClick={(event) => handleClick(event)} className={styles.AddToCartBtn}>
+                //     Add to cart
+                // </button>
+                <AddToCartBtn isDisabled={productData?.isInCart} onClick={handleClick}  title={productData?.isInCart ? "Added to cart" : "Add to cart"} className={styles.HiddenBtn}  product={productData} />
             }
 
             <div className={styles.ProductInfo}>

@@ -1,10 +1,9 @@
 
 import styles from "./Sales.module.scss";
 import {Layout} from "../../layouts/Layout/Layout";
-import {Breadcrumbs, Loader, ProductCard, SortControlPanel} from "../../components";
+import {Loader, ProductCard, SortControlPanel} from "../../components";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect, useState} from "react";
-import {getAllProducts} from "../../store/reducers/actionCreators";
+import {useEffect} from "react";
 import STATUS from "../../utils/Utils";
 import {useBreadcrumbs} from "../../utils/CustomHooks";
 import {filteredProducts} from "../../store/selectors";
@@ -17,7 +16,7 @@ export const Sales = () => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getAllProducts());
+        // dispatch(getAllProducts());
         dispatch(toggleDiscount(true));
     }, []);
 

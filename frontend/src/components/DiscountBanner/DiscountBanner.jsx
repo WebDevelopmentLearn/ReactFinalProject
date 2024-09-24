@@ -9,7 +9,7 @@ import {NotificationContext} from "../../context/NotificationContext";
 import {useContext, useEffect} from "react";
 import {DiscountAndOrderForm} from "../DiscountAndOrderForm/DiscountAndOrderForm";
 import {clearCart} from "../../store/reducers/cartSlice";
-import {clearStatus} from "../../store/reducers/orderSlice";
+import {clearStatus} from "../../store/reducers/discountSlice";
 export const DiscountBanner = () => {
     const { addNotification } = useContext(NotificationContext);
     const {register,
@@ -22,6 +22,7 @@ export const DiscountBanner = () => {
     useEffect(() => {
         if (status === STATUS.SUCCESS) {
             addNotification("Discount has been successfully sent", "success");
+            dispatch(clearStatus());
         } else if (status === STATUS.FAILED) {
             addNotification("Failed to send discount", "error");
         }

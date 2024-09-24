@@ -3,11 +3,11 @@ import {SectionSeparator} from "../SectionSeparator/SectionSeparator";
 import styles from './SalesComponent.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {BACKEND_URL, getAllProducts} from "../../store/reducers/actionCreators";
+import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import {Loader} from "../Loader/Loader";
 import {Link} from "react-router-dom";
 import {ProductCard} from "../ProductCard/ProductCard";
-import {status} from "../../utils/Utils";
+import STATUS from "../../utils/Utils";
 
 export const SalesComponent = () => {
 
@@ -17,16 +17,16 @@ export const SalesComponent = () => {
     const randomProducts = products ? products.slice().filter(product => product.discont_price).sort(() => Math.random() - 0.5).slice(0, 4) : [];
 
 
-    useEffect(() => {
-        dispatch(getAllProducts());
-        console.log(randomProducts);
-    }, []);
+    // useEffect(() => {
+    //     dispatch(getAllProducts());
+    //     console.log(randomProducts);
+    // }, []);
 
     return (
         <section className={styles.SalesComponent}>
             <SectionSeparator sectionName="Sale" path="/sales/all" fullSectionName="All sales"/>
             <div className={styles.SaleProductsContainer}>
-                {status === status.LOADING ? <Loader/> : (
+                {status === STATUS.LOADING ? <Loader/> : (
                     randomProducts.length ? randomProducts.map((product) => (
                         // <Link key={product.id} to={`/categories/${product.id}`} className={styles.SaleProduct}>
                         //     <img
@@ -47,7 +47,7 @@ export const SalesComponent = () => {
                         //         </div>
                         //     </div>
                         // </Link>
-                            <ProductCard isDiscountPrice={true} key={product.id} productData={product} addCartBtn={false}/>
+                            <ProductCard isDiscountPrice={true} key={product.id} productData={product} addCartBtn={true}/>
                         )
                     ) : <h2 className={styles.NoProducts}>No products</h2>
                 )}

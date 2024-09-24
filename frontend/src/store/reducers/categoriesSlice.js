@@ -3,7 +3,7 @@ import {getAllCategories, getCategoryById} from "./actionCreators";
 import STATUS from "../../utils/Utils";
 const initialState = {
     categories: [],
-    currentCategory: {},
+    currentCategory: 0,
     status: STATUS.IDLE,
     error: null
 }
