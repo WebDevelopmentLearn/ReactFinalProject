@@ -20,7 +20,9 @@ export const Sales = () => {
         dispatch(toggleDiscount(true));
     }, []);
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
         <Layout>

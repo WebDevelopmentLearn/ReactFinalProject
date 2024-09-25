@@ -19,6 +19,10 @@ export const Categories = () => {
         }
     }, []);
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Layout>
             <div className={styles.Categories}>
