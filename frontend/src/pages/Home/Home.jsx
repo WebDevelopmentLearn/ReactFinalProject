@@ -4,8 +4,6 @@ import styles from './Home.module.scss';
 
 export const Home = () => {
 
-    console.log("Home");
-
     return (
         <Layout>
             <main className={styles.Home}>

@@ -15,17 +15,11 @@ export const Cart = () => {
     const dispatch = useDispatch();
 
     const price = useSelector(calculateSum);
-    // useEffect(() => {
-    //
-    //     console.log("New price", price);
-    // }, [cartProducts]);
 
 
     const handleClick = () => {
         navigate('/products');
     }
-
-    console.log("Cart");
 
     return (
         <Layout>

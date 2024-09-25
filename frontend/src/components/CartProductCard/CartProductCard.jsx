@@ -18,21 +18,18 @@ export const CartProductCard = ({productInd, productCard}) => {
         event.preventDefault();
         event.stopPropagation();
         dispatch(increaseQuantity(productInd));
-        console.log("Increment Amount", amount);
     };
 
     const decrementQuantity = (event) => {
         event.preventDefault();
         event.stopPropagation();
         dispatch(decreaseQuantity(productInd));
-        console.log("Decrement Amount", amount);
     };
 
     const handleRemove = (id, event) => {
         event.preventDefault();
         event.stopPropagation();
         dispatch(removeProductFromCart(id));
-        console.log('Remove', id);
     }
 
 

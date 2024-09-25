@@ -17,7 +17,6 @@ export const Products = () => {
         }
     }, []);
 
-    console.log("Products");
     return (
         <Layout>
             <div className={styles.Category}>

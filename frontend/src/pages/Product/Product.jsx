@@ -45,7 +45,6 @@ export const Product = () => {
         addNotification("Product has been successfully added to cart", "success");
     }
 
-    console.log("Product");
 
     return (
         <Layout>

@@ -25,7 +25,6 @@ export const DiscountBanner = () => {
     }, [status]);
 
     const submitForm = (data) => {
-        // console.log(data);
         const customerData = {
             name: data.name,
             phone: data.phone,

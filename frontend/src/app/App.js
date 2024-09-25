@@ -28,7 +28,6 @@ function App() {
 
     const addModal = (contentObj) => {
         const id = Math.random().toString(36).substr(2, 9);
-        console.log(contentObj);
         const objData = {
             id: id,
             ...contentObj,
@@ -36,7 +35,7 @@ function App() {
             content: contentObj.content,
             onClose: contentObj.onClose
         }
-        console.log(objData);
+
         setModal(objData);
     };
 

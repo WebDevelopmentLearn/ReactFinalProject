@@ -33,14 +33,12 @@ export const OrderDetails = ({products, productsLength, price}) => {
                 });
 
         } else if (orderStatus === STATUS.FAILED && orderError) {
-            console.log(orderError);
             addNotification(orderError, "error");
         }
 
     }, [orderStatus]);
 
     const submitOrder = (data) => {
-        console.log(data);
         const sentProducts = products.map(product => {
             return {
                 id: product.id,

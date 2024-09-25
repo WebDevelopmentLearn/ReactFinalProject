@@ -16,7 +16,6 @@ export const SortControlPanel = ({showDiscountCheckbox = true}) => {
     const dispatch = useDispatch();
     const customFilter = useSelector(filter)
     const handleSelectChange = (value) => {
-        console.log('Selected:', value);
         dispatch(setFilter({
             ...customFilter,
             sort: value
@@ -41,7 +40,6 @@ export const SortControlPanel = ({showDiscountCheckbox = true}) => {
                 to: value
             }
         }))
-        console.log(value);
     }
 
     return (

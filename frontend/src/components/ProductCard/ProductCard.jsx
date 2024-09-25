@@ -5,16 +5,15 @@ import {Link} from "react-router-dom";
 import {useContext} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {addProductToCart} from "../../store/reducers/cartSlice";
-import STATUS from "../../utils/Utils";
 import {AddToCartBtn} from "../AddToCartBtn/AddToCartBtn";
 import {NotificationContext} from "../../context/NotificationContext";
 
 /**
  * Product card component
- * @param data - product data
+ * @param isDiscountPrice - true if discount price should be displayed
+ * @param productData - product data
  * @param addCartBtn - true if add to cart button should be displayed
  * @returns {JSX.Element}
- * @constructor
  */
 export const ProductCard = ({isDiscountPrice = false, productData, addCartBtn = false}) => {
     const { addNotification } = useContext(NotificationContext);

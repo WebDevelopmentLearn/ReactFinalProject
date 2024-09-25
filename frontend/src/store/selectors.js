@@ -1,8 +1,10 @@
 import {createSelector} from "@reduxjs/toolkit";
-import {useSelector} from "react-redux";
 
-export const cart = (state) => state.cartReducer.cartProducts;
-const products = (state) => state.productsReducer.products;
+const cartSlice = (state) => state.cartReducer;
+export const cart = createSelector(cartSlice, (state) => state.cartProducts);
+
+const productsSlice = (state) => state.productsReducer;
+const products = createSelector(productsSlice, (state) => state.products);
 export const filter = (state) => state.filterReducer;
 export const categories = (state) => state.categoriesReducer.categories;
 
@@ -16,11 +18,9 @@ export const filteredProducts = createSelector(
     products, filter, cart,
     (_, categoryId) => categoryId,
     (productsFromState, filterFromState, cart, categoryId) => {
-        console.log("categoryId", categoryId);
         const products = categoryId
             ? [...productsFromState.filter((product) => product.categoryId === Number(categoryId))]
             : [...productsFromState];
-    console.log("products", products);
     if (filterFromState.isDiscount) {
         return products
             .filter((product) => product.discont_price !== null)
@@ -48,7 +48,6 @@ export const filteredProducts = createSelector(
     } else {
         return products
             .filter((product) => {
-                // console.log("product.price", product);
                 return product.discont_price ?
                     product.discont_price >= filterFromState.price.from && product.discont_price <= filterFromState.price.to :
                     product.price >= filterFromState.price.from && product.price <= filterFromState.price.to;

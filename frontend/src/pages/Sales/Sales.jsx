@@ -24,7 +24,6 @@ export const Sales = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    console.log("Sales");
     return (
         <Layout>
             <div className={styles.Sales}>

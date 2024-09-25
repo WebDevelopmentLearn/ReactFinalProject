@@ -21,7 +21,6 @@ export const getAllCategories = createAsyncThunk("categoriesReducer/getAllCatego
 export const getAllProducts = createAsyncThunk("productsReducer/getAllProducts", async () => {
     try {
         const response = await axios.get(`${BACKEND_URL}/products/all`);
-        // console.log(response.data);
         return response.data;
     } catch (error) {
         throw new Error(error);
@@ -41,7 +40,6 @@ export const getAllProductsAndCategories = () => {
 export const getProductById = createAsyncThunk("productsReducer/getProductById", async (productId) => {
     try {
         const response = await axios.get(`${BACKEND_URL}/products/${productId}`);
-        // console.log(response.data);
         return response.data;
     } catch (error) {
         throw new Error(error);
@@ -59,7 +57,6 @@ export const sendDiscountForm = createAsyncThunk("discountReducer/sendDiscountFo
         //     }
         // })
         const response = await axios.post(`${BACKEND_URL}/sale/send`, data);
-        // console.log(response.data);
         return response.data;
     } catch (error) {
         throw new Error(error);
@@ -72,7 +69,6 @@ export const sendDiscountForm = createAsyncThunk("discountReducer/sendDiscountFo
 export const sendOrder = createAsyncThunk("orderReducer/sendOrder", async (orderData) => {
     try {
         const response = await axios.post(`${BACKEND_URL}/order/send`, {});
-        console.log(response.data);
         return response.data;
     } catch (error) {
         throw new Error(error);
