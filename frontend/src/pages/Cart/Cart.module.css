@@ -27,7 +27,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
-  flex-wrap: wrap;
+  gap: 16px;
 }
 .CartContainer .CartProducts {
   display: flex;
@@ -66,6 +66,9 @@
     gap: 16px;
   }
   .CartContainer .CartOrderContainer {
+    width: 100%;
+  }
+  .CartContainer .CartOrderContainer .CartProducts {
     width: 100%;
   }
 }

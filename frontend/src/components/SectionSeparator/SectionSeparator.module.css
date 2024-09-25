@@ -68,5 +68,11 @@
     display: none;
   }
 }
+@media screen and (max-width: 425px) {
+  .CategoriesPanel .CategoriesHeader {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+}
 
 /*# sourceMappingURL=SectionSeparator.module.css.map */

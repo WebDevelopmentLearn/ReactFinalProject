@@ -120,6 +120,11 @@
   width: 10px;
 }
 
+@media screen and (max-width: 1024px) {
+  .CartProductCard {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
   .CartProductCard {
     flex-direction: column;

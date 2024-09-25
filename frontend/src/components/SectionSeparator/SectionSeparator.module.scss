@@ -70,6 +70,15 @@
       display: none;
     }
   }
+}
 
+@media screen and (max-width: 425px){
+  .CategoriesPanel {
+    .CategoriesHeader {
+      //font-size: 4.8rem;
+      @include fontSizeAndWeight(4.0rem, 700);
+    }
+
+  }
 
 }

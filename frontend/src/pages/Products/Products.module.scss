@@ -1,0 +1,44 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.Category {
+  padding: 0 40px;
+}
+
+.CategoryHeader {
+  @include fontSizeAndWeight($fontSize64, 700);
+}
+
+
+////////////////////////
+
+
+.CategoryProductsContainer {
+  @include flex(row, center, start);
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .Category {
+    padding: 0 16px;
+  }
+
+  .CategoryProductsContainer{
+
+    gap: 12px;
+  }
+
+
+}
+
+@media screen and (max-width: 425px){
+  .CategoryHeader {
+    //font-size: 4.8rem;
+    @include fontSizeAndWeight(4.8rem, 700);
+
+  }
+
+}

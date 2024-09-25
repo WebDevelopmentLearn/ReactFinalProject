@@ -56,3 +56,33 @@
     }
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .CartOrderContainer {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .CartOrderContainer {
+    padding: 16px;
+    text-align: start;
+
+    .CartOrderTitle {
+      @include fontSizeAndWeight($fontSize30, 700);
+    }
+
+    .CartProductsCountPar, .CartProductsTotalPar {
+        @include fontSizeAndWeight($fontSize30, 500);
+    }
+  }
+
+
+  .CartOrderPriceContainer {
+    .CartProductsPricePar {
+      @include fontSizeAndWeight($fontSize40, 700);
+    }
+  }
+
+
+}

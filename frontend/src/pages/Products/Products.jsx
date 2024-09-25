@@ -1,13 +1,11 @@
 import {Layout} from "../../layouts/Layout/Layout";
-import styles from "../Category/Category.module.scss";
+import styles from "./Products.module.scss";
 import {Loader, ProductCard, SortControlPanel} from "../../components";
 import {useSelector} from "react-redux";
 import STATUS from "../../utils/Utils";
 import {filteredProducts} from "../../store/selectors";
 import {useContext, useEffect} from "react";
 import {NotificationContext} from "../../context/NotificationContext";
-
-
 
 export const Products = () => {
     const {status, error} = useSelector(state => state.productsReducer);

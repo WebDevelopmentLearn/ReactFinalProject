@@ -40,5 +40,11 @@
     gap: 12px;
   }
 }
+@media screen and (max-width: 425px) {
+  .SalesHeader {
+    font-size: 4.8rem;
+    font-weight: 700;
+  }
+}
 
 /*# sourceMappingURL=Sales.module.css.map */
