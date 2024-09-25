@@ -23,6 +23,8 @@ export const Categories = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    console.log("Categories");
+
     return (
         <Layout>
             <div className={styles.Categories}>

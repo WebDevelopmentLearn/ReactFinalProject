@@ -64,13 +64,15 @@
 
 .removeBtnIcon {
   color: #282828;
-  transition: color 0.5s;
+  transition: color 0.5s, transform 0.5s;
 }
 .removeBtnIcon:hover {
   color: #db2e2e;
+  transform: scale(1.35);
 }
 .removeBtnIcon:active {
   color: #b02626;
+  transform: scale(0.9);
 }
 
 .QuantityAndPrice {

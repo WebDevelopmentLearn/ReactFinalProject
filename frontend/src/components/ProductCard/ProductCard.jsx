@@ -33,7 +33,12 @@ export const ProductCard = ({isDiscountPrice = false, productData, addCartBtn = 
     }
 
     return (
-        <Link key={productData?.id} to={`${isDiscountPrice ? `/sales/${productData.id}` : `/products/${productData?.id}`}`} className={styles.ProductCard}>
+        <Link key={productData?.id} to={
+            `${isDiscountPrice ? 
+                `/sales/${productData.id}` : 
+                `/products/${productData?.id}`
+            
+            }`} className={styles.ProductCard}>
             <img
                 className={styles.ProductImage}
                 src={`${BACKEND_URL}/${productData?.image}`}

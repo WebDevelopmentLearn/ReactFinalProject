@@ -3,6 +3,9 @@ import {AboutBanner, CategoriesComponent, DiscountBanner, SalesComponent} from "
 import styles from './Home.module.scss';
 
 export const Home = () => {
+
+    console.log("Home");
+
     return (
         <Layout>
             <main className={styles.Home}>

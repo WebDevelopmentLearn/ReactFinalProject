@@ -46,14 +46,16 @@
 
 .removeBtnIcon {
   color: $darkGrayF;
-  transition: color 0.5s;
+  transition: color 0.5s, transform 0.5s;
 
   &:hover {
     color: $redF;
+    transform: scale(1.35);
   }
 
   &:active {
     color: #b02626;
+    transform: scale(0.9);
   }
 
 }

@@ -8,22 +8,12 @@ export const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhos
 export const getAllCategories = createAsyncThunk("categoriesReducer/getAllCategories", async () => {
     try {
         const response = await axios.get(`${BACKEND_URL}/categories/all`);
-
         return response.data;
     } catch (error) {
         throw new Error(error);
     }
 });
 
-export const getCategoryById = createAsyncThunk("categoriesReducer/getCategoryById", async (categoryId) => {
-    try {
-        const response = await axios.get(`${BACKEND_URL}/categories/${categoryId}`);
-        // console.log(response.data);
-        return response.data;
-    } catch (error) {
-        throw new Error(error);
-    }
-});
 // ================ КАТЕГОРИИ [КОНЕЦ] ====================
 
 
@@ -37,6 +27,16 @@ export const getAllProducts = createAsyncThunk("productsReducer/getAllProducts",
         throw new Error(error);
     }
 });
+
+
+export const getAllProductsAndCategories = () => {
+    return (dispatch) => {
+        dispatch(getAllCategories());
+        dispatch(getAllProducts());
+    }
+}
+
+
 
 export const getProductById = createAsyncThunk("productsReducer/getProductById", async (productId) => {
     try {

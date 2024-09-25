@@ -25,6 +25,8 @@ export const Cart = () => {
         navigate('/products');
     }
 
+    console.log("Cart");
+
     return (
         <Layout>
             <div className={styles.Cart}>

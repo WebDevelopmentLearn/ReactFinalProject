@@ -1,16 +1,29 @@
 import {SectionSeparator} from "../SectionSeparator/SectionSeparator";
 
 import styles from './SalesComponent.module.scss';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Loader} from "../Loader/Loader";
 import {ProductCard} from "../ProductCard/ProductCard";
 import STATUS from "../../utils/Utils";
-import {useContext, useEffect} from "react";
+import {useContext, useEffect, useMemo} from "react";
 import {NotificationContext} from "../../context/NotificationContext";
+import {filteredProducts} from "../../store/selectors";
+import {toggleDiscount} from "../../store/reducers/filterSlice";
 
 export const SalesComponent = () => {
-    const {products, status, error} = useSelector(state => state.productsReducer);
-    const randomProducts = products ? products.slice().filter(product => product.discont_price).sort(() => Math.random() - 0.5).slice(0, 4) : [];
+    const {status, error} = useSelector(state => state.productsReducer);
+    const products = useSelector(filteredProducts);
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+        // dispatch(getAllProducts());
+        dispatch(toggleDiscount(true));
+    }, []);
+
+    const randomProducts = useMemo(() => {
+        return products.slice().filter(product => product.discont_price).sort(() => Math.random() - 0.5).slice(0, 4);
+    }, [products]);
+
 
     const {addNotification} = useContext(NotificationContext);
     useEffect(() => {

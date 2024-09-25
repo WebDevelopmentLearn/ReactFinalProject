@@ -6,7 +6,7 @@ import React, {useEffect, useState} from "react";
 import {BreadcrumbsContext} from "../context/BreadcrumbsContext";
 import {ModalContext} from "../context/ModalContext";
 import {useDispatch} from "react-redux";
-import {getAllCategories, getAllProducts} from "../store/reducers/actionCreators";
+import {getAllProductsAndCategories} from "../store/reducers/actionCreators";
 
 function App() {
     const [notifications, setNotifications] = useState([]);
@@ -17,11 +17,10 @@ function App() {
         setNotifications((prev) => [...prev, { id, message, type }]);
 
         // Автоматическое удаление через 5 секунд
-        setTimeout(() => removeNotification(id), 5000);
+        setTimeout(() => removeNotification(id), 2000);
     };
 
     const removeNotification = (id) => {
-
         setNotifications((prev) => prev.filter((notification) => notification.id !== id));
     };
 
@@ -47,8 +46,7 @@ function App() {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(getAllProducts())
-        dispatch(getAllCategories())
+        dispatch(getAllProductsAndCategories())
     }, [dispatch]);
 
     return (
