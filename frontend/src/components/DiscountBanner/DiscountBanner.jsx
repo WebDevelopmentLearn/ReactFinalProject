@@ -20,7 +20,7 @@ export const DiscountBanner = () => {
             addNotification("Discount has been successfully sent", "success");
             // dispatch(clearStatus());
         } else if (status === STATUS.FAILED && error) {
-            addNotification(error, "error");
+            addNotification("An error occurred while submitting the form", "error");
         }
     }, [status]);
 

@@ -15,7 +15,7 @@ export const Categories = () => {
     const {addNotification} = useContext(NotificationContext);
     useEffect(() => {
         if (error) {
-            addNotification(error, "error");
+            addNotification("An error occurred while retrieving categories", "error");
         }
     }, []);
 

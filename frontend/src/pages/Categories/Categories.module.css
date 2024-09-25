@@ -31,6 +31,11 @@
   flex-wrap: wrap;
   gap: 32px;
 }
+.CategoriesContainer .NoCategories {
+  font-size: 4rem;
+  font-weight: 600;
+  text-align: center;
+}
 
 @media screen and (max-width: 425px) {
   .Categories {

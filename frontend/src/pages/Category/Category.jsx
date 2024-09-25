@@ -19,7 +19,7 @@ export const Category = () => {
     const {addNotification} = useContext(NotificationContext);
     useEffect(() => {
         if (error) {
-            addNotification(error, "error");
+            addNotification("An error occurred when receiving products", "error");
         }
     }, []);
 

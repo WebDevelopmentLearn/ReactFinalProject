@@ -3,14 +3,15 @@ import styles from "./Sales.module.scss";
 import {Layout} from "../../layouts/Layout/Layout";
 import {Loader, ProductCard, SortControlPanel} from "../../components";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
+import {useContext, useEffect} from "react";
 import STATUS from "../../utils/Utils";
 
 import {filteredProducts} from "../../store/selectors";
 import {toggleDiscount} from "../../store/reducers/filterSlice";
+import {NotificationContext} from "../../context/NotificationContext";
 
 export const Sales = () => {
-
+    const {addNotification} = useContext(NotificationContext);
     const {status, error} = useSelector(state => state.productsReducer);
     const products = useSelector(filteredProducts);
 
@@ -22,6 +23,9 @@ export const Sales = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        if (error) {
+            addNotification("An error occurred when receiving discount products", "error");
+        }
     }, []);
 
     return (

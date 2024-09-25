@@ -18,6 +18,11 @@
   flex-wrap: wrap;
   gap: 32px;
   margin-top: 40px;
+
+  .NoProducts {
+    @include fontSizeAndWeight($fontSize40, 600);
+    text-align: center;
+  }
 }
 
 

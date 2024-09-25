@@ -22,8 +22,6 @@
 a {
   text-decoration: none;
   color: $darkGrayF;
-  //font-size: 2rem;
-  //font-weight: 500;
   @include fontSizeAndWeight(2rem, 500);
   text-align: center;
 }
