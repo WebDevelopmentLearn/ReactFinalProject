@@ -1,6 +1,6 @@
 import {createSelector} from "@reduxjs/toolkit";
 
-const cart = (state) => state.cartReducer.cartProducts;
+export const cart = (state) => state.cartReducer.cartProducts;
 const products = (state) => state.productsReducer.products;
 export const filter = (state) => state.filterReducer;
 

@@ -28,6 +28,7 @@
 
 .CartProductImg {
   max-height: 180px;
+  max-width: 180px;
 }
 
 .CartProductCardInfoContainer {
@@ -42,7 +43,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   gap: 16px;
 }
 .CartProductTitleAndBtn .CartProductTitle {
@@ -50,12 +51,26 @@
   font-weight: 500;
   color: #282828;
   max-width: 400px;
+  text-align: start;
 }
 .CartProductTitleAndBtn .CartProductRemoveBtn {
+  width: 14px;
+  height: 14px;
   border: none;
   background-color: transparent;
   color: #282828;
   outline: none;
+}
+
+.removeBtnIcon {
+  color: #282828;
+  transition: color 0.5s;
+}
+.removeBtnIcon:hover {
+  color: #db2e2e;
+}
+.removeBtnIcon:active {
+  color: #b02626;
 }
 
 .QuantityAndPrice {

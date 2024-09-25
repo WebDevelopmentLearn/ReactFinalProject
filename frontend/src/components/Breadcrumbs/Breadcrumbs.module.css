@@ -20,7 +20,7 @@
   align-items: center;
   flex-wrap: wrap;
   list-style: none;
-  margin: 40px;
+  padding: 40px;
   gap: 32px;
 }
 .breadcrumb .crumbLink, .breadcrumb div {
@@ -39,28 +39,11 @@
 .breadcrumb div {
   color: #282828;
 }
-.breadcrumb hr {
-  border: 1px solid #dddddd;
-  transform: rotate(180deg);
-  width: 16px;
-}
 
-.breadcrumbItem {
-  margin-right: 5px;
-}
-
-.breadcrumbItemActive {
-  font-weight: bold;
-  color: #333;
-}
-
-.breadcrumbItem a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-.breadcrumbItem a:hover {
-  text-decoration: underline;
+@media screen and (max-width: 1024px) {
+  .breadcrumb {
+    padding: 16px;
+  }
 }
 
 /*# sourceMappingURL=Breadcrumbs.module.css.map */

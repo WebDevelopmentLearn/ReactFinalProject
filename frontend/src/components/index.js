@@ -1,21 +1,33 @@
-
+// ========= Universal Components =========
 export {Navbar} from './Navbar/Navbar';
-export {CartComponent} from './CartComponent/CartComponent';
-export {AboutBanner} from './AboutBanner/AboutBanner';
-export {CategoriesComponent} from './CategoriesComponent/CategoriesComponent';
 export {Loader} from './Loader/Loader';
-export {DiscountBanner} from './DiscountBanner/DiscountBanner';
-export {SectionSeparator} from './SectionSeparator/SectionSeparator';
-export {SalesComponent} from './SalesComponent/SalesComponent';
-export {CardSection} from './CardSection/CardSection';
 export {Footer} from './Footer/Footer';
 export {Breadcrumbs} from './Breadcrumbs/Breadcrumbs';
+export {SectionSeparator} from './SectionSeparator/SectionSeparator';
 export {CustomSelect} from './CustomSelect/CustomSelect';
 export {ProductCard} from './ProductCard/ProductCard';
-export {Notification} from './Notification/Notification';
 export {SortControlPanel} from './SortControlPanel/SortControlPanel';
-export {CartProductCard} from './CartProductCard/CartProductCard';
-export {OrderDetails} from './OrderDetails/OrderDetails';
 export {AddToCartBtn} from './AddToCartBtn/AddToCartBtn';
 export {DiscountAndOrderForm} from './DiscountAndOrderForm/DiscountAndOrderForm';
+// ========= Universal Components =========
+
+
+// ========= Notifications Components =========
+export {Notification} from './Notification/Notification';
 export {ModalComponent} from './ModalComponent/ModalComponent';
+// ========= Notifications Components =========
+
+
+// ========= Home Page Components =========
+export {AboutBanner} from './AboutBanner/AboutBanner';
+export {CategoriesComponent} from './CategoriesComponent/CategoriesComponent';
+export {DiscountBanner} from './DiscountBanner/DiscountBanner';
+export {SalesComponent} from './SalesComponent/SalesComponent';
+// ========= Home Page Components =========
+
+
+// ========= Cart Page Components =========
+export {CartComponent} from './CartComponent/CartComponent';
+export {CartProductCard} from './CartProductCard/CartProductCard';
+export {OrderDetails} from './OrderDetails/OrderDetails';
+// ========= Cart Page Components =========

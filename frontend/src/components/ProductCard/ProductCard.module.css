@@ -89,7 +89,7 @@
   top: 224px;
   left: 50%;
   transform: translateX(-50%);
-  opacity: 0; /* Изначально скрыта */
+  opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s, visibility 0.5s;
 }
@@ -107,7 +107,7 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .AddToCartBtn {
+  .AddToCartBtn, .HiddenBtn {
     opacity: 1;
     visibility: visible;
   }

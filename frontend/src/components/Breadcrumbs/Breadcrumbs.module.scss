@@ -5,8 +5,7 @@
   @include flex(row, start, center);
   flex-wrap: wrap;
   list-style: none;
-  margin: 40px;
-  //height: 36px;
+  padding: 40px;
   gap: 32px;
 
   .crumbLink {
@@ -30,32 +29,19 @@
   div {
     @extend .crumbLink;
     color: $darkGrayF;
-
-
   }
 
-  hr {
-    border: 1px solid $lightGrayB;
-    transform: rotate(180deg);
-    width: 16px;
-  }
+  //hr {
+  //  border: 1px solid $lightGrayB;
+  //  transform: rotate(180deg);
+  //  width: 16px;
+  //}
 
 }
 
-.breadcrumbItem {
-  margin-right: 5px;
-}
 
-.breadcrumbItemActive {
-  font-weight: bold;
-  color: #333;
-}
-
-.breadcrumbItem a {
-  text-decoration: none;
-  color: $brightBlueF;
-}
-
-.breadcrumbItem a:hover {
-  text-decoration: underline;
+@media screen and (max-width: 1024px) {
+    .breadcrumb {
+        padding: 16px;
+    }
 }

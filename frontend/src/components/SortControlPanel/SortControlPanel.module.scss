@@ -5,6 +5,7 @@
   @include flex(row, start, center);
   flex-wrap: wrap;
   gap: 40px;
+  margin-top: 40px;
 
   span {
     @include fontSizeAndWeight(2rem, 500);

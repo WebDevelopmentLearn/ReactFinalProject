@@ -39,6 +39,9 @@
       padding: 16px 32px;
       border: 1px solid $lightGrayB;
       border-radius: 6px;
+
+      color: $darkGrayF;
+      @include fontSizeAndWeight($fontSize16, 500);
     }
 
     .CartOrderBtn {

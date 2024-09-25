@@ -31,8 +31,7 @@
 
 .ProductInfo {
   padding: 20px 32px 0 32px;
-  //@include flex(column, start, start);
-    gap: 16px;
+  gap: 16px;
 
   //.ProductTitleHeader {
   //  white-space: nowrap; /* Предотвращает перенос текста */
@@ -102,13 +101,10 @@
   left: 50%;
   transform: translateX(-50%);
 
-  opacity: 0; /* Изначально скрыта */
+  opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s, visibility 0.5s;
 
-  //&:hover {
-  //
-  //}
 }
 
 .ProductCard:hover .HiddenBtn {
@@ -120,11 +116,6 @@
 
 
 @media screen and (max-width: 1024px) {
-  //.ProductCard {
-  //  width: 216px;
-  //  min-height: 284px;
-  //}
-
   .AddToCartBtn {
     width: 75%;
     padding: 8px 16px;
@@ -135,7 +126,7 @@
 
 
 @media screen and (max-width: 768px) {
-  .AddToCartBtn {
+  .AddToCartBtn, .HiddenBtn {
     opacity: 1;
     visibility: visible;
   }

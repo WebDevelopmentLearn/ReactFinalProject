@@ -20,6 +20,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 40px;
+  margin-top: 40px;
 }
 .CategorySortPanel span {
   font-size: 2rem;

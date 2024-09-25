@@ -24,7 +24,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
     @include fontSizeAndWeight($fontSize20, 500);
+}
+
+.closeNotificationBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 

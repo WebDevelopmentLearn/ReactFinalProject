@@ -9,44 +9,53 @@
   gap: 32px;
   border: 1px solid $lightGrayB;
   border-radius: 12px;
-  //position: relative;
 }
 
 .CartProductImg {
   max-height: 180px;
+    max-width: 180px;
 }
 
 .CartProductCardInfoContainer {
-  //width: 548px;
   padding: 32px 32px 32px 0;
   @include flex(column, space-between, start);
 
 }
 
 .CartProductTitleAndBtn {
-    @include flex(row, space-between, center);
+    @include flex(row, space-between, start);
     gap: 16px;
 
-    //width: 100%;
 
   .CartProductTitle {
     @include fontSizeAndWeight($fontSize20, 500);
     color: $darkGrayF;
     max-width: 400px;
+    text-align: start;
   }
 
   .CartProductRemoveBtn {
-    //width: 12px;
-    //height: 12px;
-    //cursor: pointer;
+    width: 14px;
+    height: 14px;
     border: none;
     background-color: transparent;
     color: $darkGrayF;
     outline: none;
-    //position: absolute;
-    //top: 32px;
-    //right: 32px;
   }
+}
+
+.removeBtnIcon {
+  color: $darkGrayF;
+  transition: color 0.5s;
+
+  &:hover {
+    color: $redF;
+  }
+
+  &:active {
+    color: #b02626;
+  }
+
 }
 
 .QuantityAndPrice {

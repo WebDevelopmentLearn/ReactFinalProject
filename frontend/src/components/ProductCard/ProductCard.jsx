@@ -9,7 +9,6 @@ import STATUS from "../../utils/Utils";
 import {AddToCartBtn} from "../AddToCartBtn/AddToCartBtn";
 import {NotificationContext} from "../../context/NotificationContext";
 
-
 /**
  * Product card component
  * @param data - product data
@@ -59,4 +58,4 @@ export const ProductCard = ({isDiscountPrice = false, productData, addCartBtn = 
             </div>
         </Link>
     )
-}
+};

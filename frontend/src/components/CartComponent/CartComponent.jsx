@@ -2,9 +2,11 @@ import styles from './CartComponent.module.scss';
 
 import {NavLink} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {cart} from "../../store/selectors";
 export const CartComponent = ({className, ...props}) => {
-    const {cartProducts} = useSelector(state => state.cartReducer);
+    const cartProducts = useSelector(cart);
     const count = cartProducts.length;
+
     return (
         <NavLink className={className} to="/cart">
             <div className={styles.iconWrapper}>

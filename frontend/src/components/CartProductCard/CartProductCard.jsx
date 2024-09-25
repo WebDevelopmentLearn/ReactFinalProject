@@ -43,7 +43,13 @@ export const CartProductCard = ({productInd, productCard}) => {
                 <div className={styles.CartProductTitleAndBtn}>
                     <h3 className={styles.CartProductTitle}>{product.title}</h3>
                     <button className={styles.CartProductRemoveBtn} onClick={(event) => handleRemove(productInd, event)}>
-                        <img src={x_icon} alt="Remove product"/>
+                        <svg className={styles.removeBtnIcon} width="30" height="30" viewBox="0 0 24 24" fill="none"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M18 6L6 18" stroke="currentColor" strokeWidth="2"
+                                  strokeLinecap="round" strokeLinejoin="round"/>
+                            <path fill="currentColor" d="M6 6L18 18" stroke="currentColor" strokeWidth="2"
+                                  strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
                     </button>
                 </div>
                 <div className={styles.QuantityAndPrice}>

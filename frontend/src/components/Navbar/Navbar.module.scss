@@ -8,14 +8,11 @@
     flex-wrap: wrap;
 
     padding: 30px 40px;
-    //padding: 1rem 2rem;
+
     background-color: $ghostWhiteO;
-    //box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
     a {
         text-decoration: none;
-        //font-size: 2rem;
-        //font-weight: 500;
         @include fontSizeAndWeight(2rem, 500);
         color: #282828FF;
     }
@@ -27,9 +24,6 @@
 }
 
 .navbarCenterLinks {
-    //display: flex;
-    //justify-content: center;
-    //align-items: center;
     @include flex(row, center, center);
     gap: 32px;
 }
@@ -75,13 +69,6 @@
 }
 
 @media screen and (max-width: 768px) {
-    //.Navbar {
-    //    padding: 20px 30px;
-    //}
-    //
-    //.navbarCenterLinks {
-    //    gap: 16px;
-    //}
 
     .Navbar {
         //flex-direction: column;
@@ -104,16 +91,13 @@
         gap: 0.3rem;
         width: 40px;
         height: 40px;
-        //background-color: red;
         cursor: pointer;
     }
 
     .cartBtnOpen {
         display: block;
-
         //opacity: 1;
         //visibility: visible;
-
     }
 
     .navbarCenterLinksOpen {
@@ -130,8 +114,5 @@
         padding: 32px;
         border-radius: 0 0 16px 16px;
     }
-
-
-
 
 }
