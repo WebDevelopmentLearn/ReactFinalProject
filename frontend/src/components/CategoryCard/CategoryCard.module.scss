@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.CategoryCard {
+  width: 316px;
+
+  img {
+    width: 100%;
+  }
+
+  .CategoryName {
+    @include fontSizeAndWeight($fontSize20, 500);
+  }
+
+  transition: transform 0.5s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Category {
+    width: 100%;
+
+    .CategoryName {
+      @include fontSizeAndWeight($fontSize30, 500);
+    }
+  }
+}

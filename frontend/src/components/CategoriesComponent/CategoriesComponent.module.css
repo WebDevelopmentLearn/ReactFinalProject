@@ -25,16 +25,6 @@
   flex-wrap: wrap;
   gap: 32px;
 }
-.CategoriesContainer .Category {
-  width: 316px;
-}
-.CategoriesContainer .Category img {
-  width: 100%;
-}
-.CategoriesContainer .Category .CategoryName {
-  font-size: 2rem;
-  font-weight: 500;
-}
 
 .NoCategories {
   font-size: 4rem;
@@ -63,13 +53,6 @@ a {
     justify-content: center;
     align-items: center;
     gap: 32px;
-  }
-  .CategoriesContainer .Category {
-    width: 100%;
-  }
-  .CategoriesContainer .Category .CategoryName {
-    font-size: 3rem;
-    font-weight: 500;
   }
 }
 

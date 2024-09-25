@@ -16,17 +16,7 @@
   flex-wrap: wrap;
   gap: 32px;
 
-  .Category {
-    width: 316px;
 
-    img {
-      width: 100%;
-    }
-
-    .CategoryName {
-      @include fontSizeAndWeight($fontSize20, 500);
-    }
-  }
 }
 
 

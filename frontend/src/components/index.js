@@ -6,6 +6,7 @@ export {Breadcrumbs} from './Breadcrumbs/Breadcrumbs';
 export {SectionSeparator} from './SectionSeparator/SectionSeparator';
 export {CustomSelect} from './CustomSelect/CustomSelect';
 export {ProductCard} from './ProductCard/ProductCard';
+export {CategoryCard} from './CategoryCard/CategoryCard';
 export {SortControlPanel} from './SortControlPanel/SortControlPanel';
 export {AddToCartBtn} from './AddToCartBtn/AddToCartBtn';
 export {DiscountAndOrderForm} from './DiscountAndOrderForm/DiscountAndOrderForm';
