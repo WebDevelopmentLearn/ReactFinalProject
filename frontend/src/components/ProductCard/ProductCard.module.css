@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**
     * Font
  */
@@ -40,9 +39,9 @@
 }
 
 .ProductTitle {
-  white-space: nowrap; /* Предотвращает перенос текста */
-  overflow: hidden; /* Прячет текст, который не помещается */
-  text-overflow: ellipsis; /* Добавляет многоточие */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 2rem;
   font-weight: 500;
   color: #282828;

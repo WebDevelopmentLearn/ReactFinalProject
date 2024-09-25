@@ -14,10 +14,9 @@ export const Sales = () => {
     const {addNotification} = useContext(NotificationContext);
     const {status, error} = useSelector(state => state.productsReducer);
     const products = useSelector(filteredProducts);
-
     const dispatch = useDispatch();
+
     useEffect(() => {
-        // dispatch(getAllProducts());
         dispatch(toggleDiscount(true));
     }, []);
 

@@ -10,7 +10,7 @@ export const NotFound = () => {
     return (
         <Layout>
             <div className={styles.NotFound}>
-                <div className={styles.NotFoundImg}>
+                <div>
                     <img className={styles.NotFoundFourImg} src={notfoundImg} alt="notfound_img"/>
                 </div>
                 <div className={styles.NotFoundInfo}>

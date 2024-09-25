@@ -1,4 +1,3 @@
-
 import styles from './DiscountBanner.module.scss';
 import discountImg from '../../assets/home/discount_bg.png';
 import {useDispatch, useSelector} from "react-redux";
@@ -7,18 +6,16 @@ import STATUS from "../../utils/Utils";
 import {NotificationContext} from "../../context/NotificationContext";
 import {useContext, useEffect} from "react";
 import {DiscountAndOrderForm} from "../DiscountAndOrderForm/DiscountAndOrderForm";
-import {clearStatus} from "../../store/reducers/discountSlice";
 
 export const DiscountBanner = () => {
     const { addNotification } = useContext(NotificationContext);
 
     const dispatch = useDispatch();
-    const {status, error, discount} = useSelector(state => state.discountReducer);
+    const {status, error} = useSelector(state => state.discountReducer);
 
     useEffect(() => {
         if (status === STATUS.SUCCESS) {
             addNotification("Discount has been successfully sent", "success");
-            // dispatch(clearStatus());
         } else if (status === STATUS.FAILED && error) {
             addNotification("An error occurred while submitting the form", "error");
         }
@@ -36,7 +33,6 @@ export const DiscountBanner = () => {
 
     return (
         <section className={styles.DiscountBanner}>
-            {}
             <div className={styles.DiscountBannerContainer}>
                 <h1 className={styles.DiscountHeader}>5% off on the first order</h1>
                 <div className={styles.DiscountContent}>

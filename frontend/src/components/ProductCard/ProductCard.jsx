@@ -1,9 +1,8 @@
-
 import styles from './ProductCard.module.scss';
 import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import {Link} from "react-router-dom";
 import {useContext} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {addProductToCart} from "../../store/reducers/cartSlice";
 import {AddToCartBtn} from "../AddToCartBtn/AddToCartBtn";
 import {NotificationContext} from "../../context/NotificationContext";
@@ -18,7 +17,6 @@ import {NotificationContext} from "../../context/NotificationContext";
 export const ProductCard = ({isDiscountPrice = false, productData, addCartBtn = false}) => {
     const { addNotification } = useContext(NotificationContext);
     const dispatch = useDispatch();
-    const {status} = useSelector(state => state.cartReducer);
 
     const handleClick = (event, product) => {
         event.stopPropagation();

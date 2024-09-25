@@ -3,7 +3,6 @@ import {useContext} from "react";
 import {BreadcrumbsContext} from "../../context/BreadcrumbsContext";
 import {useBreadcrumbs} from "../../utils/CustomHooks";
 
-
 export const Layout = ({children}) => {
     const {crumbs} = useContext(BreadcrumbsContext);
     useBreadcrumbs();

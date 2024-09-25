@@ -5,7 +5,6 @@
 
 .ProductCard {
   width: 316px;
-  //height: 422px;
   position: relative;
   border-radius: 12px;
   border: 1px solid $lightGrayB;
@@ -18,7 +17,6 @@
 
   &:hover, &:active {
     background-color: #E9E9E9FF;
-    //transform: scale(1.02);
   }
 }
 
@@ -33,28 +31,16 @@
   padding: 20px 32px 0 32px;
   gap: 16px;
 
-  //.ProductTitleHeader {
-  //  white-space: nowrap; /* Предотвращает перенос текста */
-  //  overflow: hidden; /* Прячет текст, который не помещается */
-  //  text-overflow: ellipsis; /* Добавляет многоточие */
-  //}
-
-
 }
 
 .ProductTitle {
-  white-space: nowrap; /* Предотвращает перенос текста */
-  overflow: hidden; /* Прячет текст, который не помещается */
-  text-overflow: ellipsis; /* Добавляет многоточие */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   @include fontSizeAndWeight($fontSize20, 500);
   color: $darkGrayF;
 
-    //&:hover {
-    //  background-color: #ffffff;
-    //  overflow: visible; /* Прячет текст, который не помещается */
-    //  text-overflow: unset; /* Добавляет многоточие */
-    //}
 }
 
 
@@ -152,11 +138,3 @@
     }
   }
 }
-
-//@media screen and (max-width: 320px) {
-//  .AddToCartBtn {
-//
-//    top: 60%;
-//
-//  }
-//}

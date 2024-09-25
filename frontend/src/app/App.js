@@ -1,4 +1,3 @@
-import './App.css';
 import {MainRouter} from "../routes/MainRouter";
 import {NotificationContext, NotificationProvider} from "../context/NotificationContext";
 import {ModalComponent, Notification} from "../components/";
@@ -9,21 +8,27 @@ import {useDispatch} from "react-redux";
 import {getAllProductsAndCategories} from "../store/reducers/actionCreators";
 
 function App() {
+    // ================== Breadcrumbs ==================
+    const [crumbs, setCrumbs] = useState([]);
+    // ================== Breadcrumbs ==================
+
+
+    // ================== Notifications ==================
     const [notifications, setNotifications] = useState([]);
 
-    const [crumbs, setCrumbs] = useState([]);
     const addNotification = (message, type = 'info') => {
         const id = Math.random().toString(36).substr(2, 9); // уникальный ID для каждого уведомления
         setNotifications((prev) => [...prev, { id, message, type }]);
-
-        // Автоматическое удаление через 5 секунд
         setTimeout(() => removeNotification(id), 2000);
     };
 
     const removeNotification = (id) => {
         setNotifications((prev) => prev.filter((notification) => notification.id !== id));
     };
+    // ================== Notifications ==================
 
+
+    // ================== Modals ==================
     const [modal, setModal] = useState(null);
 
     const addModal = (contentObj) => {
@@ -42,6 +47,8 @@ function App() {
     const removeModal = () => {
         setModal(null);
     }
+    // ================== Modals ==================
+
 
     const dispatch = useDispatch();
     useEffect(() => {

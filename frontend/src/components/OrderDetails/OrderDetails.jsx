@@ -12,7 +12,6 @@ import {clearStatus} from "../../store/reducers/orderSlice";
 export const OrderDetails = ({products, productsLength, price}) => {
     const { addNotification } = useContext(NotificationContext);
     const {addModal} = useContext(ModalContext);
-    const {status, error} = useSelector(state => state.cartReducer);
     const {status: orderStatus, orderError} = useSelector(state => state.orderReducer);
     const dispatch = useDispatch();
 

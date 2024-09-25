@@ -9,7 +9,6 @@ export const filter = (state) => state.filterReducer;
 export const categories = (state) => state.categoriesReducer.categories;
 
 
-
 export const currentCategoryTitle = createSelector(categories,
     (state, categoryId) => categoryId,
     (categories, categoryId) => categories.find((cat) => cat.id === categoryId)?.title);

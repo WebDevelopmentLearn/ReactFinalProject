@@ -1,6 +1,7 @@
 import {useContext} from "react";
 import styles from './ModalComponent.module.scss';
 import {ModalContext} from "../../context/ModalContext";
+
 export const ModalComponent = ({onClose}) => {
     const { modal, removeModal } = useContext(ModalContext);
 

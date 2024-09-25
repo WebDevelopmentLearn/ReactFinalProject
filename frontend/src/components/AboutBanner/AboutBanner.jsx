@@ -1,7 +1,7 @@
-
 import aboutImg from '../../assets/home/about_bg.png';
 import styles from './AboutBanner.module.scss';
 import {useNavigate} from "react-router-dom";
+
 export const AboutBanner = () => {
     const navigate = useNavigate();
     return (

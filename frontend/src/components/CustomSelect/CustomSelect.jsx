@@ -1,5 +1,6 @@
 import {useState} from "react";
 import './CustomSelect.scss';
+
 export const CustomSelect = ({ options, value, onChange }) => {
 
     const [isOpen, setIsOpen] = useState(false);

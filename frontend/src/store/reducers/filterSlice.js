@@ -1,10 +1,3 @@
-
-// const options = [
-//     { value: 'default', label: 'by default' },
-//     { value: 'newest', label: 'newest' },
-//     { value: 'price-high-low', label: 'price: high-low' },
-//     { value: 'price-low-high', label: 'price: low-high' },
-// ];
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {

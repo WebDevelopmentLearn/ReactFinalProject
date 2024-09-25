@@ -18,6 +18,11 @@
   flex-wrap: wrap;
   gap: 32px;
   margin-top: 40px;
+
+  .NoProducts {
+    @include fontSizeAndWeight($fontSize40, 600);
+    text-align: center;
+  }
 }
 
 
@@ -27,18 +32,13 @@
   }
 
   .CategoryProductsContainer{
-
     gap: 12px;
   }
 
-  
 }
 
 @media screen and (max-width: 425px){
   .CategoryHeader {
-    //font-size: 4.8rem;
     @include fontSizeAndWeight(4.8rem, 700);
-
   }
-
 }

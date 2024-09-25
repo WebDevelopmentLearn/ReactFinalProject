@@ -1,10 +1,9 @@
-
 import styles from './CartProductCard.module.scss';
 import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import {decreaseQuantity, increaseQuantity, removeProductFromCart} from "../../store/reducers/cartSlice";
 import {useDispatch} from "react-redux";
-import x_icon from '../../assets/x_icon.svg';
 import {Link} from "react-router-dom";
+
 export const CartProductCard = ({productInd, productCard}) => {
     const amount = productCard?.quantity;
 
@@ -32,7 +31,6 @@ export const CartProductCard = ({productInd, productCard}) => {
         dispatch(removeProductFromCart(id));
     }
 
-
     return (
         <Link to={`/products/${product?.id}`} className={styles.CartProductCard}>
             <img className={styles.CartProductImg} src={`${BACKEND_URL}/${product.image}`} alt=""/>
@@ -56,7 +54,6 @@ export const CartProductCard = ({productInd, productCard}) => {
                             <span>{amount}</span>
                         </div>
                         <button className={styles.QuantityBtn} onClick={incrementQuantity}>+</button>
-
                     </div>
                     <div className={styles.CartProductPriceContainer}>
                         <h3 className={styles.CartProductDiscountPrice}>${priceWithDiscount}</h3>

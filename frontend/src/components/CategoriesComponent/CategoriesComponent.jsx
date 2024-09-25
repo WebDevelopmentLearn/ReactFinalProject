@@ -1,12 +1,10 @@
-
 import styles from './CategoriesComponent.module.scss';
 import {Link} from "react-router-dom";
-import {useDispatch, useSelector} from "react-redux";
+import {useSelector} from "react-redux";
 import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import {Loader} from "../Loader/Loader";
 import {SectionSeparator} from "../SectionSeparator/SectionSeparator";
 import STATUS from "../../utils/Utils";
-
 
 export const CategoriesComponent = () => {
     const { categories, status, error } = useSelector(state => state.categoriesReducer);
@@ -15,7 +13,6 @@ export const CategoriesComponent = () => {
     return (
         <section className={styles.CategoriesComponent}>
             <SectionSeparator sectionName="Categories" path="/categories" fullSectionName="All categories" />
-
             <div className={styles.CategoriesContainer}>
                 {status === STATUS.LOADING ? <Loader /> : (
                     firstCategories.length ? firstCategories.map((category) => (

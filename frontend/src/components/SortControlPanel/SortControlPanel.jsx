@@ -1,4 +1,3 @@
-
 import styles from './SortControlPanel.module.scss';
 import {CustomSelect} from "../CustomSelect/CustomSelect";
 import {useDispatch, useSelector} from "react-redux";
@@ -14,7 +13,8 @@ const options = [
 
 export const SortControlPanel = ({showDiscountCheckbox = true}) => {
     const dispatch = useDispatch();
-    const customFilter = useSelector(filter)
+    const customFilter = useSelector(filter);
+
     const handleSelectChange = (value) => {
         dispatch(setFilter({
             ...customFilter,
@@ -51,7 +51,7 @@ export const SortControlPanel = ({showDiscountCheckbox = true}) => {
                     <input value={customFilter.price.from} onChange={onChangePriceFrom} id="priceFromInput" type="number" placeholder="from" min={0}/>
                 </label>
 
-                <label className={styles.priceToInput} htmlFor="priceToInput">
+                <label htmlFor="priceToInput">
                     <input value={customFilter.price.to} onChange={onChangePriceTo} id="priceToInput" type="number" placeholder="to" min={0}/>
                 </label>
             </div>

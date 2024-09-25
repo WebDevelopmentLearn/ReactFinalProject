@@ -1,6 +1,4 @@
-
 import styles from "./AddToCartBtn.module.scss";
-import {useDispatch, useSelector} from "react-redux";
 
 export const AddToCartBtn = ({isDisabled, onClick, title = "Add to cart", product, className}) => {
     

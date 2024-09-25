@@ -36,7 +36,6 @@
 
 @media screen and (max-width: 425px){
   .SalesHeader {
-    //font-size: 4.8rem;
     @include fontSizeAndWeight(4.8rem, 700);
   }
 

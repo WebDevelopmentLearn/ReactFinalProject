@@ -1,7 +1,7 @@
-
 import styles from './DiscountAndOrderForm.module.scss';
 import {useForm} from "react-hook-form";
 import STATUS from "../../utils/Utils";
+
 export const DiscountAndOrderForm = ({status = null, formClass, buttonClass, submitForm, title}) => {
     const {register, handleSubmit, formState: {errors, isValid}} = useForm();
 

@@ -4,7 +4,6 @@
 .custom-select-container {
     position: relative;
     width: 200px;
-    /*height: 36px;*/
 }
 
 .custom-select {
@@ -62,6 +61,5 @@
 
 .custom-option:hover,
 .custom-option.selected {
-    //background-color: #f0f0f0;
     color: $darkGrayF;
 }

@@ -1,5 +1,4 @@
 import {SectionSeparator} from "../SectionSeparator/SectionSeparator";
-
 import styles from './SalesComponent.module.scss';
 import {useDispatch, useSelector} from "react-redux";
 import {Loader} from "../Loader/Loader";
@@ -16,7 +15,6 @@ export const SalesComponent = () => {
 
     const dispatch = useDispatch();
     useEffect(() => {
-        // dispatch(getAllProducts());
         dispatch(toggleDiscount(true));
     }, []);
 

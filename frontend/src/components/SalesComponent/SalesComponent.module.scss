@@ -36,11 +36,10 @@
   padding: 0 32px;
 
   .ProductTitleHeader {
-    white-space: nowrap; /* Предотвращает перенос текста */
-    overflow: hidden; /* Прячет текст, который не помещается */
-    text-overflow: ellipsis; /* Добавляет многоточие */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
-
 
 }
 

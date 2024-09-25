@@ -1,4 +1,4 @@
-# Fullstack React App
+# Pet Shop (Final React Project)
 
 ## Запуск проекта
 
@@ -33,6 +33,7 @@
     ```
 
 ## Описание
-
 - Клиентская часть построена с использованием React.
 - Серверная часть построена с использованием Node.js и Express.
+- Более подробное описание проекта можно найти в файле `frontend/README.md` и `backend/README.md`.
+---

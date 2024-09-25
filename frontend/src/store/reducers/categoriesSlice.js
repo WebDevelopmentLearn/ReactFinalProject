@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {getAllCategories, getCategoryById} from "./actionCreators";
+import {getAllCategories} from "./actionCreators";
 import STATUS from "../../utils/Utils";
 const initialState = {
     categories: [],

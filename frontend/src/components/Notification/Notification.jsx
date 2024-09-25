@@ -1,7 +1,6 @@
-
 import styles from './Notification.module.scss';
 import {NotificationContext} from "../../context/NotificationContext";
-import {useCallback, useContext} from "react";
+import {useContext} from "react";
 
 export const Notification = ({message, status}) => {
     const { notifications, removeNotification } = useContext(NotificationContext);

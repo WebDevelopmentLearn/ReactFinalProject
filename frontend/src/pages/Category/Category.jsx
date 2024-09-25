@@ -15,8 +15,8 @@ export const Category = () => {
 
     const categoryProducts = useSelector((state) => filteredProducts(state, Number(categoryId)));
     const category = useSelector((state) => currentCategoryTitle(state, Number(categoryId)));
-    const dispatch = useDispatch();
     const {addNotification} = useContext(NotificationContext);
+
     useEffect(() => {
         if (error) {
             addNotification("An error occurred when receiving products", "error");
@@ -30,20 +30,16 @@ export const Category = () => {
     return (
         <Layout>
             <div className={styles.Category}>
-
                 {status === STATUS.LOADING ? <Loader /> : (
                     <div>
                         <h1 className={styles.CategoryHeader}>{category}</h1>
-
                         <SortControlPanel />
-
                         <div className={styles.CategoryProductsContainer}>
                             {categoryProducts?.length ? categoryProducts?.map((product) => (
                                 <ProductCard  key={product.id} productData={product} addCartBtn={true} />
                             )) : <h2 className={styles.NoProducts}>No products</h2>}
                         </div>
                     </div>
-
                 )}
             </div>
         </Layout>
