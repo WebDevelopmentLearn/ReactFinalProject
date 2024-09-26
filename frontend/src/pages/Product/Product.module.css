@@ -146,14 +146,13 @@
   margin: 32px 0 16px 0;
 }
 .ProductFullDescContainer .ProductFullDescOverflowContainer {
-  overflow: scroll;
   max-width: 548px;
-  height: 300px;
 }
 .ProductFullDescContainer .ProductFullDescOverflowContainer .ProductFullDescPar {
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 26px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1024px) {

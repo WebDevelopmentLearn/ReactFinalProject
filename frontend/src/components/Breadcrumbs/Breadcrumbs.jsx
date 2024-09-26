@@ -7,7 +7,7 @@ export const Breadcrumbs = ({crumbs}) => {
         <div className={styles.breadcrumb}>
             {crumbs.map((crumb, index, array) => {
                 if (array.length - 1 === index) {
-                    return <div  key={crumb.path}>
+                    return <div key={crumb.path}>
                         {crumb.label}
                     </div>
                 } else  {

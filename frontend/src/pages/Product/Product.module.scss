@@ -136,13 +136,13 @@
   }
 
   .ProductFullDescOverflowContainer {
-    overflow: scroll;
+    //overflow: scroll;
     max-width: 548px;
-    height: 300px;
+    //height: 300px;
     .ProductFullDescPar {
       @include fontSizeAndWeight($fontSize16, 400);
       line-height: 26px;
-
+      overflow: hidden;
     }
   }
 

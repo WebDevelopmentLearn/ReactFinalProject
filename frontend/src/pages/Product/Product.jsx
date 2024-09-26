@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useContext, useEffect, useState} from "react";
 import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import {useParams} from "react-router-dom";
-import {AddToCartBtn, Loader} from "../../components";
+import {AddToCartBtn, ExpandableText, Loader} from "../../components";
 import STATUS from "../../utils/Utils";
 import styles from "./Product.module.scss";
 import {selectProductById} from "../../store/selectors";
@@ -80,7 +80,9 @@ export const Product = () => {
                                 <div className={styles.ProductFullDescContainer}>
                                     <h4 className={styles.ProductFullDescHeader}>Description</h4>
                                     <div className={styles.ProductFullDescOverflowContainer}>
-                                        <p className={styles.ProductFullDescPar}>{product?.description}</p>
+                                        {/*<p className={styles.ProductFullDescPar}>{product?.description}</p>*/}
+                                        {/*<button >Read more</button>*/}
+                                        <ExpandableText textClass={styles.ProductFullDescPar} text={product?.description} maxHeight={160} />
                                     </div>
                                 </div>
                             </div>

@@ -10,6 +10,7 @@ export {CategoryCard} from './CategoryCard/CategoryCard';
 export {SortControlPanel} from './SortControlPanel/SortControlPanel';
 export {AddToCartBtn} from './AddToCartBtn/AddToCartBtn';
 export {DiscountAndOrderForm} from './DiscountAndOrderForm/DiscountAndOrderForm';
+export {ExpandableText} from './ExpandableText/ExpandableText';
 // ========= Universal Components =========
 
 
