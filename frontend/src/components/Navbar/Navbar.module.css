@@ -26,6 +26,10 @@
   font-size: 2rem;
   font-weight: 500;
   color: #282828;
+  transition: color 0.5s;
+}
+.Navbar a:hover {
+  color: #3670c9;
 }
 .Navbar .active {
   color: #0D50FF;

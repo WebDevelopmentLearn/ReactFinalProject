@@ -111,6 +111,7 @@
   width: max-content;
   height: 58px;
   border: 1px solid #dddddd;
+  border-radius: 6px;
 }
 
 .QuantityBtn {
@@ -119,6 +120,11 @@
   border: 1px solid #dddddd;
   border-radius: 6px;
   font-size: 3.6rem;
+  transition: background-color 0.5s, color 0.5s;
+}
+.QuantityBtn:hover {
+  background-color: #e9e9e9;
+  color: #1f429c;
 }
 .QuantityBtn:first-child {
   margin-right: 8px;

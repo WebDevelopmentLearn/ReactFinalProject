@@ -48,6 +48,10 @@
   display: block;
   width: 110px;
   height: 20px;
+  transition: color 0.5s;
+}
+.AllCategoriesLinkSpan:hover {
+  color: #282828;
 }
 
 @media screen and (max-width: 768px) {
