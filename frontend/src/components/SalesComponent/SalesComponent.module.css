@@ -104,5 +104,10 @@
     max-height: initial;
   }
 }
+@media screen and (max-width: 425px) {
+  .SalesComponent {
+    padding: 0 20px;
+  }
+}
 
 /*# sourceMappingURL=SalesComponent.module.css.map */

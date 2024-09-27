@@ -112,3 +112,13 @@
     margin: 0 16px 0 16px;
   }
 }
+
+@media screen and (max-width: 425px) {
+  .DiscountHeader {
+    @include fontSizeAndWeight($fontSize40, 700);
+  }
+
+  .DiscountBanner {
+    padding: 0 20px;
+  }
+}

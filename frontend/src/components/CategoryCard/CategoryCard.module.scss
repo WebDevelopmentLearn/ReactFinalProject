@@ -27,4 +27,8 @@
       @include fontSizeAndWeight($fontSize30, 500);
     }
   }
+
+  .CategoryCard {
+    width: 100%;
+  }
 }
