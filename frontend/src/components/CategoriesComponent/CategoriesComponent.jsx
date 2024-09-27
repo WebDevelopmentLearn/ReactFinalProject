@@ -5,6 +5,8 @@ import {BACKEND_URL} from "../../store/reducers/actionCreators";
 import {Loader} from "../Loader/Loader";
 import {SectionSeparator} from "../SectionSeparator/SectionSeparator";
 import STATUS from "../../utils/Utils";
+import {CategoryCard} from  "../../components";
+
 
 export const CategoriesComponent = () => {
     const { categories, status, error } = useSelector(state => state.categoriesReducer);
@@ -16,15 +18,7 @@ export const CategoriesComponent = () => {
             <div className={styles.CategoriesContainer}>
                 {status === STATUS.LOADING ? <Loader /> : (
                     firstCategories.length ? firstCategories.map((category) => (
-                        <Link key={category.id} to={`/categories/${category.id}`} className={styles.Category}>
-                            <img
-                                className={styles.CategoryImage}
-                                src={`${BACKEND_URL}/${category.image}`}
-                                alt={category.title}
-                                loading="lazy"
-                            />
-                            <h4 className={styles.CategoryName}>{category.title}</h4>
-                        </Link>
+                        <CategoryCard key={category.id} category={category} />
                     )) : <h2 className={styles.NoCategories}>No categories</h2>
                 )}
             </div>
